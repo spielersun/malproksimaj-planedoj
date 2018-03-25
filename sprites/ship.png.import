@@ -7,10 +7,10 @@ path="res://.import/ship.png-4d5e64b785005468aa74f7ca14df1341.stex"
 [deps]
 
 source_file="res://sprites/ship.png"
-source_md5="4cffe8d10180e37b74864fdabb08611d"
+source_md5="423a6ca442e0f1807011e8e3cc61da23"
 
 dest_files=[ "res://.import/ship.png-4d5e64b785005468aa74f7ca14df1341.stex" ]
-dest_md5="b79e203d2d955d6821123fbc23b1bd6b"
+dest_md5="71f47bf705b9aae7d4695a2ffbddec14"
 
 [params]
 
