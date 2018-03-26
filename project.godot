@@ -14,6 +14,10 @@ config/name="malproksimaj-planedoj"
 run/main_scene="res://stages/stage_game.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+utils="*res://scripts/utils.gd"
+
 [display]
 
 window/size/width=800
