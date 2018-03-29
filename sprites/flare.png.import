@@ -7,10 +7,10 @@ path="res://.import/flare.png-17239484d02797ff2a5ffbccd926205c.stex"
 [deps]
 
 source_file="res://sprites/flare.png"
-source_md5="e2bd963e702159054b69d391a822564e"
+source_md5="01a7962d024188cc277d5e19a455895b"
 
 dest_files=[ "res://.import/flare.png-17239484d02797ff2a5ffbccd926205c.stex" ]
-dest_md5="d3aafc7438e9c63e8aac659d6a618afd"
+dest_md5="15d924a4f526b933397f9d79d93f37f3"
 
 [params]
 

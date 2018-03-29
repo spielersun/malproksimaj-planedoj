@@ -7,10 +7,10 @@ path="res://.import/smoke.png-4ce44d0c966a6a09693dcb33792d404a.stex"
 [deps]
 
 source_file="res://sprites/smoke.png"
-source_md5="99d768a393b855bcb97d73e85bc0220d"
+source_md5="07b352fa47dfe6baa18b2b4f14e07b1d"
 
 dest_files=[ "res://.import/smoke.png-4ce44d0c966a6a09693dcb33792d404a.stex" ]
-dest_md5="283e325d8efb96231baa2a40f1d495a2"
+dest_md5="ba0bc55f80706074cf81adcb03a60480"
 
 [params]
 
