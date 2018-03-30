@@ -9,6 +9,6 @@ func _ready():
 func _process(delta):
 	translate(velocity * delta)
 	
-	if position.x <= 0  
+	if position.x <= 0: 
 		queue_free()
 	pass
