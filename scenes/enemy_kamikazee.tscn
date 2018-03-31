@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 12, 16 )
 
-[node name="enemy_kamikazee" index="0" instance=ExtResource( 1 )]
+[node name="enemy_kamikazee" instance=ExtResource( 1 )]
 
 _sections_unfolded = [ "Collision", "Pause", "Pickable", "Transform", "Visibility" ]
 velocity = Vector2( -100, 0 )
