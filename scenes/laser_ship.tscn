@@ -6,12 +6,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 18, 6 )
+extents = Vector2( 9, 3 )
 
 [node name="laser_ship" instance=ExtResource( 1 )]
 
 position = Vector2( 173.482, 262.428 )
-velocity = Vector2( -350, 0 )
+velocity = Vector2( 350, 0 )
 
 [node name="sprite" parent="." index="0"]
 
@@ -24,6 +24,6 @@ shape = SubResource( 1 )
 [node name="vis_notifier" parent="." index="2"]
 
 position = Vector2( 0, -0.0769444 )
-rect = Rect2( -18, -6, 36, 12 )
+rect = Rect2( -9, -3, 18, 6 )
 
 
