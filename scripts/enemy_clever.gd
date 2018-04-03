@@ -20,7 +20,7 @@ func _process(delta):
 func shoot():
 	while true:
 		var laser = scn_laser.instance()
-		laser.position = get_node("cannon").get_position()
+		laser.position = get_node("cannon").global_position
 		utils.main_node.add_child(laser)
 		
 		yield(utils.create_timer(1.5), "timeout")

@@ -12,6 +12,7 @@ extents = Vector2( 16, 16 )
 [node name="enemy_clever" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
+armor = 6
 velocity = Vector2( -50, 150 )
 
 [node name="sprite" parent="." index="0"]

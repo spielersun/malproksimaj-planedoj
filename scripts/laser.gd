@@ -21,7 +21,7 @@ func _process(delta):
 func create_flare():
 	var flare = scn_flare.instance()
 	
-	flare.position = get_position()
+	flare.position = global_position
 	utils.main_node.add_child(flare)
 	
 	pass

@@ -8,9 +8,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 16, 16 )
 
-[node name="enemy" type="Area2D"]
+[node name="enemy" type="Area2D" index="0"]
 
-position = Vector2( 900, 225 )
+position = Vector2( 800, 225 )
 input_pickable = true
 gravity_point = true
 gravity_vec = Vector2( 0, 1 )
@@ -21,6 +21,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+armor = 2
 velocity = Vector2( 0, 0 )
 
 [node name="sprite" type="Sprite" parent="." index="0"]
@@ -30,5 +31,6 @@ texture = ExtResource( 2 )
 [node name="shape" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 
 
