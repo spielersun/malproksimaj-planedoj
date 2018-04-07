@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/camera.gd" type="Script" id=1]
 [ext_resource path="res://scenes/stars.tscn" type="PackedScene" id=2]
@@ -7,8 +7,11 @@
 [ext_resource path="res://sprites/armor.png" type="Texture" id=5]
 [ext_resource path="res://sprites/score.png" type="Texture" id=6]
 [ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://sprites/button_normal.png" type="Texture" id=8]
+[ext_resource path="res://sprites/button_pressed.png" type="Texture" id=9]
+[ext_resource path="res://sprites/button_hover.png" type="Texture" id=10]
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=3]
 
 resource_name = "spr_armor"
 script/source = "extends Sprite
@@ -22,7 +25,7 @@ func _on_armor_changed(armor):
 	pass"
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=4]
 
 resource_name = "tex_score"
 script/source = "extends TextureRect
@@ -43,13 +46,32 @@ func set_score(new_value):
 	"
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 
 size = 16
 use_mipmaps = true
 use_filter = false
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="GDScript" id=5]
+
+resource_name = "btn_menu"
+script/source = "extends TextureButton
+
+func _ready():
+	connect(\"pressed\", self, \"_on_pressed\")
+	utils.attach(\"ship\", \"tree_exited\", self, \"_on_ship_exit_tree\")
+	pass
+
+func _on_pressed():
+	get_tree().change_scene(\"res://stages/stage_menu.tscn\")
+	pass
+
+func _on_ship_exit_tree():
+	show()
+	pass"
+_sections_unfolded = [ "Resource" ]
 
 [node name="world" type="Node" index="0"]
 
@@ -100,7 +122,7 @@ centered = false
 offset = Vector2( 20, 20 )
 hframes = 5
 frame = 4
-script = SubResource( 1 )
+script = SubResource( 3 )
 _sections_unfolded = [ "Animation", "Offset" ]
 
 [node name="tex_score" type="TextureRect" parent="hud" index="1"]
@@ -121,7 +143,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 6 )
 stretch_mode = 0
-script = SubResource( 2 )
+script = SubResource( 4 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
 
 [node name="label" type="Label" parent="hud/tex_score" index="0"]
@@ -140,12 +162,62 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "0"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Focus", "Hint", "Margin", "Material", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="btn_menu" type="TextureButton" parent="hud" index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 380.0
+margin_top = 200.0
+margin_right = 427.0
+margin_bottom = 216.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+script = SubResource( 5 )
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="start" type="Label" parent="hud/btn_menu" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 48.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "MENU"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 
