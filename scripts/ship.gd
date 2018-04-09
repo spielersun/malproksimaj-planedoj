@@ -47,6 +47,7 @@ func set_armor(new_value):
 		return
 		
 	if new_value < armor:
+		audio_player.play("hit_ship")
 		utils.main_node.add_child(scn_flash.instance())
 	
 	armor = new_value

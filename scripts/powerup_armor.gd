@@ -7,5 +7,6 @@ func _ready():
 func _on_area_entered(other):
 	if other.is_in_group("ship"):
 		other.armor += 1
+		audio_player.play("powerup")
 		queue_free()
 	pass

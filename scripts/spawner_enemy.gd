@@ -6,6 +6,7 @@ const enemies = [
 ]
 
 func _ready():
+	# yield(utils.create_timer(2), "timeout")
 	spawn()
 	pass
 

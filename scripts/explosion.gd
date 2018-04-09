@@ -10,6 +10,7 @@ func _ready():
 	get_node("p_flare").set_emitting(true)
 	
 	utils.remote_call("camera", "shake", 8, 0.2)
+	audio_player.play("explosion")
 	
 	get_node("anim").play("fade_out")
 	yield(get_node("anim"), "animation_finished")
