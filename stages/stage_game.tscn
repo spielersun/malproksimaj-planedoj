@@ -39,6 +39,9 @@ func _ready():
 func set_score(new_value):
 	score = new_value
 	get_node(\"label\").set_text(str(score))
+	
+	if score > game.bestscore:
+		game.bestscore = score
 	pass
 	
 	
