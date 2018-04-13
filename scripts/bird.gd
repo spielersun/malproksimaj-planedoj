@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 func _ready():
+	linear_velocity = Vector2(50, linear_velocity.y)
 	set_process_input(true)
 	set_physics_process(true)
 	pass
@@ -8,13 +9,16 @@ func _ready():
 func _physics_process(delta):
 	if rad2deg(rotation) > 30:
 		rotation = deg2rad(30)
-	if get_linear_velocity().y > 0:
-		set_angular_velocity(1.5)
+	#	angular_velocity = 0
+		
+	#if linear_velocity.y > 0:
+	#	angular_velocity = 1.5
 	pass
 
+
 func flap():
-	set_linear_velocity(Vector2(get_linear_velocity().x, -150))
-	set_angular_velocity(-3)
+	linear_velocity = Vector2(linear_velocity.x, -150)
+	# angular_velocity = -3
 	pass
 
 func _input(event):
