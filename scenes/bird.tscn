@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/bird.gd" type="Script" id=1]
 [ext_resource path="res://sprites/bird_orange_0.png" type="Texture" id=2]
@@ -14,9 +14,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 6.5
+
 [node name="bird" type="RigidBody2D"]
 
-position = Vector2( 64.1184, 38.7423 )
+position = Vector2( 0, 38.7423 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -36,6 +41,7 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -47,6 +53,8 @@ animation = "default"
 frame = 1
 
 [node name="shape" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 2 )
 
 [node name="player" type="AnimationPlayer" parent="." index="2"]
 
