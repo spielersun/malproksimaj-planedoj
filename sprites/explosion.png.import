@@ -7,10 +7,10 @@ path="res://.import/explosion.png-dd7434c2b7b548e19d49e62996eee12b.stex"
 [deps]
 
 source_file="res://sprites/explosion.png"
-source_md5="41571cb3589f099bb3921c771db731a5"
+source_md5="42e59069b01a13cddea7aa1077bb6c37"
 
 dest_files=[ "res://.import/explosion.png-dd7434c2b7b548e19d49e62996eee12b.stex" ]
-dest_md5="66231fd232cdfd43e7121788e069f725"
+dest_md5="efc89f7c22e41459d34c4f4da23717e0"
 
 [params]
 

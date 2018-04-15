@@ -7,10 +7,10 @@ path="res://.import/background_day.png-1f646551177c17889d5f6cbd07edb3c3.stex"
 [deps]
 
 source_file="res://sprites/background_day.png"
-source_md5="b28aff29f10c52bf9f64d065df2a306d"
+source_md5="07ad726b79dc8101f91a76cb802c9e41"
 
 dest_files=[ "res://.import/background_day.png-1f646551177c17889d5f6cbd07edb3c3.stex" ]
-dest_md5="b04f23d073954ab235581699d7a9ba13"
+dest_md5="6e47dd03b88da2248fd7f22da05f54bb"
 
 [params]
 

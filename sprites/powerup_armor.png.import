@@ -7,10 +7,10 @@ path="res://.import/powerup_armor.png-d6fffd7aca254565601160b0010ccf97.stex"
 [deps]
 
 source_file="res://sprites/powerup_armor.png"
-source_md5="248b8dc65cdb8345cf3561c8c1480ddb"
+source_md5="9f0e8e91e34fc0c45985184122af6d7d"
 
 dest_files=[ "res://.import/powerup_armor.png-d6fffd7aca254565601160b0010ccf97.stex" ]
-dest_md5="0b9312ff72d2f97d61767d5688ed783d"
+dest_md5="1cfaefb39f4b5496c057ffa435b0877b"
 
 [params]
 

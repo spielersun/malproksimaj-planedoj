@@ -28,7 +28,7 @@ func spawn():
 	pass
 "
 
-[node name="spawner_enemy" type="Node" index="0"]
+[node name="spawner_enemy" type="Node"]
 
 script = SubResource( 1 )
 

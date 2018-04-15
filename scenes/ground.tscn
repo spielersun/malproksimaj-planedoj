@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 84, 28 )
+extents = Vector2( 400, 25 )
 _sections_unfolded = [ "Resource" ]
 
 [node name="ground" type="StaticBody2D"]
@@ -24,13 +24,13 @@ _sections_unfolded = [ "Transform" ]
 
 texture = ExtResource( 1 )
 centered = false
-offset = Vector2( 0, -56 )
-_sections_unfolded = [ "Offset" ]
+offset = Vector2( 0, -50 )
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="shape" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 84, -28 )
+position = Vector2( 400, -25 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 

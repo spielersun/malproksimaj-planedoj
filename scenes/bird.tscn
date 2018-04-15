@@ -21,7 +21,7 @@ radius = 6.5
 
 [node name="bird" type="RigidBody2D"]
 
-position = Vector2( 0, 38.7423 )
+position = Vector2( -200, 38.7423 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1

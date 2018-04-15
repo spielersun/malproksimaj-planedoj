@@ -7,10 +7,10 @@ path="res://.import/powerup_laser.png-3e585d63cab6f82b956959e98802b276.stex"
 [deps]
 
 source_file="res://sprites/powerup_laser.png"
-source_md5="147ddcb8ef1d943c3bdafda990676496"
+source_md5="3e3ccba2769e05c4cadc0dae12792ea0"
 
 dest_files=[ "res://.import/powerup_laser.png-3e585d63cab6f82b956959e98802b276.stex" ]
-dest_md5="76d00d92547f86ef2e20a937c59d4e0d"
+dest_md5="350e126e730509011eeafb8970f37113"
 
 [params]
 
