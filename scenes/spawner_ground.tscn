@@ -9,6 +9,4 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="container" type="Node" parent="." index="0"]
 
-[node name="con" type="Node2D" parent="." index="1"]
-
 

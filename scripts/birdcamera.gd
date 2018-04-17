@@ -9,3 +9,7 @@ func _ready():
 func _physics_process(delta):
 	position = Vector2(bird.position.x, position.y)
 	pass
+	
+func get_total_pos():
+	return position + offset
+	pass

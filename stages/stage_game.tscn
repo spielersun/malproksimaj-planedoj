@@ -77,7 +77,7 @@ func _on_ship_exit_tree():
 	pass"
 _sections_unfolded = [ "Resource" ]
 
-[node name="world" type="Node" index="0"]
+[node name="world" type="Node"]
 
 [node name="camera" type="Camera2D" parent="." index="0"]
 

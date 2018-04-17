@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 func _ready():
-	linear_velocity = Vector2(150, linear_velocity.y)
+	linear_velocity = Vector2(100, linear_velocity.y)
 	set_process_input(true)
 	set_physics_process(true)
 	pass
