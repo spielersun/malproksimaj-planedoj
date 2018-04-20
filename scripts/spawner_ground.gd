@@ -18,9 +18,7 @@ func spawn_move():
 func spawn_ground():
 	var new_ground = scn_ground.instance()
 	new_ground.position = Vector2(position.x, GROUND_HEIGHT)
-	
 	new_ground.connect("tree_exited", self, "spawn_move")
-	
 	get_node("container").add_child(new_ground)
 	pass
 

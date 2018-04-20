@@ -14,7 +14,7 @@ extents = Vector2( 13, 80 )
 custom_solver_bias = 0.0
 extents = Vector2( 13, 80 )
 
-[node name="pipe" type="StaticBody2D" index="0"]
+[node name="pipe" type="StaticBody2D"]
 
 z_index = -1
 input_pickable = false

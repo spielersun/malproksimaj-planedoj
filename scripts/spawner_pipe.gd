@@ -5,7 +5,7 @@ const GROUND_HEIGHT = 50
 const PIPE_WIDTH = 26
 const OFFSET_X = 65
 const OFFSET_Y = 100
-const AMOUNT_TO_FILL_VIEW = 3
+const AMOUNT_TO_FILL_VIEW = 5
 
 func _ready():
 	go_init_pos()
@@ -36,7 +36,7 @@ func spawn_pipe():
 func go_next_pos():
 	randomize()
 	var next_pos = position
-	next_pos.x = PIPE_WIDTH/2 + OFFSET_X + PIPE_WIDTH/2
+	next_pos.x += PIPE_WIDTH/2 + OFFSET_X + PIPE_WIDTH/2
 	next_pos.y = rand_range(0+OFFSET_Y, get_viewport_rect().size.y-GROUND_HEIGHT-OFFSET_Y)
 	position = next_pos
 	pass

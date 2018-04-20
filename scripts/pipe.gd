@@ -10,7 +10,7 @@ func _process(delta):
 	if camera == null: 
 		return
 	
-	if position.x + 1300 <= camera.get_total_pos().x:
+	if position.x + 300 <= camera.get_total_pos().x:
 		queue_free()
 	pass
 
