@@ -2,6 +2,11 @@ extends RigidBody2D
 
 onready var state = FlappingState.new(self)
 
+const STATE_FLYING = 0
+const STATE_FLAPPING = 1
+const STATE_HIT = 2
+const STATE_GROUNDED = 3
+
 func _ready():
 	set_process_input(true)
 	set_physics_process(true)
@@ -15,9 +20,36 @@ func _input(event):
 	state.input(event)
 	pass
 
+func set_state(new_state):
+	state.exit()
+	
+	if new_state == STATE_FLYING:
+		state = FlyingState.new(self)
+	elif new_state == STATE_FLAPPING:
+		state = FlappingState.new(self)
+	elif new_state == STATE_HIT:
+		state = HitState.new(self)
+	elif new_state == STATE_GROUNDED:
+		state = GroundedState.new(self)
+	pass
+
+func get_state():
+	if state extends FlyingState:
+		return STATE_FLYING
+	elif state extends FlappingState:
+		return STATE_FLAPPING
+	elif  extends HitState:
+		return STATE_HIT
+	elif state extends GroundedState:
+		return STATE_GROUNDED
+
 class FlyingState:
-	func _init():
+	var bird
+	
+	func _init(bird):
+		self.bird = bird
 		pass
+		
 	func update(delta):
 		pass
 	func input(event):
@@ -59,8 +91,12 @@ class FlappingState:
 		pass
 
 class HitState:
-	func _init():
+	var bird
+	
+	func _init(bird):
+		self.bird = bird
 		pass
+		
 	func update(delta):
 		pass
 	func input(event):
@@ -69,8 +105,12 @@ class HitState:
 		pass
 
 class GroundedState:
-	func _init():
+	var bird
+	
+	func _init(bird):
+		self.bird = bird
 		pass
+		
 	func update(delta):
 		pass
 	func input(event):

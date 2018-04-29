@@ -62,7 +62,7 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="main" type="Node"]
+[node name="main" type="Node" index="0"]
 
 [node name="stars" parent="." index="0" instance=ExtResource( 1 )]
 
