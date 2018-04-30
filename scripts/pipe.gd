@@ -4,6 +4,7 @@ onready var camera = utils._get_main_node().get_node("birdcamera")
 
 func _ready():
 	set_process(true)
+	add_to_group(balance_game.GROUP_PIPES)
 	pass
 
 func _process(delta):

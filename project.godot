@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 utils="*res://scripts/utils.gd"
 audio_player="*res://scenes/audio_player.tscn"
 game="*res://scripts/game.gd"
+balance_game="*res://scripts/balance_game.gd"
 
 [display]
 
