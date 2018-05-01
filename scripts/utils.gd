@@ -63,3 +63,12 @@ func _get_view_size():
 	return get_tree().get_root().get_visible_rect().size
 	pass
 
+func get_digits(number):
+	var str_number = str(number)
+	var digits = []
+	
+	for i in range(str_number.length()):
+		digits.append(str_number[i].to_int())
+	
+	return digits
+	pass

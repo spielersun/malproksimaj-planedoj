@@ -15,6 +15,7 @@ func _ready():
 	set_process_input(true)
 	set_physics_process(true)
 	
+	add_to_group(balance_game.GROUP_BIRDS)
 	connect("body_entered", self, "_on_body_entered")
 	pass
 	
@@ -47,13 +48,13 @@ func set_state(new_state):
 	pass
 
 func get_state():
-	if state == FlyingState:
+	if state is FlyingState:
 		return STATE_FLYING
-	elif state == FlappingState:
+	elif state is FlappingState:
 		return STATE_FLAPPING
-	elif state == HitState:
+	elif state is HitState:
 		return STATE_HIT
-	elif state == GroundedState:
+	elif state is GroundedState:
 		return STATE_GROUNDED
 	pass
 	
