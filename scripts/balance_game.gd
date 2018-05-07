@@ -4,6 +4,11 @@ const GROUP_PIPES = "pipes"
 const GROUP_GROUNDS = "grounds"
 const GROUP_BIRDS = "birds"
 
+const MEDAL_BRONZE = 10
+const MEDAL_SILVER = 20
+const MEDAL_GOLD = 30
+const MEDAL_PLATINUM = 40
+
 var balance_score_best = 0 setget _set_score_best
 var balance_score_current = 0 setget _set_score_current
 
