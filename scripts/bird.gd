@@ -13,6 +13,7 @@ signal state_changed
 
 func _ready():
 	set_process_input(true)
+	set_process_unhandled_input(true)
 	set_physics_process(true)
 	
 	add_to_group(balance_game.GROUP_BIRDS)
@@ -25,6 +26,11 @@ func _physics_process(delta):
 
 func _input(event):
 	state.input(event)
+	pass
+
+func _unhandled_input(event):
+	if state.has_method("unhandled_input"):
+		state.unhandled_input(event)
 	pass
 
 func _on_body_entered(other_body):
@@ -104,6 +110,13 @@ class FlappingState:
 	# 	if (event.scancode == KEY_SPACE or event.scancode == KEY_F) and event.is_pressed() and not event.is_echo():
 	# 	print("!")
 		if event.is_action_pressed("flap"):
+			flap()
+		pass
+	
+	func unhandled_input(event):
+		if event.type != InputEvent.MOUSE_BUTTON or !event.is_pressed() or event.is_echo():
+			return
+		if event.button_index == BUTTON_LEFT:
 			flap()
 		pass
 

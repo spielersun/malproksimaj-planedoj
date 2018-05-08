@@ -253,7 +253,7 @@ func _ready():
 	pass"
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="GDScript" id=12]
+[sub_resource type="GDScript" id=9]
 
 resource_name = "tex_medal"
 script/source = "extends TextureRect
@@ -290,7 +290,7 @@ func show_medal():
 	pass"
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=10]
 
 animations = [ {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
@@ -299,7 +299,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="GDScript" id=14]
+[sub_resource type="GDScript" id=11]
 
 resource_name = "spr_spark"
 script/source = "extends AnimatedSprite
@@ -322,7 +322,7 @@ func to_random_pos():
 	pass"
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=12]
 
 resource_name = "shine"
 length = 0.5
@@ -355,9 +355,8 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="GDScript" id=9]
+[sub_resource type="GDScript" id=13]
 
-resource_name = "hbox_buttons"
 script/source = "extends HBoxContainer
 
 func _ready():
@@ -368,7 +367,7 @@ func _ready():
 	pass"
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="GDScript" id=14]
 
 script/source = "extends TextureButton
 
@@ -385,7 +384,7 @@ func _on_pressed():
 	pass"
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=15]
 
 length = 1.0
 loop = false
@@ -578,17 +577,17 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 10.0
 margin_right = 800.0
-margin_bottom = 50.0
+margin_bottom = 28.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/separation = 2
 alignment = 1
 script = SubResource( 4 )
-_sections_unfolded = [ "Mouse", "Rect", "custom_constants" ]
+_sections_unfolded = [ "Mouse" ]
 
 [node name="tex_number_0" type="TextureRect" parent="hud/hbox_score" index="0"]
 
@@ -598,7 +597,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 394.0
 margin_right = 406.0
-margin_bottom = 40.0
+margin_bottom = 18.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -610,6 +609,7 @@ stretch_mode = 0
 
 [node name="cntr_gameover" type="Container" parent="hud" index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -767,6 +767,7 @@ script = SubResource( 8 )
 
 [node name="tex_medal" type="TextureRect" parent="hud/cntr_gameover/tex_panelscore" index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -783,15 +784,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 13 )
 stretch_mode = 0
-script = SubResource( 12 )
+script = SubResource( 9 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="spr_spark" type="AnimatedSprite" parent="hud/cntr_gameover/tex_panelscore/tex_medal" index="0"]
 
 position = Vector2( 0.222321, 0.302933 )
-frames = SubResource( 13 )
+frames = SubResource( 10 )
 animation = "default"
-script = SubResource( 14 )
+script = SubResource( 11 )
 
 [node name="anim" type="AnimationPlayer" parent="hud/cntr_gameover/tex_panelscore/tex_medal/spr_spark" index="0"]
 
@@ -800,7 +801,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 0.8
-anims/shine = SubResource( 15 )
+anims/shine = SubResource( 12 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -823,7 +824,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/separation = 9
 alignment = 1
-script = SubResource( 9 )
+script = SubResource( 13 )
 _sections_unfolded = [ "Material", "Rect", "Theme", "Visibility", "custom_constants" ]
 
 [node name="btn_play" type="TextureButton" parent="hud/cntr_gameover/hbox_buttons" index="0"]
@@ -847,7 +848,7 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 17 )
 texture_pressed = ExtResource( 18 )
-script = SubResource( 10 )
+script = SubResource( 14 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="btn_scores" type="TextureButton" parent="hud/cntr_gameover/hbox_buttons" index="1"]
@@ -881,7 +882,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.5
-anims/show = SubResource( 11 )
+anims/show = SubResource( 15 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
