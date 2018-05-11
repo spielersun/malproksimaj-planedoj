@@ -438,7 +438,7 @@ tracks/3/keys = {
 "values": [ Vector2( 343, 500 ), Vector2( 343, 200 ) ]
 }
 
-[node name="balance" type="Node" index="0"]
+[node name="balance" type="Node"]
 
 [node name="bird" parent="." index="0" instance=ExtResource( 1 )]
 
