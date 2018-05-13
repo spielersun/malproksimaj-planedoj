@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/birdcamera.gd" type="Script" id=1]
 [ext_resource path="res://scenes/bird.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/spawner_ground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/balance_background.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sprites/label_flappy_bird.png" type="Texture" id=5]
+[ext_resource path="res://sprites/button_rate_normal.png" type="Texture" id=6]
+[ext_resource path="res://sprites/button_rate_pressed.png" type="Texture" id=7]
+[ext_resource path="res://sprites/button_play_normal.png" type="Texture" id=8]
+[ext_resource path="res://sprites/button_play_pressed.png" type="Texture" id=9]
+[ext_resource path="res://stages/btn_play.gd" type="Script" id=10]
+[ext_resource path="res://sprites/button_score_normal.png" type="Texture" id=11]
+[ext_resource path="res://sprites/button_score_pressed.png" type="Texture" id=12]
 
 [node name="main_menu" type="Node" index="0"]
 
@@ -69,5 +76,98 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 5 )
 stretch_mode = 0
+
+[node name="btn_rate" type="TextureButton" parent="hud" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 403.0
+margin_top = 159.0
+margin_right = 434.0
+margin_bottom = 177.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="hbox_buttons" type="HBoxContainer" parent="hud" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 363.0
+margin_top = 197.0
+margin_right = 476.0
+margin_bottom = 226.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 9
+alignment = 1
+_sections_unfolded = [ "Material", "Rect", "Theme", "Visibility", "custom_constants" ]
+
+[node name="btn_play" type="TextureButton" parent="hud/hbox_buttons" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 52.0
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+script = ExtResource( 10 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="btn_scores" type="TextureButton" parent="hud/hbox_buttons" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 61.0
+margin_right = 113.0
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+_sections_unfolded = [ "Textures" ]
 
 
