@@ -1,6 +1,8 @@
 extends CanvasLayer
 
 const BALANCE_STAGE_GAME = "res://stages/balance_stage.tscn"
+const STAGE_MENU = "res://stages/balance_menu.tscn"
+
 var is_changing = false
 
 signal stage_changed
