@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/audio_player.gd" type="Script" id=1]
 [ext_resource path="res://sounds/explosion.wav" type="AudioStream" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://sounds/laser_ship.wav" type="AudioStream" id=6]
 [ext_resource path="res://sounds/powerup.wav" type="AudioStream" id=7]
 [ext_resource path="res://sounds/music.ogg" type="AudioStream" id=8]
+[ext_resource path="res://sounds/sfx_die.wav" type="AudioStream" id=9]
+[ext_resource path="res://sounds/sfx_hit.wav" type="AudioStream" id=10]
+[ext_resource path="res://sounds/sfx_point.wav" type="AudioStream" id=11]
+[ext_resource path="res://sounds/sfx_swooshing.wav" type="AudioStream" id=12]
+[ext_resource path="res://sounds/sfx_wing.wav" type="AudioStream" id=13]
 
 [node name="audio_player" type="Node" index="0"]
 
@@ -72,5 +77,45 @@ autoplay = true
 mix_target = 0
 bus = "Master"
 _sections_unfolded = [ "Pause" ]
+
+[node name="die" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="hit" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="point" type="AudioStreamPlayer" parent="." index="9"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="swooshing" type="AudioStreamPlayer" parent="." index="10"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="wing" type="AudioStreamPlayer" parent="." index="11"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

@@ -18,6 +18,7 @@ func change_stage(stage_path):
 	get_tree().get_root().set_disable_input(true)
 	
 	get_node("anim").play("fade_in")
+	audio_player.play("swooshing")
 	yield(get_node("anim"), "animation_finished")
 	
 	get_tree().change_scene(stage_path)
