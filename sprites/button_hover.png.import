@@ -7,10 +7,7 @@ path="res://.import/button_hover.png-ecdd1d79c40287f9f8e0b654eb5e9a5e.stex"
 [deps]
 
 source_file="res://sprites/button_hover.png"
-source_md5="f0923686f34d57c5ff52532a8cfe648a"
-
 dest_files=[ "res://.import/button_hover.png-ecdd1d79c40287f9f8e0b654eb5e9a5e.stex" ]
-dest_md5="e812bf4bef99e250fd097031956a48da"
 
 [params]
 

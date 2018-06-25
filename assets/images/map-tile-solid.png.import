@@ -7,10 +7,7 @@ path="res://.import/map-tile-solid.png-462cdb4f6b8f3f0cfba7c58f2c1e6b64.stex"
 [deps]
 
 source_file="res://assets/images/map-tile-solid.png"
-source_md5="df53eaf1caa0cf762d35a805c63bac74"
-
 dest_files=[ "res://.import/map-tile-solid.png-462cdb4f6b8f3f0cfba7c58f2c1e6b64.stex" ]
-dest_md5="e32da973dd8384c6bceccfb4c2ba1f87"
 
 [params]
 

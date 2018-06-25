@@ -7,10 +7,7 @@ path="res://.import/hit_ship.wav-6b42babcac08b10dc0a4033ee5d8e185.sample"
 [deps]
 
 source_file="res://sounds/hit_ship.wav"
-source_md5="978bffb08f1f166106694b2334e256ca"
-
 dest_files=[ "res://.import/hit_ship.wav-6b42babcac08b10dc0a4033ee5d8e185.sample" ]
-dest_md5="a7d9bca94b19669a8bd8f7442ac10fa1"
 
 [params]
 

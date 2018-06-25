@@ -7,10 +7,7 @@ path="res://.import/button_pressed.png-4ef7717f47f7e33b7d52505e2380fd97.stex"
 [deps]
 
 source_file="res://sprites/button_pressed.png"
-source_md5="964be959f82d89e0c14bdacb77d839b4"
-
 dest_files=[ "res://.import/button_pressed.png-4ef7717f47f7e33b7d52505e2380fd97.stex" ]
-dest_md5="a79a9d6f47f3f2912e69479462e9e44d"
 
 [params]
 

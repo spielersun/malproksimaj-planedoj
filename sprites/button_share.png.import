@@ -7,10 +7,7 @@ path="res://.import/button_share.png-faff864b08222bec4a6324b6b7e435d1.stex"
 [deps]
 
 source_file="res://sprites/button_share.png"
-source_md5="b920da501293b6b703d0582ae0690fd1"
-
 dest_files=[ "res://.import/button_share.png-faff864b08222bec4a6324b6b7e435d1.stex" ]
-dest_md5="58d65f35615a7a7b289bd217037883a6"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/sfx_wing.wav-acaa7e4b212f1ccc1b90e42540951d22.sample"
 [deps]
 
 source_file="res://sounds/sfx_wing.wav"
-source_md5="dd983677606ea2a94cdf22d5fb99bc00"
-
 dest_files=[ "res://.import/sfx_wing.wav-acaa7e4b212f1ccc1b90e42540951d22.sample" ]
-dest_md5="7d7b761d07b7b8197ce1901aded38acb"
 
 [params]
 

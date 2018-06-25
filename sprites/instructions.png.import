@@ -7,10 +7,7 @@ path="res://.import/instructions.png-9c9313d48cdc2ce76399562162121c3a.stex"
 [deps]
 
 source_file="res://sprites/instructions.png"
-source_md5="a5fc1da49168f8f3def294d5d48ad54a"
-
 dest_files=[ "res://.import/instructions.png-9c9313d48cdc2ce76399562162121c3a.stex" ]
-dest_md5="6280854fafe786832c2da9132685ad23"
 
 [params]
 

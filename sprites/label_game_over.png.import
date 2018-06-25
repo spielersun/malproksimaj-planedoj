@@ -7,10 +7,7 @@ path="res://.import/label_game_over.png-27dbba785cf3d7369e76b15b5757f1cd.stex"
 [deps]
 
 source_file="res://sprites/label_game_over.png"
-source_md5="16ff86f4b3110d3ee01cc6710f50b30e"
-
 dest_files=[ "res://.import/label_game_over.png-27dbba785cf3d7369e76b15b5757f1cd.stex" ]
-dest_md5="586b6b9b4805319723ced01d28d36842"
 
 [params]
 

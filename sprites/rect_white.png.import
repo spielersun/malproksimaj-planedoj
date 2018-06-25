@@ -7,10 +7,7 @@ path="res://.import/rect_white.png-ee6be476cbdfdbe1db2c37f42dee3431.stex"
 [deps]
 
 source_file="res://sprites/rect_white.png"
-source_md5="a855f26267d0715de841c77799a412c8"
-
 dest_files=[ "res://.import/rect_white.png-ee6be476cbdfdbe1db2c37f42dee3431.stex" ]
-dest_md5="d61f498727c4f7e3cbc9d4e6ede31e9e"
 
 [params]
 

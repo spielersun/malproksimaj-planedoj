@@ -7,10 +7,7 @@ path="res://.import/map-tile-liquid.png-d0c1b8402af5776d70e85e37eea26587.stex"
 [deps]
 
 source_file="res://assets/images/map-tile-liquid.png"
-source_md5="ad667b432529bfcec98c104ad0bc149e"
-
 dest_files=[ "res://.import/map-tile-liquid.png-d0c1b8402af5776d70e85e37eea26587.stex" ]
-dest_md5="6de039f01df1b1ebc76ac68936f069b5"
 
 [params]
 

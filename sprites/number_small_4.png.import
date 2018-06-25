@@ -7,10 +7,7 @@ path="res://.import/number_small_4.png-51aa4a2c79cc0bd33345bddd811f11d2.stex"
 [deps]
 
 source_file="res://sprites/number_small_4.png"
-source_md5="f0d819fdd41430e29abc0effa3fee664"
-
 dest_files=[ "res://.import/number_small_4.png-51aa4a2c79cc0bd33345bddd811f11d2.stex" ]
-dest_md5="3951e1763f4c391d4e4a7abddb69089e"
 
 [params]
 

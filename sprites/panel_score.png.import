@@ -7,10 +7,7 @@ path="res://.import/panel_score.png-b41b416131743fce69e268e4ff8af766.stex"
 [deps]
 
 source_file="res://sprites/panel_score.png"
-source_md5="421986022ed4b7d81e0281d10480f445"
-
 dest_files=[ "res://.import/panel_score.png-b41b416131743fce69e268e4ff8af766.stex" ]
-dest_md5="d85150b9897569a6461ef4dba93e0dcf"
 
 [params]
 

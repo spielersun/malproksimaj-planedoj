@@ -7,10 +7,7 @@ path="res://.import/map-tiles.png-a67f3acf3b846520cb77cc3184c4f7c1.stex"
 [deps]
 
 source_file="res://assets/images/map-tiles.png"
-source_md5="4c005883f93eb35f11cbc1a6fcee4c1a"
-
 dest_files=[ "res://.import/map-tiles.png-a67f3acf3b846520cb77cc3184c4f7c1.stex" ]
-dest_md5="741e2a55132e0beca21cbe1e4a312a19"
 
 [params]
 

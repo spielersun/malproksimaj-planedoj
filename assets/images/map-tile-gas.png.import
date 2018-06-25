@@ -7,10 +7,7 @@ path="res://.import/map-tile-gas.png-50fc6594ea1ea46ce0a18f0277208211.stex"
 [deps]
 
 source_file="res://assets/images/map-tile-gas.png"
-source_md5="dd13b1498d33460798b2420d16804c8b"
-
 dest_files=[ "res://.import/map-tile-gas.png-50fc6594ea1ea46ce0a18f0277208211.stex" ]
-dest_md5="6c31fbe0177befa4151524e57d28b5d8"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/label_get_ready.png-77dba6222b55b4d4777740909bb34925.stex"
 [deps]
 
 source_file="res://sprites/label_get_ready.png"
-source_md5="9f3eb0c3d58843bfae38054dbaba3c2a"
-
 dest_files=[ "res://.import/label_get_ready.png-77dba6222b55b4d4777740909bb34925.stex" ]
-dest_md5="944457e9fefce462513b6423acbf7527"
 
 [params]
 

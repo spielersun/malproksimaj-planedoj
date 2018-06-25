@@ -7,10 +7,7 @@ path="res://.import/enemy_clever.png-a3dd6ffcc4c1cf6ea575fedeb816ede2.stex"
 [deps]
 
 source_file="res://sprites/enemy_clever.png"
-source_md5="0fb63d6e77c887d110ce5a9eb8db4088"
-
 dest_files=[ "res://.import/enemy_clever.png-a3dd6ffcc4c1cf6ea575fedeb816ede2.stex" ]
-dest_md5="b28540c46a64d863e3f4961d4d65166c"
 
 [params]
 

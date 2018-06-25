@@ -7,10 +7,7 @@ path="res://.import/button_rate_pressed.png-32f1860c0766c2dd583517a21d6c7768.ste
 [deps]
 
 source_file="res://sprites/button_rate_pressed.png"
-source_md5="364302c76b77397dbf2f3a2884331f3d"
-
 dest_files=[ "res://.import/button_rate_pressed.png-32f1860c0766c2dd583517a21d6c7768.stex" ]
-dest_md5="374a46fd76b05497643c7deef706ae0d"
 
 [params]
 

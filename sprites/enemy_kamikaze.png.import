@@ -7,10 +7,7 @@ path="res://.import/enemy_kamikaze.png-30db8ef9378e7d345ba5b2a4abbd1667.stex"
 [deps]
 
 source_file="res://sprites/enemy_kamikaze.png"
-source_md5="36c339580df05f44b34b1b9c9f55dade"
-
 dest_files=[ "res://.import/enemy_kamikaze.png-30db8ef9378e7d345ba5b2a4abbd1667.stex" ]
-dest_md5="4209c3ec3952b42dce5c4c3597ca3ff7"
 
 [params]
 

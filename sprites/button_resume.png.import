@@ -7,10 +7,7 @@ path="res://.import/button_resume.png-4459c97a14700d12c2c4aeb89c0f5134.stex"
 [deps]
 
 source_file="res://sprites/button_resume.png"
-source_md5="a08eef014a3ffa772430be59b1f401de"
-
 dest_files=[ "res://.import/button_resume.png-4459c97a14700d12c2c4aeb89c0f5134.stex" ]
-dest_md5="ff4a51b257e6879e33f7c1a02709186f"
 
 [params]
 

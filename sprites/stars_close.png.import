@@ -7,10 +7,7 @@ path="res://.import/stars_close.png-669b88572421da8de8adaf220010f1e1.stex"
 [deps]
 
 source_file="res://sprites/stars_close.png"
-source_md5="67f30f7901ee82ed21a12331376dec2c"
-
 dest_files=[ "res://.import/stars_close.png-669b88572421da8de8adaf220010f1e1.stex" ]
-dest_md5="b85d3b59b72c8dbb86fdf04a13c2110f"
 
 [params]
 

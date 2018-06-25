@@ -7,10 +7,7 @@ path="res://.import/medal_bronze.png-d37e437e1e0c4dde09f11e4f8b625561.stex"
 [deps]
 
 source_file="res://sprites/medal_bronze.png"
-source_md5="5bd9a817e8a9c4e8c881c64348e66896"
-
 dest_files=[ "res://.import/medal_bronze.png-d37e437e1e0c4dde09f11e4f8b625561.stex" ]
-dest_md5="fcd4c9bd6bd4dcc04d0a93939e9373d0"
 
 [params]
 

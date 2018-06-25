@@ -7,10 +7,7 @@ path="res://.import/button_play_normal.png-b49c7db120557e8981fe426dfa242156.stex
 [deps]
 
 source_file="res://sprites/button_play_normal.png"
-source_md5="5a53e9331b3c632dee803a5c89a05620"
-
 dest_files=[ "res://.import/button_play_normal.png-b49c7db120557e8981fe426dfa242156.stex" ]
-dest_md5="824876a5ed45a39a9eb3939d2374583e"
 
 [params]
 

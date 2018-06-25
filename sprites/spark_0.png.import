@@ -7,10 +7,7 @@ path="res://.import/spark_0.png-3eaeaa54cead845c18e70b6eb204b82b.stex"
 [deps]
 
 source_file="res://sprites/spark_0.png"
-source_md5="723d30525ea9474dd08d59a2da92392c"
-
 dest_files=[ "res://.import/spark_0.png-3eaeaa54cead845c18e70b6eb204b82b.stex" ]
-dest_md5="da04b453fe2883bfed1e3bab1a32be24"
 
 [params]
 

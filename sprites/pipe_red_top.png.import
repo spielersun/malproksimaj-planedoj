@@ -7,10 +7,7 @@ path="res://.import/pipe_red_top.png-0f29639a3db52cb24605b25ab4b01373.stex"
 [deps]
 
 source_file="res://sprites/pipe_red_top.png"
-source_md5="3130cda7b14a4e0cf100d6206521cf4b"
-
 dest_files=[ "res://.import/pipe_red_top.png-0f29639a3db52cb24605b25ab4b01373.stex" ]
-dest_md5="8a8d2f7431bf545c57b8d45b1919ed90"
 
 [params]
 

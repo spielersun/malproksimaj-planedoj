@@ -7,10 +7,7 @@ path="res://.import/bird.png-2a2641cc7a85643e633b5feb636c6ca1.stex"
 [deps]
 
 source_file="res://sprites/bird.png"
-source_md5="4bb5ebd61d2d5cec79e9a5e3ceb625d6"
-
 dest_files=[ "res://.import/bird.png-2a2641cc7a85643e633b5feb636c6ca1.stex" ]
-dest_md5="299c49bc2a8321ea780fb0a3c79a7ba0"
 
 [params]
 

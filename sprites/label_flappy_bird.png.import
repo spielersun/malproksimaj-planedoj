@@ -7,10 +7,7 @@ path="res://.import/label_flappy_bird.png-f22128c090ac0a383da1551eb8a87705.stex"
 [deps]
 
 source_file="res://sprites/label_flappy_bird.png"
-source_md5="1dd4330928bb8449d44dc8158837fa58"
-
 dest_files=[ "res://.import/label_flappy_bird.png-f22128c090ac0a383da1551eb8a87705.stex" ]
-dest_md5="908ebc2e32cb94aefa57458a200f8f89"
 
 [params]
 

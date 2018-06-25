@@ -7,10 +7,7 @@ path="res://.import/button_pause.png-8627963735913206a0ab63c54a742302.stex"
 [deps]
 
 source_file="res://sprites/button_pause.png"
-source_md5="efed24629ed668aa0be2472ecadbba0e"
-
 dest_files=[ "res://.import/button_pause.png-8627963735913206a0ab63c54a742302.stex" ]
-dest_md5="5be323f7e65dffceb4ed5ccf42e907d4"
 
 [params]
 

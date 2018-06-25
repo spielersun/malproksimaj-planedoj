@@ -7,10 +7,7 @@ path="res://.import/button_ok.png-ec12640141eb89718dcd534b278654c2.stex"
 [deps]
 
 source_file="res://sprites/button_ok.png"
-source_md5="0307aafb495d014804cad613b47c5a40"
-
 dest_files=[ "res://.import/button_ok.png-ec12640141eb89718dcd534b278654c2.stex" ]
-dest_md5="e9a54b9054771559fb5d8e109309b9d5"
 
 [params]
 

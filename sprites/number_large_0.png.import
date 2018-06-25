@@ -7,10 +7,7 @@ path="res://.import/number_large_0.png-6217e3fde36d4af10186e25c99736a6a.stex"
 [deps]
 
 source_file="res://sprites/number_large_0.png"
-source_md5="11dbf474b14e84119221e46c3c506c6f"
-
 dest_files=[ "res://.import/number_large_0.png-6217e3fde36d4af10186e25c99736a6a.stex" ]
-dest_md5="8f21ca1993db371f77e1d40378e1100b"
 
 [params]
 
