@@ -16,20 +16,20 @@ signal score_best_changed
 signal score_current_changed
 
 func _ready():
-	balance_stage_manager.connect("stage_changed", self, "_on_stage_changed")
+	# balance_stage_manager.connect("stage_changed", self, "_on_stage_changed")
 	pass
 
 func _on_stage_changed():
-	balance_score_current = 0
+	# balance_score_current = 0
 	pass
 
 func _set_score_best(new_value):
-	if new_value > balance_score_best:
-		balance_score_best = new_value
-		emit_signal("score_best_changed")
+	# if new_value > balance_score_best:
+	# 	balance_score_best = new_value
+	# 	emit_signal("score_best_changed")
 	pass
 	
 func _set_score_current(new_value):
-	balance_score_current = new_value
-	emit_signal("score_current_changed")
+	# balance_score_current = new_value
+	# emit_signal("score_current_changed")
 	pass

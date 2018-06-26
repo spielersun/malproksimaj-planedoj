@@ -11,22 +11,22 @@ func _ready():
 	pass
 
 func change_stage(stage_path):
-	if is_changing:
-		return
+	# if is_changing:
+	# 	return
 		
-	is_changing = true
-	get_tree().get_root().set_disable_input(true)
+	# is_changing = true
+	# get_tree().get_root().set_disable_input(true)
 	
-	get_node("anim").play("fade_in")
-	audio_player.play("swooshing")
-	yield(get_node("anim"), "animation_finished")
+	# get_node("anim").play("fade_in")
+	# # audio_player.play("swooshing")
+	# yield(get_node("anim"), "animation_finished")
 	
-	get_tree().change_scene(stage_path)
-	emit_signal("stage_changed")
+	# get_tree().change_scene(stage_path)
+	# emit_signal("stage_changed")
 	
-	get_node("anim").play("fade_out")
-	yield(get_node("anim"), "animation_finished")
+	# get_node("anim").play("fade_out")
+	# yield(get_node("anim"), "animation_finished")
 	
-	is_changing = false
-	get_tree().get_root().set_disable_input(false)
+	# is_changing = false
+	# get_tree().get_root().set_disable_input(false)
 	pass

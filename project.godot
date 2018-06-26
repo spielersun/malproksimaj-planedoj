@@ -14,22 +14,15 @@ config/name="malproksimaj-planedoj"
 run/main_scene="res://stages/stage_menu.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-utils="*res://scripts/utils.gd"
-audio_player="*res://scenes/audio_player.tscn"
-game="*res://scripts/game.gd"
-balance_game="*res://scripts/balance_game.gd"
-balance_stage_manager="*res://scenes/balance_stage_manager.tscn"
-
 [display]
 
-window/size/width=800
-window/size/height=450
-window/size/test_width=1600
-window/size/test_height=900
+window/size/width=1600
+window/size/height=900
+window/size/test_width=800
+window/size/test_height=450
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+window/stretch/shrink="1"
 
 [input]
 
