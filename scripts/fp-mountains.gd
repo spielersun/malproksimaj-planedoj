@@ -1,9 +1,9 @@
 extends Node
 
-const MOVE_SPEED_1 = 100
-const MOVE_SPEED_2 = 50
-const MOVE_SPEED_3 = 25
-const MOVE_SPEED_4 = 10
+const MOVE_SPEED_1 = 200
+const MOVE_SPEED_2 = 100
+const MOVE_SPEED_3 = 50
+const MOVE_SPEED_4 = 25
 
 const OFFSET = 100
 
@@ -23,17 +23,19 @@ onready var quartus = $quartus
 onready var quartus_alium = $quartusalium
 onready var quartus_cauda = $quartuscauda
 
-onready var ambient = $ambient
-
 var frons_pos
 var tergum_pos
 
 func _ready():
 	frons_pos = primus.position.x
 	tergum_pos = get_viewport_rect().size.x
-	ambient.play()
 
 func _process(delta):
+	if Input.is_action_pressed("ui_right"):
+		mountains_move(delta)
+	
+
+func mountains_move(delta):
 	primus.position.x -= MOVE_SPEED_1 * delta
 	primus_alium.position.x -= MOVE_SPEED_1 * delta
 	primus_cauda.position.x -= MOVE_SPEED_1 * delta
@@ -51,11 +53,11 @@ func _process(delta):
 	quartus_cauda.position.x -= MOVE_SPEED_4 * delta
 	
 	if primus.position.x <=  -frons_pos :
-		primus.position.x = tergum_pos + frons_pos - 1
+		primus.position.x = tergum_pos + frons_pos - 2
 	elif primus_alium.position.x <= -frons_pos:
-		primus_alium.position.x = tergum_pos + frons_pos - 1
+		primus_alium.position.x = tergum_pos + frons_pos - 2
 	elif primus_cauda.position.x <= -frons_pos:
-		primus_cauda.position.x = tergum_pos + frons_pos - 1
+		primus_cauda.position.x = tergum_pos + frons_pos - 2
 	
 	if secundus.position.x <=  -frons_pos :
 		secundus.position.x = tergum_pos + frons_pos - 1
@@ -77,3 +79,4 @@ func _process(delta):
 		quartus_alium.position.x = tergum_pos + frons_pos - 1
 	elif quartus_cauda.position.x <= -frons_pos:
 		quartus_cauda.position.x = tergum_pos + frons_pos - 1
+	

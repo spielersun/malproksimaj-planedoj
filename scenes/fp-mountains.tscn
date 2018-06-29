@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/fp-mountains.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/bg-1.png" type="Texture" id=2]
@@ -6,8 +6,7 @@
 [ext_resource path="res://sprites/new/bg-3.png" type="Texture" id=4]
 [ext_resource path="res://sprites/new/bg-4.png" type="Texture" id=5]
 [ext_resource path="res://sprites/new/bg-0.png" type="Texture" id=6]
-[ext_resource path="res://audio/ssa.wav" type="AudioStream" id=7]
-[ext_resource path="res://sprites/new/fp-phased-moon.png" type="Texture" id=8]
+[ext_resource path="res://sprites/new/fp-phased-moon.png" type="Texture" id=7]
 
 [node name="fp-mountains" type="Node2D" index="0"]
 
@@ -104,23 +103,11 @@ z_index = 6
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="ambient" type="AudioStreamPlayer2D" parent="." index="13"]
-
-stream = ExtResource( 7 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = false
-max_distance = 2000.0
-attenuation = 1.0
-bus = "Master"
-area_mask = 1
-_sections_unfolded = [ "Visibility" ]
-
-[node name="phasedmoon" type="Sprite" parent="." index="14"]
+[node name="phasedmoon" type="Sprite" parent="." index="13"]
 
 position = Vector2( 1286.46, 309.657 )
 z_index = 20
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Z Index" ]
 
 

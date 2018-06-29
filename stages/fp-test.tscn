@@ -9,6 +9,6 @@
 
 [node name="fp-cartoffel" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 248.116, 524.94 )
+position = Vector2( 266.571, 520.839 )
 
 
