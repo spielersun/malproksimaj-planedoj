@@ -7,6 +7,7 @@ export(PackedScene) var bullet
 
 onready var engine = $engine
 onready var turret = $turret
+onready var ship_anims = $ship
 
 func _ready():
 	pass
@@ -14,8 +15,11 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_right"):
 		engine.play()
+		ship_anims.play("start-right")
+		
 	elif Input.is_action_just_released("ui_right"):
 		engine.stop()
+		ship_anims.play("idle")
 	
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
@@ -34,13 +38,9 @@ func _physics_process(delta):
 func shoot():
 	var new_bullet = bullet.instance()
 	var turret_angle = turret.rotation
-	var bullet_x = (position.x - turret.offset.x) + (30 * cos(turret_angle))
-	var bullet_y = (position.y - turret.offset.y) + (5 * sin(turret_angle))
 	
-	print(position.x)
-	print(position.y)
-	print(turret.offset.x)
-	print(turret.offset.y)
+	var bullet_x = (position.x + 10) + (40 * cos(turret_angle))
+	var bullet_y = (position.y + 20) + (40 * sin(turret_angle))
 	
 	get_parent().add_child(new_bullet)
 	new_bullet.angle = turret_angle
