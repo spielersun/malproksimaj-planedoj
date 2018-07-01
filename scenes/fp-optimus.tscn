@@ -44,7 +44,9 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 147.085, 115.518 )
 
-[node name="fp-optimus" type="KinematicBody2D" index="0"]
+[node name="fp-optimus" type="KinematicBody2D" index="0" groups=[
+"player",
+]]
 
 z_index = 50
 input_pickable = false

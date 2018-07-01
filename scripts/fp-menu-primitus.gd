@@ -1,8 +1,10 @@
 extends Node
 
 onready var mountains = $fp_mountains
+onready var music = $music
 
 func _ready():
+	music.play()
 	pass
 
 func _process(delta):

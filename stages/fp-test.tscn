@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/fp-mountains.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/fp-cartoffel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/new/health-bar.png" type="Texture" id=3]
+[ext_resource path="res://scenes/fp-enemy-spawner.tscn" type="PackedScene" id=4]
 
 [node name="fp-test" type="Node" index="0"]
 
 [node name="fp-mountains" parent="." index="0" instance=ExtResource( 1 )]
+
+_sections_unfolded = [ "Z Index" ]
 
 [node name="fp-cartoffel" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -27,5 +30,7 @@ offset = Vector2( 70, 50 )
 hframes = 6
 frame = 3
 _sections_unfolded = [ "Animation", "Offset", "Transform" ]
+
+[node name="fp-enemy-spawner" parent="." index="3" instance=ExtResource( 4 )]
 
 

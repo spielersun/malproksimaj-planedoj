@@ -1,16 +1,20 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/fp-cartoffel.gd" type="Script" id=1]
 [ext_resource path="res://scenes/fp-cartoffel-bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/new/fp-cartoffel-0a.png" type="Texture" id=3]
-[ext_resource path="res://sprites/new/fp-cartoffel-0.png" type="Texture" id=4]
-[ext_resource path="res://sprites/new/fp-cartoffel-a.png" type="Texture" id=5]
-[ext_resource path="res://sprites/new/fp-cartoffel-b.png" type="Texture" id=6]
-[ext_resource path="res://sprites/new/fp-cartoffel-c.png" type="Texture" id=7]
-[ext_resource path="res://sprites/new/fp-cartoffel-d.png" type="Texture" id=8]
-[ext_resource path="res://sprites/new/fp-cartoffel-e.png" type="Texture" id=9]
-[ext_resource path="res://sprites/new/fp-cartoffel-0turret.png" type="Texture" id=10]
-[ext_resource path="res://audio/ssa.wav" type="AudioStream" id=11]
+[ext_resource path="res://sprites/new/fp-cartoffel-e.png" type="Texture" id=4]
+[ext_resource path="res://sprites/new/fp-cartoffel-d.png" type="Texture" id=5]
+[ext_resource path="res://sprites/new/fp-cartoffel-c.png" type="Texture" id=6]
+[ext_resource path="res://sprites/new/fp-cartoffel-b.png" type="Texture" id=7]
+[ext_resource path="res://sprites/new/fp-cartoffel-aa.png" type="Texture" id=8]
+[ext_resource path="res://sprites/new/fp-cartoffel-bb.png" type="Texture" id=9]
+[ext_resource path="res://sprites/new/fp-cartoffel-dd.png" type="Texture" id=10]
+[ext_resource path="res://sprites/new/fp-cartoffel-0.png" type="Texture" id=11]
+[ext_resource path="res://sprites/new/fp-cartoffel-a.png" type="Texture" id=12]
+[ext_resource path="res://sprites/new/fp-cartoffel-0turret.png" type="Texture" id=13]
+[ext_resource path="res://audio/ssa.wav" type="AudioStream" id=14]
+[ext_resource path="res://audio/laser_3.wav" type="AudioStream" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -20,15 +24,15 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "move-right",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ) ],
 "loop": false,
 "name": "start-right",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "move-right",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -36,7 +40,9 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 10.7519, 11.9818 )
 
-[node name="fp-cartoffel" type="KinematicBody2D" index="0"]
+[node name="fp-cartoffel" type="KinematicBody2D" index="0" groups=[
+"player",
+]]
 
 z_index = 50
 input_pickable = false
@@ -59,7 +65,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="turret" type="Sprite" parent="." index="1"]
 
 position = Vector2( 6, 20 )
-texture = ExtResource( 10 )
+texture = ExtResource( 13 )
 centered = false
 offset = Vector2( -23, -15 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
@@ -72,13 +78,24 @@ shape = SubResource( 2 )
 
 [node name="engine" type="AudioStreamPlayer2D" parent="." index="3"]
 
-stream = ExtResource( 11 )
+stream = ExtResource( 14 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0
-bus = "Master"
+bus = "engine"
+area_mask = 1
+
+[node name="beam" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 15 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "beam"
 area_mask = 1
 
 

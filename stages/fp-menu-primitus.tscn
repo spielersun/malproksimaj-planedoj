@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/fp-menu-primitus.gd" type="Script" id=1]
 [ext_resource path="res://scenes/fp-mountains.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/oratorstd.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://audio/amazing.wav" type="AudioStream" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -146,6 +147,17 @@ text = "QUIT"
 flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="music" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="pressed" from="items/start" to="." method="_on_start_pressed"]
 
