@@ -13,7 +13,7 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="fp-cartoffel" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 292.398, 503.369 )
+position = Vector2( 213.257, 516.739 )
 
 [node name="hud" type="CanvasLayer" parent="." index="2"]
 
