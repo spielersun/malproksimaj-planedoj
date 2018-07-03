@@ -28,4 +28,3 @@ func _process(delta):
 
 func movement(delta):
 	position.x -= speed * delta
-

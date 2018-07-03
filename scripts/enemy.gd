@@ -22,7 +22,6 @@ func _on_area_entered(other):
 		other.armor -= 1
 		create_explosion()
 		queue_free()
-	pass
 
 func set_armor(new_value):
 	if is_queued_for_deletion():
