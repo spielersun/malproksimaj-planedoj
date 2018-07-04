@@ -9,7 +9,6 @@ func _ready():
 
 func _process(delta):
 	mountains.mountains_move(delta)
-	pass
 
 
 func _on_start_pressed():

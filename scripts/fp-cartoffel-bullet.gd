@@ -5,6 +5,8 @@ export var angle = 0
 
 export(PackedScene) var explosion
 
+signal add_score
+
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	
@@ -22,6 +24,7 @@ func _move(delta):
 func _on_body_entered(area):
 	if area.is_in_group("enemy"):
 		create_explosion()
+		emit_signal("add_score", [5])
 		queue_free()
 
 func create_explosion():
