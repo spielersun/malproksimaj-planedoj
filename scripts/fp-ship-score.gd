@@ -3,11 +3,10 @@ extends TextureRect
 onready var score_text = $score
 
 var score = 0
-var value 
 
 func _ready():
 	score_text.text = str(score)
-	connect("add_score", self, "change_score", [value])
+	connect("add_score", self, "change_score")
 
 func change_score(value):
 	score += value

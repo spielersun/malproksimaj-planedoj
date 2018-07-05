@@ -14,10 +14,10 @@ var direction = 1
 var dead = false
 var can_shoot = true
 
-signal giorgio_defeated
+signal marconi_defeated
 
 func _ready():
-	ship_anims.play("move-left")
+	ship_anims.play("idle")
 	left_bound = position.y - 100
 	right_bound = position.y + 100
 	
@@ -41,4 +41,4 @@ func add_damage(damage):
 		dead = true
 		collision.queue_free()
 		hide()
-		emit_signal("giorgio_defeated")
+		emit_signal("marconi_defeated")

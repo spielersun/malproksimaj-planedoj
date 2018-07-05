@@ -15,17 +15,14 @@ func create_timer(wait_time):
 	add_child(timer)
 	timer.start()
 	return timer
-	pass
 
 func choose(choises):
 	randomize()
 	var rand_index = randi() % choises.size()
 	return choises[rand_index]
-	pass
 
 func find_node(node):
 	return self.main_node.find_node(node)
-	pass
 
 func attach(src_node, src_signal, trg_node, trg_func):
 	if typeof(src_node) == TYPE_STRING:
@@ -36,7 +33,6 @@ func attach(src_node, src_signal, trg_node, trg_func):
 	
 	if src_node != null and trg_node != null:
 		src_node.connect(src_signal, trg_node, trg_func)
-	pass
 
 func remote_call(src_node, method, arg0 = null, arg1 = null):
 	src_node = find_node(src_node)
@@ -48,20 +44,16 @@ func remote_call(src_node, method, arg0 = null, arg1 = null):
 			return src_node.call(method, arg0)
 		
 		return src_node.call(method)
-	pass
 
 func _get_mouse_pos():
 	return get_viewport().get_mouse_pos()
-	pass
 
 func _get_main_node():
 	var root = get_tree().get_root()
 	return root.get_child( root.get_child_count()-1 )
-	pass
 
 func _get_view_size():
 	return get_tree().get_root().get_visible_rect().size
-	pass
 
 func get_digits(number):
 	var str_number = str(number)
@@ -71,4 +63,3 @@ func get_digits(number):
 		digits.append(str_number[i].to_int())
 	
 	return digits
-	pass

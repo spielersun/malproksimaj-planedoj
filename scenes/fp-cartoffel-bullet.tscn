@@ -9,7 +9,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 9.12111, 3.17976 )
 
-[node name="fp-cartoffel-bullet" type="Area2D" index="0"]
+[node name="fp-cartoffel-bullet" type="Area2D" index="0" groups=[
+"projectile",
+]]
 
 position = Vector2( 432.79, 470.212 )
 z_index = 60
@@ -24,6 +26,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
 speed = 200
 angle = 0
+damage = 5
 explosion = ExtResource( 2 )
 
 [node name="bullet" type="Sprite" parent="." index="0"]

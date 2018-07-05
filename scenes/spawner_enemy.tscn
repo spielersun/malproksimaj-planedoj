@@ -11,7 +11,6 @@ const enemies = [
 
 func _ready():
 	spawn()
-	pass
 
 func spawn():
 	while true:
@@ -25,10 +24,9 @@ func spawn():
 		
 		get_node(\"container\").add_child(enemy)
 		yield(utils.create_timer(rand_range(1.50, 3.00)), \"timeout\")
-	pass
 "
 
-[node name="spawner_enemy" type="Node"]
+[node name="spawner_enemy" type="Node" index="0"]
 
 script = SubResource( 1 )
 
