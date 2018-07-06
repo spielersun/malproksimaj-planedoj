@@ -14,7 +14,7 @@ func _ready():
 func _process(delta):
 	_move(delta)
 	
-	if position.x < -2000:
+	if position.x > 3000:
 		queue_free()
 
 func _move(delta):

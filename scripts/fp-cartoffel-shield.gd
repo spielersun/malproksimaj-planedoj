@@ -1,0 +1,13 @@
+extends Sprite
+
+onready var glare = $glare
+onready var anim = $anim
+
+func _ready():
+	randomize()
+	
+	glare.set_emitting(true)
+	
+	get_node("anim").play("fade_out")
+	yield(anim, "animation_finished")
+	queue_free()

@@ -14,4 +14,3 @@ func _ready():
 	get_node("anim").play("fade_out")
 	yield(anim, "animation_finished")
 	queue_free()
-	pass

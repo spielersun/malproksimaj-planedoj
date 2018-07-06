@@ -4,6 +4,7 @@ export (float) var rotation_speed = 2
 export var speed = 100
 
 export(PackedScene) var bullet
+export(PackedScene) var shield
 
 onready var engine = $engine
 onready var turret = $turret
@@ -11,6 +12,9 @@ onready var ship_anims = $ship
 onready var beam = $beam
 
 var accelerated = false
+var armor = 5 setget took_hit
+
+signal armor_changed
 
 func _ready():
 	pass
@@ -56,13 +60,26 @@ func engine_stop():
 	engine.stop()
 	accelerated = false
 	ship_anims.play("idle")
+
+func took_hit(new_value):
+	hit_shield()
 	
+	if new_value > 4:
+		return
+		
+	if new_value < armor:
+		pass
+		
+	armor = new_value
+	emit_signal("armor_changed", [armor])
+		
+	if armor <= 0:
+		queue_free()
 	
-	
-	
-	
-	
-	
+func hit_shield():
+	var new_hit = shield.instance()
+	new_hit.position = position
+	get_parent().add_child(new_hit)
 	
 	
 	
