@@ -6,7 +6,7 @@ export var damage = 5
 
 export(PackedScene) var explosion
 
-signal add_score
+# signal add_score
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
@@ -30,7 +30,7 @@ func _on_body_entered(area):
 		create_explosion()
 		var total_score = int(score_text.text) + 5
 		score_text.text = str(total_score)
-		emit_signal("add_score", [5])
+		# emit_signal("add_score", [5])
 		queue_free()
 
 func create_explosion():

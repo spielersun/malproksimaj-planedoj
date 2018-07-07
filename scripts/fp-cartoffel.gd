@@ -14,8 +14,6 @@ onready var beam = $beam
 var accelerated = false
 var armor = 5 setget took_hit
 
-signal armor_changed
-
 func _ready():
 	pass
 	
@@ -71,7 +69,6 @@ func took_hit(new_value):
 		pass
 		
 	armor = new_value
-	emit_signal("armor_changed", [armor])
 		
 	if armor <= 0:
 		queue_free()

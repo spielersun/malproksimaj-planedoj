@@ -5,6 +5,8 @@ export var damage = 5
 
 export(PackedScene) var explosion
 
+# signal armor_changed
+
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	
@@ -18,9 +20,11 @@ func _move(delta):
 	position.x -= (speed * delta)
 	
 func _on_body_entered(area):
-	# var score_text = get_tree().get_root().get_node("fp-test").find_node("score")
+	var health_bar = get_tree().get_root().get_node("fp-test").find_node("health")
 	
 	if area.is_in_group("player"):
+		# emit_signal("armor_changed", [1])
+		health_bar.frame = area.armor - 1
 		area.armor -= 1
 		queue_free()
 
