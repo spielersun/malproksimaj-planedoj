@@ -24,7 +24,6 @@ func _process(delta):
 	var view_size = get_viewport_rect().size
 	
 	position.y = clamp(position.y, 0 + 15, view_size.y - 15)
-	pass
 
 func shoot():
 	while true:
