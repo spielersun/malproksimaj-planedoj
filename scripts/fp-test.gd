@@ -1,21 +1,21 @@
-extends Node
+extends Node2D
 
-# onready var score_text = $"hud/fp-ship-score/score"
-# onready var armor_bar = $"hud/health"
+onready var mother = $fp_mother
 
-var score = 0
+var initial_point_x = 400
+var initial_point_y = -200
+
+var release_point_x = 1200
+var release_point_y = 0
 
 func _ready():
-	# score_text.text = str(score)
-	# get_node("hud/fp-ship-score/score").connect("add_score", get_node("fp-cartoffel/fp-cartoffel-bullet"), "change_score")
-	# get_node("hud/health").connect("armor_changed", get_node("fp-cartoffel"), "change_armor")
-	pass
-
-func change_score(value):
-	# score += value
-	# score_text.text = str(score)
-	pass
+	mother.position.x = initial_point_x
+	mother.position.y = initial_point_y
 	
-func change_armor(armor):
-	# armor_bar.frame = armor
-	pass
+	# position.y = clamp(position.y, 0 + 15, view_size.y - 15)
+	
+func _process(delta):
+	var motion_x = (release_point_x - mother.position.x) * delta
+	var motion_y = (release_point_y - mother.position.y) * delta
+	
+	mother.translate(Vector2(motion_x, motion_y))

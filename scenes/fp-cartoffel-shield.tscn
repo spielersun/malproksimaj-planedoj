@@ -62,7 +62,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="fp-cartoffel-shield" type="Sprite" index="0"]
+[node name="fp-cartoffel-shield" type="Sprite"]
 
 z_index = 60
 texture = ExtResource( 1 )

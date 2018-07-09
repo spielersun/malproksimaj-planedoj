@@ -31,7 +31,7 @@ func _ready():
 	tergum_pos = get_viewport_rect().size.x
 
 func _process(delta):
-	if Input.is_action_pressed("fp-forwards"):
+	if Input.is_action_pressed("fp_forward"):
 		mountains_move(delta)
 	
 

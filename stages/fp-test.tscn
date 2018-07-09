@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/fp-test.gd" type="Script" id=1]
 [ext_resource path="res://scenes/fp-mountains.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scripts/fp-ship-score.gd" type="Script" id=7]
 [ext_resource path="res://fonts/oratorstd.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://scenes/fp-enemy-spawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/fp-mother.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -18,7 +19,7 @@ use_filter = false
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="fp-test" type="Node" index="0"]
+[node name="fp-test" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -94,5 +95,10 @@ max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="fp-enemy-spawner" parent="." index="3" instance=ExtResource( 9 )]
+
+[node name="fp_mother" parent="." index="4" instance=ExtResource( 10 )]
+
+z_index = 60
+_sections_unfolded = [ "Z Index" ]
 
 

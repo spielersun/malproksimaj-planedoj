@@ -76,18 +76,14 @@ func engine_stop():
 	ship_anims.play("idle")
 
 func took_hit(new_value):
-	hit_shield()
-	
 	if new_value > 4:
+		hit_shield()
 		return
-		
-	if new_value < armor:
-		pass
-		
-	armor = new_value
-		
-	if armor <= 0:
+	elif new_value <= 0:
 		queue_free()
+	else:
+		armor = new_value
+		hit_shield()
 	
 func hit_shield():
 	var new_hit = shield.instance()

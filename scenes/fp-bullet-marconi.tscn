@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8.98591, 3.13014 )
 
-[node name="fp-bullet-marconi" type="Area2D" index="0" groups=[
+[node name="fp-bullet-marconi" type="Area2D" groups=[
 "projectile",
 ]]
 
