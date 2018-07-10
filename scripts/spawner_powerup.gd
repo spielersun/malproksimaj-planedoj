@@ -8,7 +8,6 @@ const powerups = [
 func _ready():
 	yield(utils.create_timer(rand_range(10, 15)), "timeout")
 	spawn()
-	pass
 
 func spawn():
 	while true:
@@ -22,4 +21,3 @@ func spawn():
 		
 		get_node("container").add_child(powerup)
 		yield(utils.create_timer(rand_range(10, 15)), "timeout")
-	pass

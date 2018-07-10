@@ -98,6 +98,7 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="fp_mother" parent="." index="4" instance=ExtResource( 10 )]
 
+position = Vector2( 542.644, -298.454 )
 z_index = 60
 _sections_unfolded = [ "Z Index" ]
 

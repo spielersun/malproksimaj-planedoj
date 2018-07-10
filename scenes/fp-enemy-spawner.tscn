@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/fp-giorgio.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/fp-marconi.tscn" type="PackedScene" id=3]
 
-[node name="fp-enemy-spawner" type="Node2D" index="0"]
+[node name="fp-enemy-spawner" type="Node2D"]
 
 script = ExtResource( 1 )
 giorgio = ExtResource( 2 )

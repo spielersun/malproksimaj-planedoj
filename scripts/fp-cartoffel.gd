@@ -13,6 +13,7 @@ onready var beam = $beam
 
 var accelerated = false
 var armor = 5 setget took_hit
+var double_shooting = false
 
 var mouse_angle
 
@@ -43,7 +44,7 @@ func _physics_process(delta):
 	# translate(Vector2(0, motion))
 	
 	var view_size = get_viewport_rect().size
-	position.y = clamp(position.y, 0 + 15, view_size.y - 15)
+	position.y = clamp(position.y, 0 + 100, view_size.y - 100)
 	
 	# if Input.is_action_pressed("turret_down"):
 	# 	turret.rotation += rotation_speed * delta

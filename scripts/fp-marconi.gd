@@ -25,7 +25,7 @@ func _ready():
 	
 	direction = 1 if rand_range(0,100) > 50 else -1 
 	
-	while true:
+	while !dead:
 		shoot()
 		yield(create_timer(rand_range(1.50, 3.00)), "timeout")
 
@@ -45,7 +45,7 @@ func add_damage(damage):
 	health -= damage
 	if health <= 0:
 		dead = true
-		collision.queue_free()
+		queue_free()
 		hide()
 		emit_signal("marconi_defeated")
 
