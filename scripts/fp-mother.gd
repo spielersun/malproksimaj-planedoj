@@ -5,24 +5,26 @@ var initial_point_y = 0
 
 var on_field = true
 
+signal mother_presence
+
 const supports = [
 	preload("res://scenes/fp-support-battery.tscn"),
 	preload("res://scenes/fp-support-double.tscn")
 ]
 
 func _ready():
-	yield(create_timer(rand_range(1, 3)), "timeout")
+	yield(create_timer(3), "timeout")
 	spawn()
-	yield(create_timer(rand_range(5, 7)), "timeout")
+	yield(create_timer(10), "timeout")
 	on_field = false
-	queue_free()
+	emit_signal("mother_presence", false)
 
 func spawn():
 	while on_field:
 		randomize()
 		var support = choose(supports).instance()
 		var pos = Vector2()
-		print(support)
+		
 		pos.y = position.y + 160
 		pos.x = position.x - 220
 		

@@ -13,7 +13,7 @@ onready var beam = $beam
 
 var accelerated = false
 var armor = 5 setget took_hit
-var double_shooting = false
+var double_shooting = false setget set_double_shooting
 
 var mouse_angle
 
@@ -31,8 +31,11 @@ func _process(delta):
 		engine_stop()
 	
 	if Input.is_action_just_pressed("fp_shoot"):
-		shoot()
-
+		if double_shooting:
+			double_shoot()
+		else:
+			shoot()
+			
 func _physics_process(delta):
 	
 	var relative_height = get_global_mouse_position().y - position.y
@@ -60,7 +63,7 @@ func shoot():
 	var new_bullet = bullet.instance()
 	var turret_angle = turret.rotation
 	# print(mouse_angle)
-	# print(turret_angle)
+	print(turret_angle)
 	
 	var bullet_x = (position.x + 10) + (40 * cos(turret_angle))
 	var bullet_y = (position.y + 20) + (40 * sin(turret_angle))
@@ -70,7 +73,42 @@ func shoot():
 	get_parent().add_child(new_bullet)
 	new_bullet.angle = turret_angle
 	new_bullet.position = Vector2(bullet_x, bullet_y) 
+	
+func double_shoot():
+	var new_bullet_up = bullet.instance()
+	var turret_angle_up = turret.rotation + 0.1
+	
+	var new_bullet_down = bullet.instance()
+	var turret_angle_down= turret.rotation - 0.1
+	
+	# print(mouse_angle)
+	# print(turret_angle)
+	
+	var bullet_x_up = (position.x + 10) + (40 * cos(turret_angle_up))
+	var bullet_y_up = (position.y + 20) + (40 * sin(turret_angle_up))
+	
+	var bullet_x_down = (position.x + 10) + (40 * cos(turret_angle_down))
+	var bullet_y_down = (position.y + 20) + (40 * sin(turret_angle_down))
+	
+	beam.play()
+	beam.play()
+	
+	get_parent().add_child(new_bullet_up)
+	get_parent().add_child(new_bullet_down)
+	
+	new_bullet_up.angle = turret_angle_up
+	new_bullet_up.position = Vector2(bullet_x_up, bullet_y_up) 
+	
+	new_bullet_down.angle = turret_angle_down
+	new_bullet_down.position = Vector2(bullet_x_up, bullet_y_down) 
 
+func set_double_shooting(value):
+	double_shooting = value
+	
+	if double_shooting:
+		yield(create_timer(5), "timeout")
+		double_shooting = false
+	
 func engine_stop():
 	engine.stop()
 	accelerated = false
@@ -91,9 +129,14 @@ func hit_shield():
 	new_hit.position = position
 	get_parent().add_child(new_hit)
 	
-	
-	
-	
+func create_timer(wait_time):
+	var timer = Timer.new()
+	timer.set_wait_time(wait_time)
+	timer.set_one_shot(true)
+	timer.connect("timeout", timer, "queue_free")
+	add_child(timer)
+	timer.start()
+	return timer
 	
 	
 	
