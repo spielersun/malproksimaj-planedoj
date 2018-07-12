@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/fp-cartoffel-drop.gd" type="Script" id=1]
+[ext_resource path="res://scenes/fp-enemy-explosion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/new/crusader-0.png" type="Texture" id=3]
+[ext_resource path="res://sprites/new/crusader-1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/new/crusader-2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/new/crusader-3.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "fall",
+"speed": 10.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 24.0927
+
+[node name="fp-cartoffel-drop" type="Area2D"]
+
+z_index = 65
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+speed = 200
+angle = 0
+damage = 20
+explosion = ExtResource( 2 )
+
+[node name="item" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "fall"
+
+[node name="shape" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 2 )
+
+

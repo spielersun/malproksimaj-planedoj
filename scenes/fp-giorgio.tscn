@@ -19,7 +19,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 18.0148, 44.9135 )
 
-[node name="fp-giorgio" type="KinematicBody2D" index="0" groups=[
+[node name="fp-giorgio" type="KinematicBody2D" groups=[
 "enemy",
 ]]
 

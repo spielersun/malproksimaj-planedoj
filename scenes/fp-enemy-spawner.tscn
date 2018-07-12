@@ -9,6 +9,7 @@
 script = ExtResource( 1 )
 giorgio = ExtResource( 2 )
 marconi = ExtResource( 3 )
+lorenna = null
 
 [node name="container" type="Node" parent="." index="0"]
 

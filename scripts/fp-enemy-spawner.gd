@@ -2,6 +2,9 @@ extends Node2D
 
 export(PackedScene) var giorgio
 export(PackedScene) var marconi
+export(PackedScene) var lorenna
+
+var lorenna_presence = false
 
 const enemies = [
 	preload("res://scenes/fp-giorgio.tscn"),
@@ -21,6 +24,8 @@ func _ready():
 		add_child(new_enemy)
 		
 		yield(create_timer(rand_range(1.50, 3.00)), "timeout")
+		if !lorenna_presence:
+			get_lorenna()
 
 func choose(choises):
 	randomize()
@@ -35,3 +40,11 @@ func create_timer(wait_time):
 	add_child(timer)
 	timer.start()
 	return timer
+
+func get_lorenna():
+	lorenna_presence = true
+	yield(create_timer(rand_range(2, 4)), "timeout")
+	var new_grounder = lorenna.instance()
+	new_grounder.position.x = 2000
+	new_grounder.position.y = 820
+	add_child(new_grounder)

@@ -25,15 +25,18 @@ func _ready():
 
 func _process(delta):
 	movement(delta)
+	
+	if position.x < -100:
+		queue_free()
+
+func movement(delta):
+	position.x -= speed * delta
 	position.y += speed * direction * delta
 	
 	if position.y > right_bound:
 		direction = -1
 	elif position.y < left_bound:
 		direction = 1
-
-func movement(delta):
-	position.x -= speed * delta
 
 func add_damage(damage):
 	health -= damage

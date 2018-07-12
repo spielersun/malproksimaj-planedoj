@@ -5,6 +5,7 @@ export var speed = 100
 
 export(PackedScene) var bullet
 export(PackedScene) var shield
+export(PackedScene) var drop
 
 onready var engine = $engine
 onready var turret = $turret
@@ -36,6 +37,9 @@ func _process(delta):
 		else:
 			shoot()
 			
+	if Input.is_action_just_pressed("fp_drop"):
+		drop()
+					
 func _physics_process(delta):
 	
 	var relative_height = get_global_mouse_position().y - position.y
@@ -62,8 +66,7 @@ func _physics_process(delta):
 func shoot():
 	var new_bullet = bullet.instance()
 	var turret_angle = turret.rotation
-	# print(mouse_angle)
-	print(turret_angle)
+	# print(turret_angle)
 	
 	var bullet_x = (position.x + 10) + (40 * cos(turret_angle))
 	var bullet_y = (position.y + 20) + (40 * sin(turret_angle))
@@ -73,6 +76,11 @@ func shoot():
 	get_parent().add_child(new_bullet)
 	new_bullet.angle = turret_angle
 	new_bullet.position = Vector2(bullet_x, bullet_y) 
+
+func drop():
+	var new_drop = drop.instance()
+	new_drop.position = Vector2(position.x + 20, position.y + 40) 
+	get_parent().add_child(new_drop)
 	
 func double_shoot():
 	var new_bullet_up = bullet.instance()
