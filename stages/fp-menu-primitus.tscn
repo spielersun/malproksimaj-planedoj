@@ -43,7 +43,7 @@ extra_spacing_top = 5
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="fp-menu-primitus" type="Node" index="0"]
+[node name="fp-menu-primitus" type="Node"]
 
 script = ExtResource( 1 )
 __meta__ = {
