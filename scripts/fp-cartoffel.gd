@@ -13,39 +13,61 @@ onready var ship_anims = $ship
 onready var beam = $beam
 
 var accelerated = false
+var descending = false
+var landed = false
+
 var armor = 5 setget took_hit
 var double_shooting = false setget set_double_shooting
 
 var mouse_angle
+var relative_height
+var relative_width
 
 func _ready():
-	pass
+	ship_anims.connect("animation_finished", self, "animation_changed")
 	
 func _process(delta):
-	if Input.is_action_just_pressed("fp_forward"):
-		engine.play()
-		if accelerated:
-			ship_anims.play("move-right")
-		else:
+	if descending:
+		position.y += delta * speed
+		print(position.y)
+		if position.y >= 800:
+			landed = true
+			descending = false
+			print(landed)
+	if landed:
+		if Input.is_action_just_pressed("fp_forward"):
+			ship_anims.play("ride")
+	else:
+		if Input.is_action_just_pressed("fp_forward"):
+			engine.play()
 			ship_anims.play("start-right")
-	elif Input.is_action_just_released("fp_forward"):
-		engine_stop()
+		elif Input.is_action_just_released("fp_forward"):
+			engine_stop()
 	
 	if Input.is_action_just_pressed("fp_shoot"):
 		if double_shooting:
 			double_shoot()
 		else:
 			shoot()
-			
+
 	if Input.is_action_just_pressed("fp_drop"):
 		drop()
+	if Input.is_action_pressed("fp_transform"):
+		transform()
 					
 func _physics_process(delta):
+	var deg_angle
 	
-	var relative_height = get_global_mouse_position().y - position.y
-	var relative_width = get_global_mouse_position().x - position.x
+	relative_height = get_global_mouse_position().y - position.y
+	relative_width = get_global_mouse_position().x - position.x
 	mouse_angle = atan(relative_height/relative_width)
-	turret.rotation = mouse_angle
+	
+	if relative_width <= 0:
+		deg_angle = rad2deg(mouse_angle) + 180
+	else:
+		deg_angle = rad2deg(mouse_angle)
+	
+	turret.rotation = deg2rad(deg_angle)
 	
 	# var motion = (get_global_mouse_position().y - position.y) * 10 * delta
 	# translate(Vector2(0, motion))
@@ -62,7 +84,13 @@ func _physics_process(delta):
 		position.y += speed * delta
 	elif Input.is_action_pressed("fp_up"):
 		position.y -= speed * delta
- 
+
+func animation_changed():
+	if ship_anims.animation == "start-right":
+		ship_anims.play("move-right")
+	elif ship_anims.animation == "move-right":
+		ship_anims.play("cruise-right")
+
 func shoot():
 	var new_bullet = bullet.instance()
 	var turret_angle = turret.rotation
@@ -146,5 +174,7 @@ func create_timer(wait_time):
 	timer.start()
 	return timer
 	
-	
+func transform():
+	descending = true
+	ship_anims.play("eject-tires")
 	

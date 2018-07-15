@@ -17,10 +17,10 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "move-left",
-"speed": 20.0
+"speed": 15.0
 } ]
 
-[node name="fp-lorenna" type="KinematicBody2D" groups=[
+[node name="fp-lorenna" type="KinematicBody2D" index="0" groups=[
 "enemy",
 ]]
 

@@ -50,7 +50,7 @@ resource_name = "tex_bestscore"
 script/source = "extends TextureRect
 
 func _ready():
-	get_node(\"label\").set_text(str(game.bestscore))
+	#get_node(\"label\").set_text(str(game.bestscore))
 	pass"
 _sections_unfolded = [ "Resource" ]
 
