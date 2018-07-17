@@ -27,33 +27,7 @@ func _ready():
 	ship_anims.connect("animation_finished", self, "animation_changed")
 	
 func _process(delta):
-	if descending:
-		position.y += delta * speed
-		print(position.y)
-		if position.y >= 800:
-			landed = true
-			descending = false
-			print(landed)
-	if landed:
-		if Input.is_action_just_pressed("fp_forward"):
-			ship_anims.play("ride")
-	else:
-		if Input.is_action_just_pressed("fp_forward"):
-			engine.play()
-			ship_anims.play("start-right")
-		elif Input.is_action_just_released("fp_forward"):
-			engine_stop()
-	
-	if Input.is_action_just_pressed("fp_shoot"):
-		if double_shooting:
-			double_shoot()
-		else:
-			shoot()
-
-	if Input.is_action_just_pressed("fp_drop"):
-		drop()
-	if Input.is_action_pressed("fp_transform"):
-		transform()
+	pass
 					
 func _physics_process(delta):
 	var deg_angle
@@ -80,10 +54,38 @@ func _physics_process(delta):
 	# elif Input.is_action_pressed("turret_up"):
 	# 	turret.rotation -= rotation_speed * delta
 	
-	if Input.is_action_pressed("fp_down"):
-		position.y += speed * delta
-	elif Input.is_action_pressed("fp_up"):
-		position.y -= speed * delta
+	if descending:
+		position.y += delta * speed
+		if position.y >= 800:
+			landed = true
+			descending = false
+	if landed:
+		if Input.is_action_just_pressed("fp_forward"):
+			ship_anims.play("ride")
+		elif Input.is_action_just_released("fp_forward"):
+			ride_stop()
+	else:
+		if Input.is_action_just_pressed("fp_forward"):
+			engine.play()
+			ship_anims.play("start-right")
+		elif Input.is_action_just_released("fp_forward"):
+			engine_stop()
+			
+		if Input.is_action_pressed("fp_down"):
+			position.y += speed * delta
+		elif Input.is_action_pressed("fp_up"):
+			position.y -= speed * delta
+	
+	if Input.is_action_just_pressed("fp_shoot"):
+		if double_shooting:
+			double_shoot()
+		else:
+			shoot()
+
+	if Input.is_action_just_pressed("fp_drop"):
+		drop()
+	if Input.is_action_pressed("fp_transform"):
+		transform()
 
 func animation_changed():
 	if ship_anims.animation == "start-right":
@@ -150,6 +152,10 @@ func engine_stop():
 	accelerated = false
 	ship_anims.play("idle")
 
+func ride_stop():
+	accelerated = false
+	ship_anims.play("stop")
+
 func took_hit(new_value):
 	if new_value > 4:
 		hit_shield()
@@ -176,5 +182,5 @@ func create_timer(wait_time):
 	
 func transform():
 	descending = true
-	ship_anims.play("eject-tires")
+	ship_anims.play("transform")
 	

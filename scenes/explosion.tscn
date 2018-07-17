@@ -64,7 +64,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="explosion" type="Sprite" index="0"]
+[node name="explosion" type="Sprite"]
 
 position = Vector2( 63, 63 )
 z_index = 5
