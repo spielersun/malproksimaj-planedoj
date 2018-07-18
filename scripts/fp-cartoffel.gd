@@ -24,6 +24,7 @@ var relative_height
 var relative_width
 
 func _ready():
+	wait()
 	ship_anims.connect("animation_finished", self, "animation_changed")
 	
 func _process(delta):
@@ -55,37 +56,45 @@ func _physics_process(delta):
 	# 	turret.rotation -= rotation_speed * delta
 	
 	if descending:
-		position.y += delta * speed
-		if position.y >= 800:
+		var motion = (800 - position.y) * delta
+		translate(Vector2(0, motion))
+		
+		# var motion_turret_x = ((turret.position.x + 2) - turret.position.x) * delta
+		# var motion_turret_y = ((turret.position.y + 3) - turret.position.y) * delta
+		# turret.translate(Vector2(motion_turret_x, motion_turret_y))
+		
+		# position.y += delta * speed
+		if position.y >= 790:
 			landed = true
 			descending = false
-	if landed:
-		if Input.is_action_just_pressed("fp_forward"):
-			ship_anims.play("ride")
-		elif Input.is_action_just_released("fp_forward"):
-			ride_stop()
 	else:
-		if Input.is_action_just_pressed("fp_forward"):
-			engine.play()
-			ship_anims.play("start-right")
-		elif Input.is_action_just_released("fp_forward"):
-			engine_stop()
-			
-		if Input.is_action_pressed("fp_down"):
-			position.y += speed * delta
-		elif Input.is_action_pressed("fp_up"):
-			position.y -= speed * delta
+		if landed:
+			if Input.is_action_just_pressed("fp_forward"):
+				ship_anims.play("ride")
+			elif Input.is_action_just_released("fp_forward"):
+				ride_stop()
+		else:
+			if Input.is_action_just_pressed("fp_forward"):
+				engine.play()
+				ship_anims.play("start-right")
+			elif Input.is_action_just_released("fp_forward"):
+				engine_stop()
+				
+			if Input.is_action_pressed("fp_down"):
+				position.y += speed * delta
+			elif Input.is_action_pressed("fp_up"):
+				position.y -= speed * delta
 	
 	if Input.is_action_just_pressed("fp_shoot"):
 		if double_shooting:
 			double_shoot()
 		else:
 			shoot()
-
-	if Input.is_action_just_pressed("fp_drop"):
-		drop()
-	if Input.is_action_pressed("fp_transform"):
-		transform()
+	if !landed:
+		if Input.is_action_just_pressed("fp_drop"):
+			drop()
+		if Input.is_action_pressed("fp_transform"):
+			transform()
 
 func animation_changed():
 	if ship_anims.animation == "start-right":
@@ -150,7 +159,7 @@ func set_double_shooting(value):
 func engine_stop():
 	engine.stop()
 	accelerated = false
-	ship_anims.play("idle")
+	wait()
 
 func ride_stop():
 	accelerated = false
@@ -179,8 +188,10 @@ func create_timer(wait_time):
 	add_child(timer)
 	timer.start()
 	return timer
-	
+
+func wait():
+	ship_anims.play("wait")
+
 func transform():
-	descending = true
 	ship_anims.play("transform")
-	
+	descending = true
