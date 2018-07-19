@@ -14,6 +14,7 @@ onready var beam = $beam
 
 var accelerated = false
 var descending = false
+var ascending = false
 var landed = false
 
 var armor = 5 setget took_hit
@@ -67,6 +68,13 @@ func _physics_process(delta):
 		if position.y >= 790:
 			landed = true
 			descending = false
+	elif ascending:
+		var motion = -(position.y - 150) * delta
+		translate(Vector2(0, motion))
+		
+		if position.y <= 250:
+			landed = false
+			ascending = false
 	else:
 		if landed:
 			if Input.is_action_just_pressed("fp_forward"):
@@ -93,9 +101,15 @@ func _physics_process(delta):
 	if !landed:
 		if Input.is_action_just_pressed("fp_drop"):
 			drop()
-		if Input.is_action_pressed("fp_transform"):
-			transform()
-
+	
+	if Input.is_action_pressed("fp_transform"):
+		if landed:
+			ride_stop()
+			to_ship_form()
+		elif !landed:
+			engine_stop()
+			to_truck_form()
+	
 func animation_changed():
 	if ship_anims.animation == "start-right":
 		ship_anims.play("move-right")
@@ -192,6 +206,10 @@ func create_timer(wait_time):
 func wait():
 	ship_anims.play("wait")
 
-func transform():
+func to_truck_form():
 	ship_anims.play("transform")
 	descending = true
+	
+func to_ship_form():
+	ship_anims.play("retract-tires")
+	ascending = true

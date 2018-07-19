@@ -1,24 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/fp-mother.gd" type="Script" id=1]
-[ext_resource path="res://sprites/new/mother.png" type="Texture" id=2]
+[ext_resource path="res://scenes/fp-mother-shield.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/new/mother.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 366.425, 190.41 )
 
-[node name="fp-mother" type="KinematicBody2D"]
+[node name="fp-mother" type="KinematicBody2D" groups=[
+"company",
+]]
 
+z_index = 50
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+shield = ExtResource( 2 )
 
 [node name="ship" type="Sprite" parent="." index="0"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="shape" type="CollisionShape2D" parent="." index="1"]
 

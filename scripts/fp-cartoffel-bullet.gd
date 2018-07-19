@@ -32,6 +32,9 @@ func _on_body_entered(area):
 		score_text.text = str(total_score)
 		# emit_signal("add_score", [5])
 		queue_free()
+	elif area.is_in_group("company"):
+		area.hit_shield()
+		queue_free()
 
 func create_explosion():
 	var new_explosion = explosion.instance()

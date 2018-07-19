@@ -103,10 +103,6 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 _sections_unfolded = [ "Z Index" ]
 lorenna = ExtResource( 11 )
 
-[node name="fp_mother" parent="." index="4" instance=ExtResource( 12 )]
-
-position = Vector2( 542.644, -298.454 )
-z_index = 60
-_sections_unfolded = [ "Z Index" ]
+[node name="fp-mother" parent="." index="4" instance=ExtResource( 12 )]
 
 
