@@ -8,7 +8,8 @@ var lorenna_presence = false
 
 const enemies = [
 	preload("res://scenes/fp-giorgio.tscn"),
-	preload("res://scenes/fp-marconi.tscn")
+	preload("res://scenes/fp-marconi.tscn"),
+	preload("res://scenes/fp-kendra.tscn")
 ]
 
 func _ready():
@@ -23,7 +24,7 @@ func _ready():
 		new_enemy.position = Vector2(position_x, position_y)
 		add_child(new_enemy)
 		
-		yield(create_timer(rand_range(1.50, 3.00)), "timeout")
+		yield(create_timer(rand_range(2.50, 4.00)), "timeout")
 		if !lorenna_presence:
 			get_lorenna()
 
