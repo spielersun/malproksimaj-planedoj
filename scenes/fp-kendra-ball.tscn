@@ -8,13 +8,16 @@
 custom_solver_bias = 0.0
 radius = 15.5203
 
-[node name="fp-kendra-ball" type="KinematicBody2D" index="0"]
+[node name="fp-kendra-ball" type="KinematicBody2D" groups=[
+"enemy",
+]]
 
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+health = 10
 
 [node name="ship" type="Sprite" parent="." index="0"]
 

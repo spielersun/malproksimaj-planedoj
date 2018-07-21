@@ -20,11 +20,12 @@ func _ready():
 		var position_y = get_viewport_rect().size.y / 2
 		
 		var new_enemy = choose(enemies).instance()
+		# var new_enemy = enemies[2].instance()
 		
 		new_enemy.position = Vector2(position_x, position_y)
 		add_child(new_enemy)
 		
-		yield(create_timer(rand_range(2.50, 4.00)), "timeout")
+		yield(create_timer(rand_range(3.50, 5.00)), "timeout")
 		if !lorenna_presence:
 			get_lorenna()
 

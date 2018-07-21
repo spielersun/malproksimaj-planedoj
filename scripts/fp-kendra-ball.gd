@@ -1,15 +1,15 @@
 extends KinematicBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+export var health = 10
+var dead = false
+
+onready var collision = $shape
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func add_damage(damage):
+	health -= damage
+	if health <= 0:
+		dead = true
+		queue_free()

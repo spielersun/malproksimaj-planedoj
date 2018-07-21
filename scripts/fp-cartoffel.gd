@@ -164,11 +164,14 @@ func double_shoot():
 	new_bullet_down.position = Vector2(bullet_x_up, bullet_y_down) 
 
 func set_double_shooting(value):
-	double_shooting = value
-	
-	if double_shooting:
-		yield(create_timer(5), "timeout")
-		double_shooting = false
+	if value:
+		if double_shooting:
+			yield(create_timer(5), "timeout")
+			double_shooting = false
+		else:
+			double_shooting = true
+			yield(create_timer(5), "timeout")
+			double_shooting = false
 	
 func engine_stop():
 	engine.stop()
