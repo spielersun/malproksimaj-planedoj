@@ -3,6 +3,7 @@ extends Area2D
 export var speed = 200
 export var angle = 0
 export var damage = 5
+var bounced = false
 
 export(PackedScene) var explosion
 
@@ -10,11 +11,19 @@ export(PackedScene) var explosion
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
+	connect("area_entered", self, "_on_area_entered")
 	
 func _process(delta):
-	_move(delta)
+	if !bounced:
+		rotation = angle
+		position.x += cos(angle) * (speed * delta)
+		position.y += sin(angle) * (speed * delta)
+	else:
+		rotation = angle
+		position.x -= cos(angle) * (speed * delta)
+		position.y -= sin(angle) * (speed * delta)
 	
-	if position.x > 3000:
+	if position.x > 1650 or position.x < 50:
 		queue_free()
 
 func _move(delta):
@@ -22,20 +31,23 @@ func _move(delta):
 	position.x += cos(angle) * (speed * delta)
 	position.y += sin(angle) * (speed * delta)
 	
-func _on_body_entered(area):
+func _on_body_entered(body):
 	var score_text = get_tree().get_root().get_node("fp-test").find_node("score")
-	
-	if area.is_in_group("enemy"):
-		area.add_damage(damage)
+	if body.is_in_group("enemy"):
+		body.add_damage(damage)
 		create_explosion()
 		var total_score = int(score_text.text) + 5
 		score_text.text = str(total_score)
 		# emit_signal("add_score", [5])
 		queue_free()
-	elif area.is_in_group("company"):
-		area.hit_shield()
+	elif body.is_in_group("company"):
+		body.hit_shield()
 		queue_free()
-
+		
+func _on_area_entered(area):
+	if area.is_in_group("cristal"):
+		bounced = true
+	
 func create_explosion():
 	var new_explosion = explosion.instance()
 	new_explosion.position = position

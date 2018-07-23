@@ -1,7 +1,7 @@
 extends Node
 
-const MOVE_SPEED_1 = 200
-const MOVE_SPEED_2 = 100
+const MOVE_SPEED_1 = 100
+const MOVE_SPEED_2 = 75
 const MOVE_SPEED_3 = 50
 const MOVE_SPEED_4 = 25
 

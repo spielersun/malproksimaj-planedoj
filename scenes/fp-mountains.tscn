@@ -8,7 +8,7 @@
 [ext_resource path="res://sprites/new/bg-0.png" type="Texture" id=6]
 [ext_resource path="res://sprites/new/fp-phased-moon.png" type="Texture" id=7]
 
-[node name="fp-mountains" type="Node2D" index="0"]
+[node name="fp-mountains" type="Node2D"]
 
 script = ExtResource( 1 )
 
