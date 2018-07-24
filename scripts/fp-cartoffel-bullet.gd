@@ -47,6 +47,7 @@ func _on_body_entered(body):
 func _on_area_entered(area):
 	if area.is_in_group("cristal"):
 		bounced = true
+		area.bullet_hit(damage)
 	
 func create_explosion():
 	var new_explosion = explosion.instance()

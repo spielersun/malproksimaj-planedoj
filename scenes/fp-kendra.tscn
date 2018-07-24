@@ -78,7 +78,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="follow" type="PathFollow2D" parent="path" index="0"]
 
 editor/display_folded = true
-position = Vector2( -3.17074, 120.228 )
+position = Vector2( -3.16994, 120.228 )
 rotation = -0.053751
 offset = 392.398
 h_offset = 0.0
@@ -90,12 +90,10 @@ lookahead = 4.0
 
 [node name="fp-kendra-ball" parent="path/follow" index="0" instance=ExtResource( 2 )]
 
-health = 10
-
 [node name="follow2" type="PathFollow2D" parent="path" index="1"]
 
 editor/display_folded = true
-position = Vector2( -3.17074, 120.228 )
+position = Vector2( -3.16994, 120.228 )
 rotation = -0.053751
 offset = 392.398
 h_offset = 0.0
@@ -107,12 +105,10 @@ lookahead = 4.0
 
 [node name="fp-kendra-ball" parent="path/follow2" index="0" instance=ExtResource( 2 )]
 
-health = 10
-
 [node name="follow3" type="PathFollow2D" parent="path" index="2"]
 
 editor/display_folded = true
-position = Vector2( -3.17074, 120.228 )
+position = Vector2( -3.16994, 120.228 )
 rotation = -0.053751
 offset = 392.398
 h_offset = 0.0
@@ -124,12 +120,10 @@ lookahead = 4.0
 
 [node name="fp-kendra-ball" parent="path/follow3" index="0" instance=ExtResource( 2 )]
 
-health = 10
-
 [node name="follow4" type="PathFollow2D" parent="path" index="3"]
 
 editor/display_folded = true
-position = Vector2( -3.17074, 120.228 )
+position = Vector2( -3.16994, 120.228 )
 rotation = -0.053751
 offset = 392.398
 h_offset = 0.0
@@ -141,12 +135,10 @@ lookahead = 4.0
 
 [node name="fp-kendra-ball" parent="path/follow4" index="0" instance=ExtResource( 2 )]
 
-health = 10
-
 [node name="follow5" type="PathFollow2D" parent="path" index="4"]
 
 editor/display_folded = true
-position = Vector2( -3.17074, 120.228 )
+position = Vector2( -3.16994, 120.228 )
 rotation = -0.053751
 offset = 392.398
 h_offset = 0.0
@@ -157,7 +149,5 @@ loop = true
 lookahead = 4.0
 
 [node name="fp-kendra-ball" parent="path/follow5" index="0" instance=ExtResource( 2 )]
-
-health = 10
 
 
