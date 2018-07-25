@@ -1,0 +1,54 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/fp-floating-turret.gd" type="Script" id=1]
+[ext_resource path="res://scenes/fp-floating-rock-ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_0.png" type="Texture" id=3]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_3.png" type="Texture" id=6]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_4.png" type="Texture" id=7]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_5.png" type="Texture" id=8]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_6.png" type="Texture" id=9]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_7.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "float",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 72.2413, 56.1452 )
+
+[node name="fp-floating-turret" type="Area2D"]
+
+z_index = 60
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+ball = ExtResource( 2 )
+
+[node name="object" type="AnimatedSprite" parent="." index="0"]
+
+position = Vector2( 0, 450 )
+frames = SubResource( 1 )
+animation = "float"
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 8.72256, 505.061 )
+shape = SubResource( 2 )
+
+

@@ -1,9 +1,10 @@
 extends Node2D
 
 export(PackedScene) var floating_rock
+export(PackedScene) var floating_turret
 
 func _ready():
-	var new_obstacle = floating_rock.instance()
+	var new_obstacle = floating_turret.instance()
 	new_obstacle.position.x = 2000
 	add_child(new_obstacle)
 

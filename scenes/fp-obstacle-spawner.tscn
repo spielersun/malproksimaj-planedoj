@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/fp-obstacle-spawner.gd" type="Script" id=1]
 [ext_resource path="res://scenes/fp-floatiing-rock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/fp-floating-turret.tscn" type="PackedScene" id=3]
 
 [node name="fp-obstacle-spawner" type="Node2D"]
 
 script = ExtResource( 1 )
 floating_rock = ExtResource( 2 )
+floating_turret = ExtResource( 3 )
 
 [node name="container" type="Node" parent="." index="0"]
 
