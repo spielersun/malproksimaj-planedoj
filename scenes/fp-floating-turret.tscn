@@ -25,7 +25,9 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 72.2413, 56.1452 )
 
-[node name="fp-floating-turret" type="Area2D"]
+[node name="fp-floating-turret" type="Area2D" groups=[
+"obstacle",
+]]
 
 z_index = 60
 input_pickable = true
