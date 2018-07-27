@@ -24,7 +24,6 @@ func move(delta):
 func add_damage(damage):
 	health -= damage
 	if health <= 0:
-		print(spawner.name)
 		dead = true
 		spawner.lorenna_presence = false
 		queue_free()

@@ -6,9 +6,7 @@ var shield_down = false
 
 func _ready():
 	if !shield_down:
-		randomize()
 		get_node("animation").play("fade_out")
-	
 		yield(animation, "animation_finished")
 		queue_free()
 

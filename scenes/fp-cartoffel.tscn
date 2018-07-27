@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://scripts/fp-cartoffel.gd" type="Script" id=1]
 [ext_resource path="res://scenes/fp-cartoffel-bullet.tscn" type="PackedScene" id=2]
@@ -21,37 +21,37 @@
 [ext_resource path="res://sprites/new/cartoffel-idle/cartoffel-idle-5.png" type="Texture" id=19]
 [ext_resource path="res://sprites/new/cartoffel-idle/cartoffel-idle-6.png" type="Texture" id=20]
 [ext_resource path="res://sprites/new/fp-cartoffel-0a.png" type="Texture" id=21]
-[ext_resource path="res://sprites/new/cartoffel-tired-0.png" type="Texture" id=22]
-[ext_resource path="res://sprites/new/cartoffel-tired-1.png" type="Texture" id=23]
-[ext_resource path="res://sprites/new/cartoffel-tired-2.png" type="Texture" id=24]
-[ext_resource path="res://sprites/new/cartoffel-tired-3.png" type="Texture" id=25]
-[ext_resource path="res://sprites/new/cartoffel-tired-4.png" type="Texture" id=26]
-[ext_resource path="res://sprites/new/fp-cartoffel-e.png" type="Texture" id=27]
-[ext_resource path="res://sprites/new/fp-cartoffel-d.png" type="Texture" id=28]
-[ext_resource path="res://sprites/new/fp-cartoffel-c.png" type="Texture" id=29]
-[ext_resource path="res://sprites/new/fp-cartoffel-b.png" type="Texture" id=30]
-[ext_resource path="res://sprites/new/fp-cartoffel-aa.png" type="Texture" id=31]
-[ext_resource path="res://sprites/new/fp-cartoffel-bb.png" type="Texture" id=32]
-[ext_resource path="res://sprites/new/fp-cartoffel-dd.png" type="Texture" id=33]
-[ext_resource path="res://sprites/new/fp-cartoffel-0.png" type="Texture" id=34]
-[ext_resource path="res://sprites/new/fp-cartoffel-a.png" type="Texture" id=35]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-2.png" type="Texture" id=36]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-3.png" type="Texture" id=37]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-4.png" type="Texture" id=38]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-5.png" type="Texture" id=39]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-6.png" type="Texture" id=40]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-7.png" type="Texture" id=41]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-8.png" type="Texture" id=42]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-9.png" type="Texture" id=43]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-10.png" type="Texture" id=44]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-11.png" type="Texture" id=45]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-12.png" type="Texture" id=46]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-13.png" type="Texture" id=47]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-15.png" type="Texture" id=48]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-14.png" type="Texture" id=49]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-16.png" type="Texture" id=50]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-17.png" type="Texture" id=51]
-[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-18.png" type="Texture" id=52]
+[ext_resource path="res://sprites/new/fp-cartoffel-dd.png" type="Texture" id=22]
+[ext_resource path="res://sprites/new/fp-cartoffel-bb.png" type="Texture" id=23]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-2.png" type="Texture" id=24]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-3.png" type="Texture" id=25]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-4.png" type="Texture" id=26]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-5.png" type="Texture" id=27]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-6.png" type="Texture" id=28]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-7.png" type="Texture" id=29]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-8.png" type="Texture" id=30]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-9.png" type="Texture" id=31]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-10.png" type="Texture" id=32]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-11.png" type="Texture" id=33]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-12.png" type="Texture" id=34]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-13.png" type="Texture" id=35]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-15.png" type="Texture" id=36]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-14.png" type="Texture" id=37]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-16.png" type="Texture" id=38]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-17.png" type="Texture" id=39]
+[ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-18.png" type="Texture" id=40]
+[ext_resource path="res://sprites/new/fp-cartoffel-0.png" type="Texture" id=41]
+[ext_resource path="res://sprites/new/fp-cartoffel-a.png" type="Texture" id=42]
+[ext_resource path="res://sprites/new/fp-cartoffel-b.png" type="Texture" id=43]
+[ext_resource path="res://sprites/new/fp-cartoffel-c.png" type="Texture" id=44]
+[ext_resource path="res://sprites/new/fp-cartoffel-d.png" type="Texture" id=45]
+[ext_resource path="res://sprites/new/fp-cartoffel-e.png" type="Texture" id=46]
+[ext_resource path="res://sprites/new/fp-cartoffel-aa.png" type="Texture" id=47]
+[ext_resource path="res://sprites/new/cartoffel-tired-0.png" type="Texture" id=48]
+[ext_resource path="res://sprites/new/cartoffel-tired-1.png" type="Texture" id=49]
+[ext_resource path="res://sprites/new/cartoffel-tired-2.png" type="Texture" id=50]
+[ext_resource path="res://sprites/new/cartoffel-tired-3.png" type="Texture" id=51]
+[ext_resource path="res://sprites/new/cartoffel-tired-4.png" type="Texture" id=52]
 [ext_resource path="res://sprites/new/fp-cartoffel-0turret.png" type="Texture" id=53]
 [ext_resource path="res://audio/ssa.wav" type="AudioStream" id=54]
 [ext_resource path="res://audio/laser_3.wav" type="AudioStream" id=55]
@@ -79,19 +79,19 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
-"loop": false,
-"name": "eject-tires",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
-"loop": false,
-"name": "move-right",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 33 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 33 ), ExtResource( 33 ) ],
+"frames": [ ExtResource( 22 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 22 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "cruise-right",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
+"loop": true,
+"name": "ride",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 46 ) ],
+"loop": false,
+"name": "start-right",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
@@ -99,23 +99,29 @@ animations = [ {
 "name": "retract-tires",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 34 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 27 ) ],
+"frames": [ ExtResource( 46 ), ExtResource( 45 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 47 ), ExtResource( 23 ), ExtResource( 22 ) ],
 "loop": false,
-"name": "start-right",
+"name": "move-right",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ) ],
-"loop": true,
-"name": "ride",
-"speed": 15.0
+"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ) ],
+"loop": false,
+"name": "eject-tires",
+"speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10.7519, 11.9818 )
+radius = 2.49273
+height = 2.14144
 
-[node name="fp-cartoffel" type="KinematicBody2D" groups=[
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 3.31684
+
+[node name="fp-cartoffel" type="KinematicBody2D" index="0" groups=[
 "player",
 ]]
 
@@ -147,13 +153,19 @@ centered = false
 offset = Vector2( -23, -15 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
-[node name="shape" type="CollisionShape2D" parent="." index="2"]
+[node name="hull" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( 56.4637, 0.407413 )
-scale = Vector2( 9.87025, 5.01854 )
+position = Vector2( 43.1044, -11.9651 )
+scale = Vector2( 36.418, 13.9006 )
 shape = SubResource( 2 )
 
-[node name="engine" type="AudioStreamPlayer2D" parent="." index="3"]
+[node name="front" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 102.7, 13.8263 )
+scale = Vector2( 18.2539, 15.5005 )
+shape = SubResource( 3 )
+
+[node name="engine" type="AudioStreamPlayer2D" parent="." index="4"]
 
 stream = ExtResource( 54 )
 volume_db = 0.0
@@ -164,7 +176,7 @@ attenuation = 1.0
 bus = "engine"
 area_mask = 1
 
-[node name="beam" type="AudioStreamPlayer2D" parent="." index="4"]
+[node name="beam" type="AudioStreamPlayer2D" parent="." index="5"]
 
 stream = ExtResource( 55 )
 volume_db = 0.0

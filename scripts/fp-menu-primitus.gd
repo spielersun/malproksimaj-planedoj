@@ -10,14 +10,11 @@ func _ready():
 func _process(delta):
 	mountains.mountains_move(delta)
 
-
 func _on_start_pressed():
 	get_tree().change_scene("res://stages/fp-test.tscn")
 
-
 func _on_options_pressed():
 	pass # replace with function body
-
 
 func _on_quit_pressed():
 	pass # replace with function body

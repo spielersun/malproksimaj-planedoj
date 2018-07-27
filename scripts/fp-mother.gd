@@ -27,7 +27,7 @@ func _ready():
 	while true:
 		came_to_help()
 		spawn_supports()
-		yield(create_timer(10), "timeout")
+		yield(belt.create_timer(10), "timeout")
 
 func spawn_supports():
 	randomize()
@@ -43,17 +43,8 @@ func spawn_supports():
 			support.position = pos
 			
 			get_parent().add_child(support)
-			yield(create_timer(rand_range(2, 4)), "timeout")
+			yield(belt.create_timer(rand_range(2, 4)), "timeout")
 		on_field = false
-	
-func create_timer(wait_time):
-	var timer = Timer.new()
-	timer.set_wait_time(wait_time)
-	timer.set_one_shot(true)
-	timer.connect("timeout", timer, "queue_free")
-	add_child(timer)
-	timer.start()
-	return timer
 
 func choose(choises):
 	randomize()
@@ -62,7 +53,7 @@ func choose(choises):
 
 
 func came_to_help():
-	yield(create_timer(5), "timeout")
+	yield(belt.create_timer(5), "timeout")
 	position.x = initial_point_x
 	position.y = initial_point_y
 	on_field = true

@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 9.12111, 3.17976 )
 
-[node name="fp-cartoffel-bullet" type="Area2D" groups=[
+[node name="fp-cartoffel-bullet" type="Area2D" index="0" groups=[
 "projectile",
 ]]
 

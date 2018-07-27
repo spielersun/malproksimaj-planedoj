@@ -23,7 +23,7 @@ func _ready():
 	
 	while !dead:
 		spawn_balls()
-		yield(create_timer(rand_range(1.50, 3.00)), "timeout")
+		yield(belt.create_timer(rand_range(1.50, 3.00)), "timeout")
 		
 func _process(delta):
 	position.x -= delta * speed
@@ -45,15 +45,6 @@ func bullet_hit(damage):
 	if health <= 0:
 		queue_free()
 	#	object.play("fall")
-		
-func create_timer(wait_time):
-	var timer = Timer.new()
-	timer.set_wait_time(wait_time)
-	timer.set_one_shot(true)
-	timer.connect("timeout", timer, "queue_free")
-	add_child(timer)
-	timer.start()
-	return timer
 
 func animation_changed():
 	if object.animation == "fall":

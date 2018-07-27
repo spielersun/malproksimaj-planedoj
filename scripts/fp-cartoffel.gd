@@ -166,11 +166,11 @@ func double_shoot():
 func set_double_shooting(value):
 	if value:
 		if double_shooting:
-			yield(create_timer(5), "timeout")
+			yield(belt.create_timer(5), "timeout")
 			double_shooting = false
 		else:
 			double_shooting = true
-			yield(create_timer(5), "timeout")
+			yield(belt.create_timer(5), "timeout")
 			double_shooting = false
 	
 func engine_stop():
@@ -196,15 +196,6 @@ func hit_shield():
 	var new_hit = shield.instance()
 	new_hit.position = position
 	get_parent().add_child(new_hit)
-	
-func create_timer(wait_time):
-	var timer = Timer.new()
-	timer.set_wait_time(wait_time)
-	timer.set_one_shot(true)
-	timer.connect("timeout", timer, "queue_free")
-	add_child(timer)
-	timer.start()
-	return timer
 
 func wait():
 	ship_anims.play("wait")

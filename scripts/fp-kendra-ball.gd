@@ -3,8 +3,6 @@ extends KinematicBody2D
 export var health = 10
 var dead = false
 
-onready var collision = $shape
-
 func _ready():
 	pass
 

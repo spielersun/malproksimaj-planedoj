@@ -3,6 +3,7 @@ extends Area2D
 export var speed = 200
 export var angle = 0
 export var damage = 5
+
 var bounced = false
 
 export(PackedScene) var explosion
@@ -36,7 +37,7 @@ func _on_body_entered(body):
 	var score_text = get_tree().get_root().get_node("fp-test").find_node("score")
 	if body.is_in_group("enemy"):
 		body.add_damage(damage)
-		create_explosion()
+		belt.create_explosion(position)
 		var total_score = int(score_text.text) + 5
 		score_text.text = str(total_score)
 		# emit_signal("add_score", [5])
@@ -48,7 +49,7 @@ func _on_body_entered(body):
 func _on_area_entered(area):
 	if area.is_in_group("obstacle"):
 		area.bullet_hit(damage)
-		create_explosion()
+		belt.create_explosion(position)
 		queue_free()
 		
 func _on_area_shape_entered(area_id, area, area_shape, self_shape):
@@ -57,11 +58,6 @@ func _on_area_shape_entered(area_id, area, area_shape, self_shape):
 			bounced = true
 		elif area_shape == 1:
 			area.bullet_hit(damage)
-			create_explosion()
+			belt.create_explosion(position)
 			queue_free()
-				
-func create_explosion():
-	var new_explosion = explosion.instance()
-	new_explosion.position = position
-	get_parent().add_child(new_explosion)
 	

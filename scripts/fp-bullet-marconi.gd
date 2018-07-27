@@ -3,8 +3,6 @@ extends Area2D
 export var speed = 200
 export var damage = 5
 
-export(PackedScene) var explosion
-
 # signal armor_changed
 
 func _ready():
@@ -27,9 +25,4 @@ func _on_body_entered(area):
 		health_bar.frame = area.armor - 1
 		area.armor -= 1
 		queue_free()
-
-func create_explosion():
-	var new_explosion = explosion.instance()
-	new_explosion.position = position
-	get_parent().add_child(new_explosion)
 	

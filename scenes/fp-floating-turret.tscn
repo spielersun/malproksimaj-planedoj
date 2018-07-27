@@ -25,7 +25,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 72.2413, 56.1452 )
 
-[node name="fp-floating-turret" type="Area2D" groups=[
+[node name="fp-floating-turret" type="Area2D" index="0" groups=[
 "obstacle",
 ]]
 
