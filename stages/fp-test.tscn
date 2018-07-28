@@ -25,6 +25,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 [node name="fp-test" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Material" ]
 
 [node name="fp-mountains" parent="." index="0" instance=ExtResource( 2 )]
 

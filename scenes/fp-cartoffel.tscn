@@ -40,18 +40,18 @@
 [ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-16.png" type="Texture" id=38]
 [ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-17.png" type="Texture" id=39]
 [ext_resource path="res://sprites/new/cartoffel-ride/cartoffel-ride-18.png" type="Texture" id=40]
-[ext_resource path="res://sprites/new/fp-cartoffel-0.png" type="Texture" id=41]
-[ext_resource path="res://sprites/new/fp-cartoffel-a.png" type="Texture" id=42]
-[ext_resource path="res://sprites/new/fp-cartoffel-b.png" type="Texture" id=43]
-[ext_resource path="res://sprites/new/fp-cartoffel-c.png" type="Texture" id=44]
-[ext_resource path="res://sprites/new/fp-cartoffel-d.png" type="Texture" id=45]
-[ext_resource path="res://sprites/new/fp-cartoffel-e.png" type="Texture" id=46]
-[ext_resource path="res://sprites/new/fp-cartoffel-aa.png" type="Texture" id=47]
-[ext_resource path="res://sprites/new/cartoffel-tired-0.png" type="Texture" id=48]
-[ext_resource path="res://sprites/new/cartoffel-tired-1.png" type="Texture" id=49]
-[ext_resource path="res://sprites/new/cartoffel-tired-2.png" type="Texture" id=50]
-[ext_resource path="res://sprites/new/cartoffel-tired-3.png" type="Texture" id=51]
-[ext_resource path="res://sprites/new/cartoffel-tired-4.png" type="Texture" id=52]
+[ext_resource path="res://sprites/new/fp-cartoffel-e.png" type="Texture" id=41]
+[ext_resource path="res://sprites/new/fp-cartoffel-d.png" type="Texture" id=42]
+[ext_resource path="res://sprites/new/fp-cartoffel-c.png" type="Texture" id=43]
+[ext_resource path="res://sprites/new/fp-cartoffel-b.png" type="Texture" id=44]
+[ext_resource path="res://sprites/new/fp-cartoffel-aa.png" type="Texture" id=45]
+[ext_resource path="res://sprites/new/cartoffel-tired-0.png" type="Texture" id=46]
+[ext_resource path="res://sprites/new/cartoffel-tired-1.png" type="Texture" id=47]
+[ext_resource path="res://sprites/new/cartoffel-tired-2.png" type="Texture" id=48]
+[ext_resource path="res://sprites/new/cartoffel-tired-3.png" type="Texture" id=49]
+[ext_resource path="res://sprites/new/cartoffel-tired-4.png" type="Texture" id=50]
+[ext_resource path="res://sprites/new/fp-cartoffel-0.png" type="Texture" id=51]
+[ext_resource path="res://sprites/new/fp-cartoffel-a.png" type="Texture" id=52]
 [ext_resource path="res://sprites/new/fp-cartoffel-0turret.png" type="Texture" id=53]
 [ext_resource path="res://audio/ssa.wav" type="AudioStream" id=54]
 [ext_resource path="res://audio/laser_3.wav" type="AudioStream" id=55]
@@ -89,7 +89,17 @@ animations = [ {
 "name": "ride",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 45 ), ExtResource( 46 ) ],
+"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 23 ), ExtResource( 22 ) ],
+"loop": false,
+"name": "move-right",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ) ],
+"loop": false,
+"name": "eject-tires",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 52 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 41 ) ],
 "loop": false,
 "name": "start-right",
 "speed": 10.0
@@ -98,16 +108,6 @@ animations = [ {
 "loop": false,
 "name": "retract-tires",
 "speed": 12.0
-}, {
-"frames": [ ExtResource( 46 ), ExtResource( 45 ), ExtResource( 44 ), ExtResource( 43 ), ExtResource( 47 ), ExtResource( 23 ), ExtResource( 22 ) ],
-"loop": false,
-"name": "move-right",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ) ],
-"loop": false,
-"name": "eject-tires",
-"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -121,7 +121,7 @@ height = 2.14144
 custom_solver_bias = 0.0
 radius = 3.31684
 
-[node name="fp-cartoffel" type="KinematicBody2D" index="0" groups=[
+[node name="fp-cartoffel" type="KinematicBody2D" groups=[
 "player",
 ]]
 

@@ -13,6 +13,7 @@ var bottom_bound
 var direction = 1
 
 func _ready():
+	randomize()
 	object.play("float")
 	object.connect("animation_finished", self, "animation_changed")
 	
@@ -27,7 +28,6 @@ func _ready():
 		
 func _process(delta):
 	position.x -= delta * speed
-	
 	position.y += 10 * direction * delta
 	
 	if position.y > bottom_bound:
@@ -43,8 +43,7 @@ func spawn_balls():
 func bullet_hit(damage):
 	health -= damage
 	if health <= 0:
-		queue_free()
-	#	object.play("fall")
+		object.play("fall")
 
 func animation_changed():
 	if object.animation == "fall":

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/fp-floating-turret.gd" type="Script" id=1]
 [ext_resource path="res://scenes/fp-floating-rock-ball.tscn" type="PackedScene" id=2]
@@ -10,6 +10,25 @@
 [ext_resource path="res://sprites/new/floating-turret/floating_turret_5.png" type="Texture" id=8]
 [ext_resource path="res://sprites/new/floating-turret/floating_turret_6.png" type="Texture" id=9]
 [ext_resource path="res://sprites/new/floating-turret/floating_turret_7.png" type="Texture" id=10]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_8.png" type="Texture" id=11]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_9.png" type="Texture" id=12]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_10.png" type="Texture" id=13]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_11.png" type="Texture" id=14]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_12.png" type="Texture" id=15]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_13.png" type="Texture" id=16]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_14.png" type="Texture" id=17]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_15.png" type="Texture" id=18]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_16.png" type="Texture" id=19]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_18.png" type="Texture" id=20]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_19.png" type="Texture" id=21]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_20.png" type="Texture" id=22]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_21.png" type="Texture" id=23]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_22.png" type="Texture" id=24]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_23.png" type="Texture" id=25]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_24.png" type="Texture" id=26]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_25.png" type="Texture" id=27]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_26.png" type="Texture" id=28]
+[ext_resource path="res://sprites/new/floating-turret/floating_turret_27.png" type="Texture" id=29]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -18,14 +37,29 @@ animations = [ {
 "loop": true,
 "name": "float",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 3 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": false,
+"name": "fall",
+"speed": 10.0
 } ]
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 33.4335
+
+[sub_resource type="CircleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 39.915
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 72.2413, 56.1452 )
+extents = Vector2( 72.2413, 28.3762 )
 
-[node name="fp-floating-turret" type="Area2D" index="0" groups=[
+[node name="fp-floating-turret" type="Area2D" groups=[
 "obstacle",
 ]]
 
@@ -48,9 +82,20 @@ frames = SubResource( 1 )
 animation = "float"
 _sections_unfolded = [ "Transform" ]
 
-[node name="shape" type="CollisionShape2D" parent="." index="1"]
+[node name="turret" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 8.72256, 505.061 )
+position = Vector2( 9.72256, 483.061 )
+shape = SubResource( 3 )
+
+[node name="engine" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 6.72256, 548.282 )
+scale = Vector2( 1, 0.366875 )
+shape = SubResource( 4 )
+
+[node name="shape" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 8.72256, 524.061 )
 shape = SubResource( 2 )
 
 

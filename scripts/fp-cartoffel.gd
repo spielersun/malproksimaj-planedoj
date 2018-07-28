@@ -24,9 +24,20 @@ var mouse_angle
 var relative_height
 var relative_width
 
+var top_bound
+var bottom_bound
+var direction = 1
+var hanging = false
+
 func _ready():
+	randomize()
 	wait()
 	ship_anims.connect("animation_finished", self, "animation_changed")
+	
+	top_bound = position.y - 2
+	bottom_bound = position.y + 2
+	
+	direction = 1 if rand_range(0,100) > 50 else -1 
 	
 func _process(delta):
 	pass
@@ -78,19 +89,23 @@ func _physics_process(delta):
 	else:
 		if landed:
 			if Input.is_action_just_pressed("fp_forward"):
+				hanging = false
 				ship_anims.play("ride")
 			elif Input.is_action_just_released("fp_forward"):
 				ride_stop()
 		else:
 			if Input.is_action_just_pressed("fp_forward"):
+				hanging = false
 				engine.play()
 				ship_anims.play("start-right")
 			elif Input.is_action_just_released("fp_forward"):
 				engine_stop()
 				
 			if Input.is_action_pressed("fp_down"):
+				hanging = false
 				position.y += speed * delta
 			elif Input.is_action_pressed("fp_up"):
+				hanging = false
 				position.y -= speed * delta
 	
 	if Input.is_action_just_pressed("fp_shoot"):
@@ -100,15 +115,26 @@ func _physics_process(delta):
 			shoot()
 	if !landed:
 		if Input.is_action_just_pressed("fp_drop"):
+			hanging = false
 			drop()
 	
 	if Input.is_action_pressed("fp_transform"):
 		if landed:
 			ride_stop()
 			to_ship_form()
+			hanging = true
 		elif !landed:
 			engine_stop()
 			to_truck_form()
+			hanging = false
+	
+	if hanging:
+		position.y += 15 * direction * delta
+	
+		if position.y > bottom_bound:
+			direction = -1
+		elif position.y < top_bound:
+			direction = 1
 	
 func animation_changed():
 	if ship_anims.animation == "start-right":
@@ -198,6 +224,7 @@ func hit_shield():
 	get_parent().add_child(new_hit)
 
 func wait():
+	hanging = true
 	ship_anims.play("wait")
 
 func to_truck_form():

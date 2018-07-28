@@ -4,6 +4,8 @@ export var speed = 200
 export var angle = 0
 export var damage = 5
 
+var corrupt_angle
+
 var bounced = false
 
 export(PackedScene) var explosion
@@ -11,8 +13,10 @@ export(PackedScene) var explosion
 # signal add_score
 
 func _ready():
+	randomize()
+	corrupt_angle = angle + rand_range(-0.40, +0.40)
+	
 	connect("body_entered", self, "_on_body_entered")
-	connect("area_entered", self, "_on_area_entered")
 	connect("area_shape_entered", self, "_on_area_shape_entered")
 	
 func _process(delta):
@@ -21,17 +25,13 @@ func _process(delta):
 		position.x += cos(angle) * (speed * delta)
 		position.y += sin(angle) * (speed * delta)
 	else:
-		rotation = angle
-		position.x -= cos(angle) * (speed * delta)
-		position.y -= sin(angle) * (speed * delta)
+		# This is wrong but cool: angle = angle + rand_range(-0.20, +0.20)
+		rotation = corrupt_angle
+		position.x -= cos(corrupt_angle) * (speed * delta)
+		position.y -= sin(corrupt_angle) * (speed * delta)
 	
 	if position.x > 1650 or position.x < 50:
 		queue_free()
-
-func _move(delta):
-	rotation = angle
-	position.x += cos(angle) * (speed * delta)
-	position.y += sin(angle) * (speed * delta)
 	
 func _on_body_entered(body):
 	var score_text = get_tree().get_root().get_node("fp-test").find_node("score")
@@ -46,12 +46,6 @@ func _on_body_entered(body):
 		body.hit_shield()
 		queue_free()
 		
-func _on_area_entered(area):
-	if area.is_in_group("obstacle"):
-		area.bullet_hit(damage)
-		belt.create_explosion(position)
-		queue_free()
-		
 func _on_area_shape_entered(area_id, area, area_shape, self_shape):
 	if area.is_in_group("rock"):
 		if area_shape == 0:
@@ -60,4 +54,7 @@ func _on_area_shape_entered(area_id, area, area_shape, self_shape):
 			area.bullet_hit(damage)
 			belt.create_explosion(position)
 			queue_free()
-	
+	elif area.is_in_group("obstacle"):
+		area.bullet_hit(damage)
+		belt.create_explosion(position)
+		queue_free()
