@@ -9,7 +9,8 @@ var lorenna_presence = false
 const enemies = [
 	preload("res://scenes/fp-giorgio.tscn"),
 	preload("res://scenes/fp-marconi.tscn"),
-	preload("res://scenes/fp-kendra.tscn")
+	preload("res://scenes/fp-kendra.tscn"),
+	preload("res://scenes/fp-andrew.tscn")
 ]
 
 func _ready():
