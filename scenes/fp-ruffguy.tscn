@@ -1,0 +1,76 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scripts/fp-ruffguy.gd" type="Script" id=1]
+[ext_resource path="res://sprites/new/ruffguy/ruffguy_0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/new/ruffguy/ruffguy_1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/new/ruffguy/ruffguy_2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/new/ruffguy/ruffguy_3.png" type="Texture" id=5]
+[ext_resource path="res://sprites/new/ruffguy/ruffguy_4.png" type="Texture" id=6]
+[ext_resource path="res://sprites/new/ruffguy/ruffguy_5.png" type="Texture" id=7]
+[ext_resource path="res://sprites/new/ruffguy/ruffguy_6.png" type="Texture" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "active",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 152.171, 61.4185 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 51.7757, 54.8034 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 163.024, 21.1005 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 106.863, 53.7994 )
+
+[node name="fp-ruffguy" type="KinematicBody2D" index="0"]
+
+z_index = 60
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="object" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "active"
+
+[node name="top" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 16.9845, -14.0777 )
+shape = SubResource( 2 )
+
+[node name="front" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 138.111, 102.819 )
+shape = SubResource( 3 )
+
+[node name="bottom" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 25.9872, 180.657 )
+shape = SubResource( 4 )
+
+[node name="inside" type="CollisionShape2D" parent="." index="4"]
+
+position = Vector2( -26.8478, 103.43 )
+shape = SubResource( 5 )
+
+
