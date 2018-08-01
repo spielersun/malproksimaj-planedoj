@@ -16,6 +16,11 @@ animations = [ {
 "loop": true,
 "name": "active",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "enter",
+"speed": 1.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -38,7 +43,9 @@ extents = Vector2( 163.024, 21.1005 )
 custom_solver_bias = 0.0
 extents = Vector2( 106.863, 53.7994 )
 
-[node name="fp-ruffguy" type="KinematicBody2D" index="0"]
+[node name="fp-ruffguy" type="KinematicBody2D" index="0" groups=[
+"company",
+]]
 
 z_index = 60
 input_pickable = false

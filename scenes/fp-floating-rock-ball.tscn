@@ -25,7 +25,9 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 10.337, 10.4836 )
 
-[node name="fp-floating-rock-ball" type="Area2D"]
+[node name="fp-floating-rock-ball" type="Area2D" groups=[
+"projectile",
+]]
 
 z_index = 65
 input_pickable = true

@@ -19,26 +19,27 @@ func _ready():
 		
 func _process(delta):
 	if !placed:
-		_move(delta)
+		limiter += delta
+	
+		rotation += 0.1
+		position.x -= speed * 2 * delta
+		position.y -= 2.5 - (limiter * limiter)
+		
+		if position.x == 50:
+			detonate()
 	else:
 		position = field.position
 		detonate()
-	if position.x == 50:
-		queue_free()
-
-func _move(delta):
-	limiter += delta
 	
-	rotation += 0.1
-	position.x -= speed * 2 * delta
-	position.y -= 2.5 - (limiter * limiter)
-
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		position = body.position
 		object.play("placed")
 		field = body 
 		placed  = true
+	elif body.is_in_group("company"):
+		belt.create_explosion(position)
+		queue_free()
 
 func detonate():
 	yield(belt.create_timer(3.00), "timeout")

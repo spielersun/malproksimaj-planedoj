@@ -20,7 +20,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 33.6498, 89.7897 )
 
-[node name="fp-sindar" type="KinematicBody2D" index="0" groups=[
+[node name="fp-sindar" type="KinematicBody2D" groups=[
 "enemy",
 ]]
 
@@ -31,7 +31,7 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
-speed = 50
+speed = 150
 health = 15
 ball = null
 

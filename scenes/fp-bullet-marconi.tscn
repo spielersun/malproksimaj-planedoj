@@ -24,7 +24,6 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
 speed = 200
 damage = 5
-explosion = null
 
 [node name="bullet" type="Sprite" parent="." index="0"]
 

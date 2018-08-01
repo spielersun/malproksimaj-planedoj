@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed = 50
+export var speed = 150
 export var health = 15
 
 onready var ship_anims = $object

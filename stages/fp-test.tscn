@@ -23,7 +23,7 @@ use_filter = false
 font_data = ExtResource( 9 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="fp-test" type="Node2D"]
+[node name="fp-test" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material" ]
@@ -111,5 +111,7 @@ lorenna = ExtResource( 11 )
 [node name="fp-obstacle-spawner" parent="." index="5" instance=ExtResource( 13 )]
 
 [node name="fp-ruffguy" parent="." index="6" instance=ExtResource( 14 )]
+
+position = Vector2( 277.594, -233.179 )
 
 

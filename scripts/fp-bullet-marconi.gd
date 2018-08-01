@@ -25,4 +25,6 @@ func _on_body_entered(area):
 		health_bar.frame = area.armor - 1
 		area.armor -= 1
 		queue_free()
-	
+	elif area.is_in_group("company"):
+		belt.create_explosion(position)
+		queue_free()

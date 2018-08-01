@@ -34,6 +34,8 @@ func _ready():
 	wait()
 	ship_anims.connect("animation_finished", self, "animation_changed")
 	
+	connect("body_entered", self, "_on_body_entered")
+	
 	top_bound = position.y - 2
 	bottom_bound = position.y + 2
 	
@@ -234,3 +236,19 @@ func to_truck_form():
 func to_ship_form():
 	ship_anims.play("retract-tires")
 	ascending = true
+
+func _on_body_entered(body):
+	pass
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
