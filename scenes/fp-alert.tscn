@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://sprites/rectangle.png" type="Texture" id=1]
-[ext_resource path="res://scripts/flash.gd" type="Script" id=2]
+[ext_resource path="res://scripts/fp-alert.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
 
@@ -22,17 +22,16 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="flash" type="Sprite"]
+[node name="fp-alert" type="Sprite"]
 
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 0.886275, 0.176471, 0.176471, 1 )
-position = Vector2( -32.2504, -31.2449 )
-scale = Vector2( 26.8495, 15.9684 )
-z_index = 15
+position = Vector2( 797.31, 449.905 )
+scale = Vector2( 50.8319, 29.1191 )
+z_index = 100
 texture = ExtResource( 1 )
-centered = false
 script = ExtResource( 2 )
-_sections_unfolded = [ "Material", "Offset", "Visibility", "Z Index" ]
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="anim" type="AnimationPlayer" parent="." index="0"]
 
