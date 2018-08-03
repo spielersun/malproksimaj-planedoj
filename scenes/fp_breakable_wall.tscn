@@ -1,0 +1,153 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://scripts/fp_breakable_wall.gd" type="Script" id=1]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_left_0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_left_1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_left_2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_left_3.png" type="Texture" id=5]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_left_4.png" type="Texture" id=6]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_left_5.png" type="Texture" id=7]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_left_6.png" type="Texture" id=8]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_left_7.png" type="Texture" id=9]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_left_8.png" type="Texture" id=10]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_left_9.png" type="Texture" id=11]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_left_10.png" type="Texture" id=12]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_left_11.png" type="Texture" id=13]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_right_0.png" type="Texture" id=14]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_right_1.png" type="Texture" id=15]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_right_2.png" type="Texture" id=16]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_right_3.png" type="Texture" id=17]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_right_4.png" type="Texture" id=18]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_right_5.png" type="Texture" id=19]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_right_6.png" type="Texture" id=20]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_right_7.png" type="Texture" id=21]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_right_8.png" type="Texture" id=22]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_right_9.png" type="Texture" id=23]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_right_10.png" type="Texture" id=24]
+[ext_resource path="res://sprites/new/breakable_wall/breakable_wall_right_11.png" type="Texture" id=25]
+[ext_resource path="res://fonts/oratorstd.otf" type="DynamicFontData" id=26]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "shatter",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": false,
+"name": "shatter",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 45.6985, 188.264 )
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 80
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 26 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="fp_breakable_wall" type="Area2D"]
+
+position = Vector2( 791.217, 660.673 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="left_wall" type="AnimatedSprite" parent="." index="0"]
+
+z_index = 40
+frames = SubResource( 1 )
+animation = "stand"
+_sections_unfolded = [ "Z Index" ]
+
+[node name="right_wall" type="AnimatedSprite" parent="." index="1"]
+
+z_index = 80
+frames = SubResource( 2 )
+animation = "stand"
+_sections_unfolded = [ "Z Index" ]
+
+[node name="shape" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -149.397, 44.3923 )
+z_index = 80
+shape = SubResource( 3 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="effect" type="Node2D" parent="." index="3"]
+
+z_index = 80
+_sections_unfolded = [ "Z Index" ]
+
+[node name="effect_rect" type="TextureRect" parent="effect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -248.0
+margin_top = -308.0
+margin_right = -48.0
+margin_bottom = -228.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+
+[node name="effect_label" type="Label" parent="effect/effect_rect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1.0
+margin_top = 53.0
+margin_right = 201.0
+margin_bottom = 134.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.446991, 0.757813, 0.480987, 1 )
+text = "0"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+

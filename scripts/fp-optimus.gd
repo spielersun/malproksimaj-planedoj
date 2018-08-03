@@ -27,6 +27,11 @@ func _physics_process(delta):
 		if scorer >= 1.01:
 			scorer = 0
 		new_score = int(score_text.text) + floor(scorer)
+	else:
+		scorer += delta
+		if scorer >= 1.01:
+			scorer = 0
+		new_score = int(score_text.text) - floor(scorer)
 			
 	if Input.is_action_just_pressed("fp_forward"):
 		engine.play()

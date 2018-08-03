@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/fp_breakable_wall_spawner.gd" type="Script" id=1]
+[ext_resource path="res://scenes/fp_breakable_wall.tscn" type="PackedScene" id=2]
+
+[node name="fp_breakable_wall_spawner" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+wall = ExtResource( 2 )
+
+[node name="container" type="Node" parent="." index="0"]
+
+
