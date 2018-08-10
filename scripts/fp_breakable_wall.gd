@@ -12,7 +12,7 @@ onready var effect = $effect/effect_rect/effect_label
 func _ready():
 	randomize()
 	
-	effect_input = int(rand_range(-5,5))
+	effect_input = int(rand_range(-5,+5))
 	effect.text = str(effect_input)
 	
 	connect("body_entered", self, "_on_body_entered")
@@ -34,3 +34,6 @@ func _on_body_entered(area):
 	if area.is_in_group("player"):
 		left_wall.play("shatter")
 		right_wall.play("shatter")
+		
+		new_score = int(score_text.text) + int(effect.text)
+		score_text.text = str(new_score)
