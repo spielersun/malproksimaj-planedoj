@@ -37,3 +37,10 @@ func _on_body_entered(area):
 		
 		new_score = int(score_text.text) + int(effect.text)
 		score_text.text = str(new_score)
+		yield(belt.create_timer(2), "timeout")
+		queue_free()
+
+func shatter():
+	left_wall.play("shatter")
+	right_wall.play("shatter")
+	yield(belt.create_timer(1), "timeout")

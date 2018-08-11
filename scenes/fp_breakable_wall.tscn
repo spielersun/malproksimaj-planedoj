@@ -68,7 +68,9 @@ use_filter = false
 font_data = ExtResource( 26 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="fp_breakable_wall" type="Area2D"]
+[node name="fp_breakable_wall" type="Area2D" groups=[
+"breakable_wall",
+]]
 
 position = Vector2( 791.217, 660.673 )
 input_pickable = true

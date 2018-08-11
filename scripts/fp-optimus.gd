@@ -1,11 +1,13 @@
 extends KinematicBody2D
 
 export(PackedScene) var red_alert
+export(PackedScene) var bullet
 
 export var speed = 100
 
 onready var engine = $engine
 onready var bus_anims = $bus
+onready var beam = $beam
 
 var ascending = false
 var descending = false
@@ -63,8 +65,8 @@ func _physics_process(delta):
 			ground()
 	score_text.text = str(new_score)
 	
-	if Input.is_action_pressed("fp_transform"):
-		red_alert()
+	if Input.is_action_just_pressed("fp_transform"):
+		shoot()
 	
 func jump():
 	bus_anims.play("jump")
@@ -78,3 +80,15 @@ func ground():
 func red_alert():
 	var new_alert = red_alert.instance()
 	belt.main_node.add_child(new_alert)
+
+func shoot():
+	var new_bullet = bullet.instance()
+	# print(turret_angle)
+	
+	var bullet_x = position.x + 120
+	var bullet_y = position.y - 135
+	
+	beam.play()
+	
+	get_parent().add_child(new_bullet)
+	new_bullet.position = Vector2(bullet_x, bullet_y) 
