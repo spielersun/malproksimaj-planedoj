@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/fp_tri_plane.tscn" type="PackedScene" id=1]
+
+[node name="fp_tri" type="Node2D" index="0"]
+
+[node name="fp_tri_plane" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 800, 400 )
+
+
