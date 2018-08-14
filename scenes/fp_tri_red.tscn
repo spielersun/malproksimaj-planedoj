@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/fp_tri_red.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/tri/tri_red.png" type="Texture" id=2]
@@ -6,9 +6,19 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 50.1012, 50.3165 )
+extents = Vector2( 4.16829, 26.7062 )
 
-[node name="fp_tri_red" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 26.7054, 3.95441 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="fp_tri_red" type="StaticBody2D" index="0"]
 
 z_index = 40
 input_pickable = true
@@ -27,7 +37,18 @@ texture = ExtResource( 2 )
 
 [node name="shape" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( -42.4986, -7.94165 )
 shape = SubResource( 1 )
+
+[node name="shape2" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -4.07815, -42.4986 )
+shape = SubResource( 2 )
+
+[node name="shape3" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( -15.0247, -12.2344 )
+shape = SubResource( 3 )
 
 [connection signal="input_event" from="." to="." method="_on_fp_tri_red_input_event"]
 

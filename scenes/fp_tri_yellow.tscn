@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/fp_tri_yellow.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/tri/tri_yellow.png" type="Texture" id=2]
@@ -6,7 +6,17 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 50.042, 50.1119 )
+extents = Vector2( 2.83916, 22.8392 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 28.1888, 3.25874 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [node name="fp_tri_yellow" type="StaticBody2D"]
 
@@ -27,7 +37,18 @@ texture = ExtResource( 2 )
 
 [node name="shape" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( -43.5315, -4.02098 )
 shape = SubResource( 1 )
+
+[node name="shape2" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -7.34266, -43.007 )
+shape = SubResource( 2 )
+
+[node name="shape3" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( -12.9371, -11.3636 )
+shape = SubResource( 3 )
 
 [connection signal="input_event" from="." to="." method="_on_fp_tri_yellow_input_event"]
 

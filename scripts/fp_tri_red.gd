@@ -1,5 +1,8 @@
 extends StaticBody2D
 
+var queue
+var rotated
+
 func _ready():
     pass
 
@@ -8,4 +11,5 @@ func _process(delta):
 
 func _on_fp_tri_red_input_event(viewport, event, shape_idx):
 	if event.is_pressed():
-		print("Found Red")
+		print(queue)
+		print(shape_idx)

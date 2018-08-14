@@ -1,12 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/fp_tri_white.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/tri/tri_white.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 49.7725, 49.8304 )
+extents = Vector2( 0.474751, 6.4077 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 28.2688, 5.76306 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [node name="fp_tri_white" type="StaticBody2D"]
 
@@ -26,7 +36,20 @@ texture = ExtResource( 2 )
 
 [node name="shape" type="CollisionShape2D" parent="." index="1"]
 
-shape = SubResource( 1 )
+position = Vector2( -40.8621, -4.20433 )
+scale = Vector2( 7.95547, 4.53504 )
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape2" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -6.4707, -39.7948 )
+shape = SubResource( 2 )
+
+[node name="shape3" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( -12.9414, -11.6472 )
+shape = SubResource( 3 )
 
 [connection signal="input_event" from="." to="." method="_on_fp_tri_white_input_event"]
 
