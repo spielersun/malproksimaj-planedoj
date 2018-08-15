@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/fp_tri_white.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/tri/tri_white.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 0.474751, 6.4077 )
@@ -18,15 +18,18 @@ extents = Vector2( 28.2688, 5.76306 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="fp_tri_white" type="StaticBody2D"]
+[node name="fp_tri_white" type="Area2D" groups=[
+"tri_piece",
+]]
 
+z_index = 40
 input_pickable = true
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pickable", "Z Index" ]
 
@@ -38,7 +41,7 @@ texture = ExtResource( 2 )
 
 position = Vector2( -40.8621, -4.20433 )
 scale = Vector2( 7.95547, 4.53504 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="shape2" type="CollisionShape2D" parent="." index="2"]

@@ -18,16 +18,18 @@ extents = Vector2( 28.1888, 3.25874 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="fp_tri_yellow" type="StaticBody2D"]
+[node name="fp_tri_yellow" type="Area2D" groups=[
+"tri_piece",
+]]
 
 z_index = 40
 input_pickable = true
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pickable", "Z Index" ]
 
