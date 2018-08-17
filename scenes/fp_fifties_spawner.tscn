@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="fp_fifties_spawner" type="Node2D" index="0"]
+
+[node name="container" type="Node" parent="." index="0"]
+
+
