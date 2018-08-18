@@ -7,6 +7,8 @@ var initiater = false
 var x_initiater = false
 var y_initiater = false
 
+signal pin_piece
+
 func _ready():
 	color = "yellow"
 	connect("area_shape_entered", self, "_on_area_shape_entered")
@@ -15,7 +17,6 @@ func _process(delta):
     pass
 	
 func _on_fp_tri_yellow_input_event(viewport, event, shape_idx):
-	print(queue)
 	if event.is_pressed():
 		if queue % 2 == 0:
 			if shape_idx == 2:
@@ -55,11 +56,15 @@ func _on_area_shape_entered(area_id, area, area_shape, self_shape):
 				queue -= 1
 				area.queue += 1
 				area.initiater = false
+				emit_signal("pin_piece", queue, color)
+				emit_signal("pin_piece", area.queue, area.color)
 			else:
 				rotate(deg2rad(180))
 				queue += 1
 				area.queue -= 1
 				area.initiater = false
+				emit_signal("pin_piece", queue, color)
+				emit_signal("pin_piece", area.queue, area.color)
 	if area.is_in_group("tri_piece") and area_shape == 1:
 		if area.y_initiater:
 			if queue % 2 == 0:
@@ -68,12 +73,16 @@ func _on_area_shape_entered(area_id, area, area_shape, self_shape):
 				area.queue -= 19
 				position.y += 100
 				area.y_initiater = false
+				emit_signal("pin_piece", queue, color)
+				emit_signal("pin_piece", area.queue, area.color)
 			else:
 				rotate(deg2rad(180))
 				queue -= 19
 				area.queue += 19
 				position.y -= 100
 				area.y_initiater = false
+				emit_signal("pin_piece", queue, color)
+				emit_signal("pin_piece", area.queue, area.color)
 	if area.is_in_group("tri_piece") and area_shape == 0:
 		if area.x_initiater:
 			if queue % 2 == 0:
@@ -82,9 +91,13 @@ func _on_area_shape_entered(area_id, area, area_shape, self_shape):
 				area.queue -= 1
 				position.x += 100
 				area.x_initiater = false
+				emit_signal("pin_piece", queue, color)
+				emit_signal("pin_piece", area.queue, area.color)
 			else:
 				rotate(deg2rad(180))
 				queue -= 1
 				area.queue += 1
 				position.x -= 100
 				area.x_initiater = false
+				emit_signal("pin_piece", queue, color)
+				emit_signal("pin_piece", area.queue, area.color)
