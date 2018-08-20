@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/fp_fifties_piece.gd" type="Script" id=1]
+[ext_resource path="res://sprites/new/watch/watch_plane.png" type="Texture" id=2]
+[ext_resource path="res://sprites/new/watch/watch_outer.png" type="Texture" id=3]
+[ext_resource path="res://sprites/new/watch/watch_middle.png" type="Texture" id=4]
+[ext_resource path="res://sprites/new/watch/watch_inner.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 81.1996, 80.7374 )
+
+[node name="fp_fifties_piece" type="Area2D"]
+
+z_index = 40
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pickable", "Z Index" ]
+
+[node name="watch_plane" type="Sprite" parent="." index="0"]
+
+z_index = 45
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="watch_outer" type="Sprite" parent="." index="1"]
+
+z_index = 50
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="watch_middle" type="Sprite" parent="." index="2"]
+
+z_index = 55
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="watch_inner" type="Sprite" parent="." index="3"]
+
+z_index = 60
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="shape" type="CollisionShape2D" parent="." index="4"]
+
+z_index = 65
+shape = SubResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+[connection signal="input_event" from="." to="." method="_on_fp_fifties_piece_input_event"]
+
+

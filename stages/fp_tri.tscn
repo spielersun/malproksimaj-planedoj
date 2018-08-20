@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/fp_tri_plane.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/fp_tri_spawner.tscn" type="PackedScene" id=3]
 
-[node name="fp_tri" type="Node2D" index="0"]
+[node name="fp_tri" type="Node2D"]
 
 z_index = 10
 script = ExtResource( 1 )
@@ -13,6 +13,7 @@ _sections_unfolded = [ "Z Index" ]
 [node name="fp_tri_plane" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 800, 400 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="fp_tri_spawner" parent="." index="1" instance=ExtResource( 3 )]
 
