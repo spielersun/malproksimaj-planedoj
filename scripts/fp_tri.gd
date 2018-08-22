@@ -5,5 +5,3 @@ var current = ["red", "red", "red"]
 
 func _ready():
 	pass
-
-

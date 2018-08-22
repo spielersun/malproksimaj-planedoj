@@ -6,6 +6,9 @@ var mouse_pos setget , _get_mouse_pos
 
 const explosion = preload("res://scenes/fp-enemy-explosion.tscn")
 
+const SCENE_PATH = "res://scenes/"
+const STAGE_PATH = "res://stages/"
+
 func _ready():
 	pass
 
@@ -70,3 +73,23 @@ func create_explosion(position):
 	var new_explosion = explosion.instance()
 	new_explosion.position = position
 	get_parent().add_child(new_explosion)
+
+func change_scene(scene_name, scene_type):
+	call_deferred("_deffered_change_scene", scene_name, scene_type)
+
+func _deffered_change_scene(scene_name, scene_type):
+	var path = SCENE_PATH + scene_name + ".tscn"
+	
+	if scene_type == "stage":
+		path = STAGE_PATH + scene_name + ".tscn"
+	
+	var root = get_tree().get_root()
+	var current = root.get_child(root.get_child_count() - 1)
+	current.free()
+	
+	var scene_resource = ResourceLoader.load(path)
+	var new_scene = scene_resource.instance()
+	
+	get_tree().get_root().add_child(new_scene)
+	get_tree().set_current_scene(new_scene)
+	

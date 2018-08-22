@@ -599,6 +599,7 @@ script = SubResource( 1 )
 
 [node name="background" type="CanvasLayer" parent="." index="3"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -615,6 +616,7 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="hud" type="CanvasLayer" parent="." index="5"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
