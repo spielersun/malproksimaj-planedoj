@@ -6,19 +6,19 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8.4611, 26.7062 )
+extents = Vector2( 8.46113, 29.9258 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 26.7054, 6.95933 )
+extents = Vector2( 34.2178, 8.03251 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13.827, 13.8278 )
+extents = Vector2( 14.6856, 14.0425 )
 
-[node name="fp_tri_red" type="Area2D" groups=[
+[node name="fp_tri_red" type="Area2D" index="0" groups=[
 "tri_piece",
 ]]
 
@@ -39,17 +39,17 @@ texture = ExtResource( 2 )
 
 [node name="shape" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -40.1376, -7.29773 )
+position = Vector2( -40.3522, -2.14639 )
 shape = SubResource( 1 )
 
 [node name="shape2" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( -3.64887, -39.7083 )
+position = Vector2( -4.07815, -40.9961 )
 shape = SubResource( 2 )
 
 [node name="shape3" type="CollisionShape2D" parent="." index="3"]
 
-position = Vector2( -15.8833, -16.3125 )
+position = Vector2( -15.454, -15.8832 )
 shape = SubResource( 3 )
 
 [connection signal="input_event" from="." to="." method="_on_fp_tri_red_input_event"]
