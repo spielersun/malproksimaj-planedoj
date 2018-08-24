@@ -84,11 +84,6 @@ animations = [ {
 "name": "ride",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "retract-tires",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 39 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 39 ), ExtResource( 39 ) ],
 "loop": true,
 "name": "cruise-right",
@@ -108,6 +103,11 @@ animations = [ {
 "loop": false,
 "name": "eject-tires",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "retract-tires",
+"speed": 12.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]

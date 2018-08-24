@@ -1,30 +1,92 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scripts/bathand.gd" type="Script" id=1]
-[ext_resource path="res://sprites/bathand/bathand_ball_0.png" type="Texture" id=2]
-[ext_resource path="res://sprites/bathand/bathand_0.png" type="Texture" id=3]
-[ext_resource path="res://sprites/bathand/bathand_1.png" type="Texture" id=4]
-[ext_resource path="res://sprites/bathand/bathand_2.png" type="Texture" id=5]
-[ext_resource path="res://sprites/bathand/bathand_3.png" type="Texture" id=6]
-[ext_resource path="res://sprites/bathand/bathand_4.png" type="Texture" id=7]
+[ext_resource path="res://scenes/bathand_rocket.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/bathand/bathand_ball_0.png" type="Texture" id=3]
+[ext_resource path="res://sprites/bathand/bathand_0.png" type="Texture" id=4]
+[ext_resource path="res://sprites/bathand/bathand_1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/bathand/bathand_2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/bathand/bathand_3.png" type="Texture" id=7]
+[ext_resource path="res://sprites/bathand/bathand_4.png" type="Texture" id=8]
+[ext_resource path="res://sprites/bathand/bathand_sides_0.png" type="Texture" id=9]
+[ext_resource path="res://sprites/bathand/bathand_sides_1.png" type="Texture" id=10]
+[ext_resource path="res://sprites/bathand/bathand_sides_2.png" type="Texture" id=11]
+[ext_resource path="res://sprites/bathand/bathand_sides_3.png" type="Texture" id=12]
+[ext_resource path="res://sprites/bathand/bathand_sides_4.png" type="Texture" id=13]
+[ext_resource path="res://sprites/bathand/bathand_sides_5.png" type="Texture" id=14]
+[ext_resource path="res://sprites/bathand/bathand_sides_6.png" type="Texture" id=15]
+[ext_resource path="res://sprites/bathand/bathand_sides_7.png" type="Texture" id=16]
+[ext_resource path="res://sprites/bathand/bathand_sides_8.png" type="Texture" id=17]
+[ext_resource path="res://sprites/bathand/bathand_sides_9.png" type="Texture" id=18]
+[ext_resource path="res://sprites/bathand/bathand_sides_10.png" type="Texture" id=19]
+[ext_resource path="res://sprites/bathand/bathand_sides_11.png" type="Texture" id=20]
+[ext_resource path="res://sprites/bathand/bathand_sides_15.png" type="Texture" id=21]
+[ext_resource path="res://sprites/bathand/bathand_sides_14.png" type="Texture" id=22]
+[ext_resource path="res://sprites/bathand/bathand_sides_12.png" type="Texture" id=23]
+[ext_resource path="res://sprites/bathand/bathand_sides_13.png" type="Texture" id=24]
+[ext_resource path="res://audio/ssa.wav" type="AudioStream" id=25]
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "ball_out"
+length = 0.3
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 34, 0 ), Vector2( 52, 0 ) ]
+}
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": false,
 "name": "start",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "sides",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "sides-transform",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "sides-idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "move",
-"speed": 2.0
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "sides-move",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "sides-start",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -41,11 +103,25 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
-speed = 100
+rocket = ExtResource( 2 )
+speed = 200
+angle = 0
 
 [node name="ball" type="Sprite" parent="." index="0"]
 
-texture = ExtResource( 2 )
+position = Vector2( 34, 0 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="anim" type="AnimationPlayer" parent="ball" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/ball_out = SubResource( 3 )
+blend_times = [  ]
 
 [node name="ship" type="AnimatedSprite" parent="." index="1"]
 
@@ -54,7 +130,18 @@ animation = "idle"
 
 [node name="shape" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( 6.22452, -0.214638 )
+position = Vector2( 0.22452, -0.214638 )
 shape = SubResource( 2 )
+
+[node name="engine" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 25 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "engine"
+area_mask = 1
 
 

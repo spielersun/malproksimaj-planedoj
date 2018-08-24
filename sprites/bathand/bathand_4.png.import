@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bathand_4.png-2e9743d4c1cdfb1f76cd14d26c5b2b6f.stex"
+path="res://.import/bathand_4.PNG-df3f07680657916f9830c6e99044de87.stex"
 
 [deps]
 
-source_file="res://sprites/bathand/bathand_4.png"
-dest_files=[ "res://.import/bathand_4.png-2e9743d4c1cdfb1f76cd14d26c5b2b6f.stex" ]
+source_file="res://sprites/bathand/bathand_4.PNG"
+dest_files=[ "res://.import/bathand_4.PNG-df3f07680657916f9830c6e99044de87.stex" ]
 
 [params]
 

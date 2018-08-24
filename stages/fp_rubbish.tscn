@@ -12,6 +12,8 @@
 
 [node name="fp-mountains" parent="." index="0" instance=ExtResource( 1 )]
 
+_sections_unfolded = [ "Transform" ]
+
 [node name="bathand" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 253.03, 504.7 )
