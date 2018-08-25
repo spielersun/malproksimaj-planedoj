@@ -19,6 +19,7 @@ var can_shoot = true
 signal marconi_defeated
 
 func _ready():
+	randomize()
 	ship_anims.play("idle")
 	left_bound = position.y - 100
 	right_bound = position.y + 100
@@ -27,6 +28,7 @@ func _ready():
 	
 	while !dead:
 		shoot()
+		randomize()
 		yield(belt.create_timer(rand_range(1.50, 3.00)), "timeout")
 
 func _process(delta):
