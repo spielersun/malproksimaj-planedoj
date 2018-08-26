@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/astro_drop.png-af2a3a8b0a91273411f5b35812b119d4.stex"
+path="res://.import/astro_drop_1.png-16a88ba3afece4a40da6fffdc5fc00ee.stex"
 
 [deps]
 
-source_file="res://sprites/items/astro_drop.png"
-dest_files=[ "res://.import/astro_drop.png-af2a3a8b0a91273411f5b35812b119d4.stex" ]
+source_file="res://sprites/astro_drop/astro_drop_1.png"
+dest_files=[ "res://.import/astro_drop_1.png-16a88ba3afece4a40da6fffdc5fc00ee.stex" ]
 
 [params]
 

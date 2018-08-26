@@ -9,19 +9,19 @@
 [ext_resource path="res://sprites/bathand/bathand_3.png" type="Texture" id=7]
 [ext_resource path="res://sprites/bathand/bathand_4.png" type="Texture" id=8]
 [ext_resource path="res://sprites/bathand/bathand_sides_0.png" type="Texture" id=9]
-[ext_resource path="res://sprites/bathand/bathand_sides_1.png" type="Texture" id=10]
-[ext_resource path="res://sprites/bathand/bathand_sides_2.png" type="Texture" id=11]
-[ext_resource path="res://sprites/bathand/bathand_sides_3.png" type="Texture" id=12]
-[ext_resource path="res://sprites/bathand/bathand_sides_4.png" type="Texture" id=13]
-[ext_resource path="res://sprites/bathand/bathand_sides_5.png" type="Texture" id=14]
-[ext_resource path="res://sprites/bathand/bathand_sides_6.png" type="Texture" id=15]
-[ext_resource path="res://sprites/bathand/bathand_sides_7.png" type="Texture" id=16]
-[ext_resource path="res://sprites/bathand/bathand_sides_8.png" type="Texture" id=17]
-[ext_resource path="res://sprites/bathand/bathand_sides_9.png" type="Texture" id=18]
-[ext_resource path="res://sprites/bathand/bathand_sides_10.png" type="Texture" id=19]
-[ext_resource path="res://sprites/bathand/bathand_sides_11.png" type="Texture" id=20]
-[ext_resource path="res://sprites/bathand/bathand_sides_15.png" type="Texture" id=21]
-[ext_resource path="res://sprites/bathand/bathand_sides_14.png" type="Texture" id=22]
+[ext_resource path="res://sprites/bathand/bathand_sides_15.png" type="Texture" id=10]
+[ext_resource path="res://sprites/bathand/bathand_sides_14.png" type="Texture" id=11]
+[ext_resource path="res://sprites/bathand/bathand_sides_1.png" type="Texture" id=12]
+[ext_resource path="res://sprites/bathand/bathand_sides_2.png" type="Texture" id=13]
+[ext_resource path="res://sprites/bathand/bathand_sides_3.png" type="Texture" id=14]
+[ext_resource path="res://sprites/bathand/bathand_sides_4.png" type="Texture" id=15]
+[ext_resource path="res://sprites/bathand/bathand_sides_5.png" type="Texture" id=16]
+[ext_resource path="res://sprites/bathand/bathand_sides_6.png" type="Texture" id=17]
+[ext_resource path="res://sprites/bathand/bathand_sides_7.png" type="Texture" id=18]
+[ext_resource path="res://sprites/bathand/bathand_sides_8.png" type="Texture" id=19]
+[ext_resource path="res://sprites/bathand/bathand_sides_9.png" type="Texture" id=20]
+[ext_resource path="res://sprites/bathand/bathand_sides_10.png" type="Texture" id=21]
+[ext_resource path="res://sprites/bathand/bathand_sides_11.png" type="Texture" id=22]
 [ext_resource path="res://sprites/bathand/bathand_sides_12.png" type="Texture" id=23]
 [ext_resource path="res://sprites/bathand/bathand_sides_13.png" type="Texture" id=24]
 [ext_resource path="res://audio/ssa.wav" type="AudioStream" id=25]
@@ -63,25 +63,25 @@ animations = [ {
 "name": "sides",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": false,
-"name": "sides-transform",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "sides-move",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "sides-idle",
-"speed": 5.0
+"frames": [ ExtResource( 9 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": false,
+"name": "sides-transform",
+"speed": 10.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 11 ), ExtResource( 10 ) ],
 "loop": false,
 "name": "sides-start",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "sides-idle",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 8 ) ],
 "loop": true,
@@ -94,7 +94,9 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 53.2283, 54.1563 )
 
-[node name="bathand" type="KinematicBody2D"]
+[node name="bathand" type="KinematicBody2D" groups=[
+"player",
+]]
 
 z_index = 50
 input_pickable = false
