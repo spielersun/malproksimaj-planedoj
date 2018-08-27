@@ -13,7 +13,6 @@ var scatter_constant
 func _ready():
 	randomize()
 	scatter_constant = rand_range(-100, 100)
-	object.play("active")
 	connect("body_entered", self, "_on_body_entered")
 	connect("area_entered", self, "_on_area_entered")
 

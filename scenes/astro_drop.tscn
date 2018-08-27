@@ -22,7 +22,9 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 50.0
 
-[node name="astro_drop" type="Area2D"]
+[node name="astro_drop" type="Area2D" groups=[
+"astro_drop",
+]]
 
 z_index = 50
 input_pickable = true
