@@ -18,7 +18,7 @@ extents = Vector2( 34.2178, 8.03251 )
 custom_solver_bias = 0.0
 extents = Vector2( 14.6856, 14.0425 )
 
-[node name="fp_tri_red" type="Area2D" index="0" groups=[
+[node name="fp_tri_red" type="Area2D" groups=[
 "tri_piece",
 ]]
 

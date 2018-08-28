@@ -20,6 +20,8 @@ var ball_ready = false
 var have_rocket = true
 var is_glove = false
 
+var damage = 1
+
 func _ready():
 	ship_anims.play("idle")
 	ship_anims.connect("animation_finished", self, "animation_changed")
@@ -94,5 +96,3 @@ func batfinger():
 func batglove():
 	is_glove = true
 	ship_anims.play("sides-transform")
-
-

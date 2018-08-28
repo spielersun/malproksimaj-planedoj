@@ -22,14 +22,15 @@ var spawn_y
 
 var origin_points = ["east","west","north","south"]
 
+signal took_damage
+
 func _ready():
 	for drop in drop_count:
 		if drop != (drop_count-1):
 			astro_drop()
 			randomize()
-			yield(belt.create_timer(rand_range(0.25, 1.00)), "timeout")
+			yield(belt.create_timer(rand_range(0.15, 0.75)), "timeout")
 		else:
-			print("YES!")
 			astro_drop_prize()
 
 func astro_drop():
@@ -52,7 +53,8 @@ func astro_drop():
 	elif new_point == "south":
 		new_astro.origin_pos = "south"
 		new_astro.position = Vector2(spawn_x, south_y)
-		
+	
+	new_astro.connect("astro_crashed", self, "_on_astro_crashed")
 	get_parent().add_child(new_astro)
 
 
@@ -76,5 +78,9 @@ func astro_drop_prize():
 	elif new_point == "south":
 		new_astro.origin_pos = "south"
 		new_astro.position = Vector2(spawn_x, south_y)
-		
+	
+	new_astro.connect("astro_crashed", self, "_on_astro_crashed")
 	get_parent().add_child(new_astro)
+
+func _on_astro_crashed(damage):
+	emit_signal("took_damage", damage)

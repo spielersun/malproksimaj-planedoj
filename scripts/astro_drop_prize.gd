@@ -10,6 +10,8 @@ export var damage = 5
 var origin_pos
 var scatter_constant
 
+signal astro_crashed
+
 func _ready():
 	randomize()
 	scatter_constant = rand_range(-100, 100)
@@ -47,7 +49,15 @@ func _on_body_entered(body):
 		var new_explosion = explosion_big.instance()
 		new_explosion.position = position
 		get_parent().add_child(new_explosion)
+		emit_signal("astro_crashed", damage)
 		queue_free()
+	elif body.is_in_group("player_rocket"):
+		var new_explosion = explosion_big.instance()
+		new_explosion.position = position
+		get_parent().add_child(new_explosion)
+		queue_free()
+		print("VICTORY!")
+		
 func _on_area_entered(area):
 	if area.is_in_group("astro_drop"):
 		var new_explosion = explosion_big.instance()

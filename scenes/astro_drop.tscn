@@ -38,7 +38,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
 explosion_big = ExtResource( 2 )
 speed = 250
-damage = 5
+damage = 1
 
 [node name="object" type="AnimatedSprite" parent="." index="0"]
 

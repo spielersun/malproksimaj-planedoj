@@ -63,15 +63,15 @@ animations = [ {
 "name": "sides",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "move",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": false,
 "name": "sides-transform",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "sides-idle",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 21 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 21 ) ],
 "loop": true,
@@ -83,9 +83,9 @@ animations = [ {
 "name": "sides-start",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 20 ) ],
 "loop": true,
-"name": "move",
+"name": "sides-idle",
 "speed": 5.0
 } ]
 

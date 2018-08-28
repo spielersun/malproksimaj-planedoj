@@ -5,10 +5,12 @@ export(PackedScene) var explosion_big
 onready var object = $object
 
 export var speed = 250
-export var damage = 5
+export var damage = 1
 
 var origin_pos
 var scatter_constant
+
+signal astro_crashed
 
 func _ready():
 	randomize()
@@ -48,7 +50,14 @@ func _on_body_entered(body):
 		var new_explosion = explosion_big.instance()
 		new_explosion.position = position
 		get_parent().add_child(new_explosion)
+		emit_signal("astro_crashed", damage)
 		queue_free()
+	elif body.is_in_group("player_rocket"):
+		var new_explosion = explosion_big.instance()
+		new_explosion.position = position
+		get_parent().add_child(new_explosion)
+		queue_free()
+		
 func _on_area_entered(area):
 	if area.is_in_group("astro_drop"):
 		var new_explosion = explosion_big.instance()

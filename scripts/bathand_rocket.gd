@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var angle 
-var speed = 200
+var speed = 300
 
 func _ready():
 	# Called when the node is added to the scene for the first time.

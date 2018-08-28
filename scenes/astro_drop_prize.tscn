@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 radius = 50.0
 
-[node name="astro_drop_prize" type="Area2D" groups=[
+[node name="astro_drop_prize" type="Area2D" index="0" groups=[
 "astro_drop_prize",
 ]]
 
