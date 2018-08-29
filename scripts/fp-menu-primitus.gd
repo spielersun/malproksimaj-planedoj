@@ -30,3 +30,6 @@ func _on_quit_pressed():
 
 func _on_bathand_pressed():
 	belt.change_scene("fp_rubbish", "stage")
+
+func _on_debtruck_pressed():
+	belt.change_scene("episode_debtruck", "stage")

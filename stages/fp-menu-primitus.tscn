@@ -43,7 +43,7 @@ extra_spacing_top = 5
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[node name="fp-menu-primitus" type="Node"]
+[node name="fp-menu-primitus" type="Node" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -58,7 +58,7 @@ position = Vector2( 0.734985, -0.735107 )
 [node name="items" type="Node2D" parent="." index="1"]
 
 position = Vector2( 617.553, 369.549 )
-z_index = 10
+z_index = 50
 _sections_unfolded = [ "Z Index" ]
 
 [node name="cartoffel" type="Button" parent="items" index="0"]
@@ -119,7 +119,36 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="bathand" type="Button" parent="items" index="2"]
+[node name="debtruck" type="Button" parent="items" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 341.0
+margin_top = -72.0
+margin_right = 641.0
+margin_bottom = -2.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.882353, 0.831373, 0.556863, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "DEBTRUCK"
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="bathand" type="Button" parent="items" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -148,7 +177,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="tri" type="Button" parent="items" index="3"]
+[node name="tri" type="Button" parent="items" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -177,7 +206,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="watches" type="Button" parent="items" index="4"]
+[node name="watches" type="Button" parent="items" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -206,7 +235,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="options" type="Button" parent="items" index="5"]
+[node name="options" type="Button" parent="items" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -235,7 +264,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="quit" type="Button" parent="items" index="6"]
+[node name="quit" type="Button" parent="items" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -278,6 +307,8 @@ area_mask = 1
 [connection signal="pressed" from="items/cartoffel" to="." method="_on_cartoffel_pressed"]
 
 [connection signal="pressed" from="items/optimus" to="." method="_on_optimus_pressed"]
+
+[connection signal="pressed" from="items/debtruck" to="." method="_on_debtruck_pressed"]
 
 [connection signal="pressed" from="items/bathand" to="." method="_on_bathand_pressed"]
 
