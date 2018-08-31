@@ -206,7 +206,36 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="watches" type="Button" parent="items" index="5"]
+[node name="tries" type="Button" parent="items" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 341.0
+margin_top = 7.0
+margin_right = 641.0
+margin_bottom = 77.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.882353, 0.831373, 0.556863, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "TRIES"
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+
+[node name="watches" type="Button" parent="items" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -235,7 +264,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="options" type="Button" parent="items" index="6"]
+[node name="options" type="Button" parent="items" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -264,7 +293,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="quit" type="Button" parent="items" index="7"]
+[node name="quit" type="Button" parent="items" index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -313,6 +342,8 @@ area_mask = 1
 [connection signal="pressed" from="items/bathand" to="." method="_on_bathand_pressed"]
 
 [connection signal="pressed" from="items/tri" to="." method="_on_tri_pressed"]
+
+[connection signal="pressed" from="items/tries" to="." method="_on_tries_pressed"]
 
 [connection signal="pressed" from="items/watches" to="." method="_on_watches_pressed"]
 

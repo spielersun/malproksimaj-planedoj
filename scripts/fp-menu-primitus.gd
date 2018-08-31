@@ -33,3 +33,6 @@ func _on_bathand_pressed():
 
 func _on_debtruck_pressed():
 	belt.change_scene("episode_debtruck", "stage")
+
+func _on_tries_pressed():
+	belt.change_scene("episode_tries", "stage")
