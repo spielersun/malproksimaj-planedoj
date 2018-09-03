@@ -1,13 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scripts/fp-second.gd" type="Script" id=1]
+[ext_resource path="res://scripts/episode_optimus.gd" type="Script" id=1]
 [ext_resource path="res://scenes/fp-mountains.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/fp-optimus.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/fp_breakable_wall_spawner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sprites/new/score-bg.png" type="Texture" id=5]
 [ext_resource path="res://fonts/orator.tres" type="DynamicFont" id=6]
+[ext_resource path="res://sprites/icons/icon_unplug_0.png" type="Texture" id=7]
+[ext_resource path="res://sprites/icons/icon_unplug_2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/icons/icon_unplug_1.png" type="Texture" id=9]
 
-[node name="fp-second" type="Node2D"]
+[node name="episode_optimus" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -73,5 +76,34 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="exit" type="TextureButton" parent="hud" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1500.0
+margin_top = 800.0
+margin_right = 1600.0
+margin_bottom = 950.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+_sections_unfolded = [ "Margin", "Rect", "Textures" ]
+
+[connection signal="pressed" from="hud/exit" to="." method="_on_exit_pressed"]
 
 

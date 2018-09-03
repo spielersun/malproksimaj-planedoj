@@ -1,6 +1,6 @@
 [gd_scene format=2]
 
-[node name="episode_tries" type="Node2D" index="0"]
+[node name="episode_tries" type="Node2D"]
 
 [node name="hud" type="CanvasLayer" parent="." index="0"]
 

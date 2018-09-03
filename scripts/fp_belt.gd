@@ -85,6 +85,7 @@ func _deffered_change_scene(scene_name, scene_type):
 	
 	var root = get_tree().get_root()
 	var current = root.get_child(root.get_child_count() - 1)
+	print(current)
 	current.free()
 	
 	var scene_resource = ResourceLoader.load(path)

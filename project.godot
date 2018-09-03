@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="malproksimaj-planedoj"
-run/main_scene="res://stages/fp-menu-primitus.tscn"
+run/main_scene="res://stages/main_menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

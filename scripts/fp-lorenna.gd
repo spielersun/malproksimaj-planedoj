@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-onready var spawner = get_tree().get_root().get_node("fp-test").find_node("fp-enemy-spawner")
+onready var spawner = get_tree().get_root().get_node("episode_cartoffel").find_node("fp-enemy-spawner")
 
 export var speed = 100
 export var health = 5

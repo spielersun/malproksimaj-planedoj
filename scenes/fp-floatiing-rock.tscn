@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://scripts/fp-floatiing-rock.gd" type="Script" id=1]
+[ext_resource path="res://scripts/fp-floating-rock.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/floating-rock/floating_rock_0.png" type="Texture" id=2]
 [ext_resource path="res://sprites/new/floating-rock/floating_rock_1.png" type="Texture" id=3]
 [ext_resource path="res://sprites/new/floating-rock/floating_rock_2.png" type="Texture" id=4]
@@ -22,6 +22,7 @@
 [ext_resource path="res://sprites/new/floating-rock/floating_rock_18.png" type="Texture" id=20]
 [ext_resource path="res://sprites/new/floating-rock/floating_rock_19.png" type="Texture" id=21]
 [ext_resource path="res://sprites/new/floating-rock/floating_rock_20.png" type="Texture" id=22]
+
 
 [sub_resource type="SpriteFrames" id=1]
 

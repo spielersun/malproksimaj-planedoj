@@ -20,7 +20,7 @@ var new_score
 var accelerating = false
 
 func _ready():
-	score_text = get_tree().get_root().get_node("fp-second").find_node("score_label")
+	score_text = get_tree().get_root().get_node("episode_optimus").find_node("score_label")
 	new_score = 0
 
 func _physics_process(delta):

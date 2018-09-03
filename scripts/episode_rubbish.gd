@@ -16,3 +16,6 @@ func _on_astro_spawner_took_damage(damage):
 		print("DEATH!")
 	else:
 		health.frame = current_health - damage
+
+func _on_exit_pressed():
+	belt.change_scene("main_menu", "stage")

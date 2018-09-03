@@ -18,7 +18,7 @@ func _move(delta):
 	position.x -= (speed * delta)
 	
 func _on_body_entered(area):
-	var health_bar = get_tree().get_root().get_node("fp-test").find_node("health")
+	var health_bar = get_tree().get_root().get_node("episode_cartoffel").find_node("health")
 	
 	if area.is_in_group("player"):
 		# emit_signal("armor_changed", [1])

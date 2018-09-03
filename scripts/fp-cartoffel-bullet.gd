@@ -34,7 +34,7 @@ func _process(delta):
 		queue_free()
 	
 func _on_body_entered(body):
-	var score_text = get_tree().get_root().get_node("fp-test").find_node("score")
+	var score_text = get_tree().get_root().get_node("episode_cartoffel").find_node("score")
 	if body.is_in_group("enemy"):
 		body.add_damage(damage)
 		belt.create_explosion(position)

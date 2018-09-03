@@ -29,7 +29,7 @@ func animation_changed():
 		queue_free()
 		
 func _on_body_entered(area):
-	score_text = get_tree().get_root().get_node("fp-second").find_node("score_label")
+	score_text = get_tree().get_root().get_node("episode_optimus").find_node("score_label")
 	
 	if area.is_in_group("player"):
 		left_wall.play("shatter")
