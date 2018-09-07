@@ -1,13 +1,196 @@
-[gd_scene format=2]
+[gd_scene load_steps=10 format=2]
 
-[node name="episode_tries" type="Node2D"]
+[ext_resource path="res://scripts/episode_tries.gd" type="Script" id=1]
+[ext_resource path="res://sprites/icons/icon_unplug_0.png" type="Texture" id=2]
+[ext_resource path="res://sprites/icons/icon_unplug_2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/icons/icon_unplug_1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/new/bg-1.png" type="Texture" id=5]
+[ext_resource path="res://scripts/cartoffel.gd" type="Script" id=6]
+[ext_resource path="res://sprites/new/fp-cartoffel-0.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 800.022, 58.8754 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 16.6813
+height = 91.02
+
+[node name="episode_tries" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="hud" type="CanvasLayer" parent="." index="0"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="exit" type="TextureButton" parent="hud" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1500.0
+margin_top = 800.0
+margin_right = 1600.0
+margin_bottom = 950.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+_sections_unfolded = [ "Margin", "Rect", "Textures" ]
+
+[node name="ground" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 800, 788 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
+
+[node name="sprite" type="Sprite" parent="ground" index="0"]
+
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="shape" type="CollisionShape2D" parent="ground" index="1"]
+
+position = Vector2( 0, 54 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ground2" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 2400, 788 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
+
+[node name="sprite" type="Sprite" parent="ground2" index="0"]
+
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="shape" type="CollisionShape2D" parent="ground2" index="1"]
+
+position = Vector2( 0, 54 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ground3" type="StaticBody2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 4000, 788 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
+
+[node name="sprite" type="Sprite" parent="ground3" index="0"]
+
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="shape" type="CollisionShape2D" parent="ground3" index="1"]
+
+position = Vector2( 0, 54 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ground4" type="StaticBody2D" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 5600, 788 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
+
+[node name="sprite" type="Sprite" parent="ground4" index="0"]
+
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="shape" type="CollisionShape2D" parent="ground4" index="1"]
+
+position = Vector2( 0, 54 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cartoffel" type="RigidBody2D" parent="." index="5"]
+
+position = Vector2( 500, 400 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 1.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="sprite" type="Sprite" parent="cartoffel" index="0"]
+
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="cartoffel" index="1"]
+
+position = Vector2( 57.7639, 0.814514 )
+scale = Vector2( 6.19523, 1 )
+shape = SubResource( 2 )
+
+[connection signal="pressed" from="hud/exit" to="." method="_on_exit_pressed"]
 
 
