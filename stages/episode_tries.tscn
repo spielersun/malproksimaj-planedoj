@@ -60,34 +60,14 @@ texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 4 )
 _sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
-[node name="ground" type="StaticBody2D" parent="." index="1"]
+[node name="grounds" type="Node2D" parent="." index="1"]
 
 editor/display_folded = true
 position = Vector2( 800, 788 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
-[node name="sprite" type="Sprite" parent="ground" index="0"]
-
-texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-
-[node name="shape" type="CollisionShape2D" parent="ground" index="1"]
-
-position = Vector2( 0, 54 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="ground2" type="StaticBody2D" parent="." index="2"]
+[node name="ground" type="StaticBody2D" parent="grounds" index="0"]
 
 editor/display_folded = true
-position = Vector2( 2400, 788 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -97,21 +77,21 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
-[node name="sprite" type="Sprite" parent="ground2" index="0"]
+[node name="sprite" type="Sprite" parent="grounds/ground" index="0"]
 
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="shape" type="CollisionShape2D" parent="ground2" index="1"]
+[node name="shape" type="CollisionShape2D" parent="grounds/ground" index="1"]
 
 position = Vector2( 0, 54 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ground3" type="StaticBody2D" parent="." index="3"]
+[node name="ground2" type="StaticBody2D" parent="grounds" index="1"]
 
 editor/display_folded = true
-position = Vector2( 4000, 788 )
+position = Vector2( 1600, 0 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -121,21 +101,21 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
-[node name="sprite" type="Sprite" parent="ground3" index="0"]
+[node name="sprite" type="Sprite" parent="grounds/ground2" index="0"]
 
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="shape" type="CollisionShape2D" parent="ground3" index="1"]
+[node name="shape" type="CollisionShape2D" parent="grounds/ground2" index="1"]
 
 position = Vector2( 0, 54 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ground4" type="StaticBody2D" parent="." index="4"]
+[node name="ground3" type="StaticBody2D" parent="grounds" index="2"]
 
 editor/display_folded = true
-position = Vector2( 5600, 788 )
+position = Vector2( 3200, 0 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -145,18 +125,42 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
-[node name="sprite" type="Sprite" parent="ground4" index="0"]
+[node name="sprite" type="Sprite" parent="grounds/ground3" index="0"]
 
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="shape" type="CollisionShape2D" parent="ground4" index="1"]
+[node name="shape" type="CollisionShape2D" parent="grounds/ground3" index="1"]
 
 position = Vector2( 0, 54 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="cartoffel" type="RigidBody2D" parent="." index="5"]
+[node name="ground4" type="StaticBody2D" parent="grounds" index="3"]
+
+editor/display_folded = true
+position = Vector2( 4800, 0 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
+
+[node name="sprite" type="Sprite" parent="grounds/ground4" index="0"]
+
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="shape" type="CollisionShape2D" parent="grounds/ground4" index="1"]
+
+position = Vector2( 0, 54 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="cartoffel" type="RigidBody2D" parent="." index="2"]
 
 position = Vector2( 500, 400 )
 input_pickable = false
@@ -165,8 +169,8 @@ collision_mask = 1
 mode = 0
 mass = 1.0
 friction = 1.0
-bounce = 1.0
-gravity_scale = 1.0
+bounce = 0.0
+gravity_scale = 0.0
 custom_integrator = false
 continuous_cd = 0
 contacts_reported = 0
@@ -174,11 +178,13 @@ contact_monitor = false
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
+linear_damp = 0.5
 angular_velocity = 0.0
-angular_damp = -1.0
+angular_damp = 3.0
 script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform" ]
+engine_thrust = 500
+spin_thrust = 2500
 
 [node name="sprite" type="Sprite" parent="cartoffel" index="0"]
 
@@ -190,6 +196,31 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 57.7639, 0.814514 )
 scale = Vector2( 6.19523, 1 )
 shape = SubResource( 2 )
+
+[node name="camera" type="Camera2D" parent="cartoffel" index="2"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
 
 [connection signal="pressed" from="hud/exit" to="." method="_on_exit_pressed"]
 
