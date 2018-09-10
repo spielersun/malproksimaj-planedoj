@@ -5,8 +5,9 @@ export var angle = 0
 export var damage = 5
 
 var corrupt_angle
-
 var bounced = false
+
+var start_x
 
 export(PackedScene) var explosion
 
@@ -30,11 +31,11 @@ func _process(delta):
 		position.x -= cos(corrupt_angle) * (speed * delta)
 		position.y -= sin(corrupt_angle) * (speed * delta)
 	
-	if position.x > 1650 or position.x < 50:
+	if position.x > start_x + 5000 or position.x < start_x - 5000:
 		queue_free()
 	
 func _on_body_entered(body):
-	var score_text = get_tree().get_root().get_node("episode_cartoffel").find_node("score")
+	var score_text = get_tree().get_root().get_node("episode_tries").find_node("label")
 	if body.is_in_group("enemy"):
 		body.add_damage(damage)
 		belt.create_explosion(position)

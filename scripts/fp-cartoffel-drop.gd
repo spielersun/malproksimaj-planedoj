@@ -22,7 +22,7 @@ func _move(delta):
 	position.y += 100 * delta
 	
 func _on_body_entered(area):
-	var score_text = get_tree().get_root().get_node("fp-test").find_node("score")
+	var score_text = get_tree().get_root().get_node("episode_tries").find_node("label")
 	
 	if area.is_in_group("enemy"):
 		area.add_damage(damage)

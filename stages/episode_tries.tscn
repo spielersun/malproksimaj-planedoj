@@ -1,25 +1,25 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/episode_tries.gd" type="Script" id=1]
-[ext_resource path="res://sprites/icons/icon_unplug_0.png" type="Texture" id=2]
-[ext_resource path="res://sprites/icons/icon_unplug_2.png" type="Texture" id=3]
-[ext_resource path="res://sprites/icons/icon_unplug_1.png" type="Texture" id=4]
-[ext_resource path="res://sprites/new/bg-1.png" type="Texture" id=5]
-[ext_resource path="res://scenes/brick.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/cartoffel.gd" type="Script" id=7]
-[ext_resource path="res://sprites/new/fp-cartoffel-0.png" type="Texture" id=8]
-[ext_resource path="res://scenes/cartoffel_new.tscn" type="PackedScene" id=9]
+[ext_resource path="res://sprites/new/score-bg.png" type="Texture" id=2]
+[ext_resource path="res://scripts/fp-ship-score.gd" type="Script" id=3]
+[ext_resource path="res://fonts/orator.tres" type="DynamicFont" id=4]
+[ext_resource path="res://sprites/new/health-bar.png" type="Texture" id=5]
+[ext_resource path="res://scripts/fp-ship-health.gd" type="Script" id=6]
+[ext_resource path="res://sprites/icons/icon_unplug_0.png" type="Texture" id=7]
+[ext_resource path="res://sprites/icons/icon_unplug_2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/icons/icon_unplug_1.png" type="Texture" id=9]
+[ext_resource path="res://sprites/new/bg-1.png" type="Texture" id=10]
+[ext_resource path="res://scenes/brick.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/cartoffel_new.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/fp-cartoffel-bullet.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/fp-cartoffel-shield.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/fp-cartoffel-drop.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 800.022, 58.8754 )
-
-[sub_resource type="CapsuleShape2D" id=2]
-
-custom_solver_bias = 0.0
-radius = 16.6813
-height = 91.02
 
 [node name="episode_tries" type="Node2D" index="0"]
 
@@ -28,14 +28,69 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="hud" type="CanvasLayer" parent="." index="0"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="exit" type="TextureButton" parent="hud" index="0"]
+[node name="score" type="TextureRect" parent="hud" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1449.0
+margin_top = 23.0
+margin_right = 1569.0
+margin_bottom = 83.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+script = ExtResource( 3 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="label" type="Label" parent="hud/score" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 19.0
+margin_right = 107.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.859375, 0.80889, 0.271912, 1 )
+text = "000"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="health" type="Sprite" parent="hud" index="1"]
+
+texture = ExtResource( 5 )
+offset = Vector2( 70, 50 )
+hframes = 6
+frame = 5
+script = ExtResource( 6 )
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
+
+[node name="exit" type="TextureButton" parent="hud" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -43,7 +98,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 1500.0
 margin_top = 800.0
-margin_right = 1600.0
+margin_right = 1650.0
 margin_bottom = 950.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -57,9 +112,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 4 )
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
 _sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
 [node name="grounds" type="Node2D" parent="." index="1"]
@@ -84,7 +139,7 @@ __meta__ = {
 
 [node name="sprite" type="Sprite" parent="grounds/ground5" index="0"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds/ground5" index="1"]
@@ -111,7 +166,7 @@ __meta__ = {
 
 [node name="sprite" type="Sprite" parent="grounds/ground" index="0"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds/ground" index="1"]
@@ -135,7 +190,7 @@ _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibi
 
 [node name="sprite" type="Sprite" parent="grounds/ground2" index="0"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds/ground2" index="1"]
@@ -159,7 +214,7 @@ _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibi
 
 [node name="sprite" type="Sprite" parent="grounds/ground3" index="0"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds/ground3" index="1"]
@@ -183,7 +238,7 @@ _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibi
 
 [node name="sprite" type="Sprite" parent="grounds/ground4" index="0"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds/ground4" index="1"]
@@ -211,7 +266,7 @@ _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibi
 
 [node name="sprite" type="Sprite" parent="grounds2/ground" index="0"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds2/ground" index="1"]
@@ -235,7 +290,7 @@ _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibi
 
 [node name="sprite" type="Sprite" parent="grounds2/ground2" index="0"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds2/ground2" index="1"]
@@ -259,7 +314,7 @@ _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibi
 
 [node name="sprite" type="Sprite" parent="grounds2/ground3" index="0"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds2/ground3" index="1"]
@@ -283,7 +338,7 @@ _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibi
 
 [node name="sprite" type="Sprite" parent="grounds2/ground4" index="0"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds2/ground4" index="1"]
@@ -297,116 +352,56 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 position = Vector2( 3185.95, 653.342 )
 
-[node name="brick" parent="bricks" index="0" instance=ExtResource( 6 )]
+[node name="brick" parent="bricks" index="0" instance=ExtResource( 11 )]
 
 position = Vector2( 193.797, -99.9429 )
 
-[node name="brick6" parent="bricks" index="1" instance=ExtResource( 6 )]
+[node name="brick6" parent="bricks" index="1" instance=ExtResource( 11 )]
 
 position = Vector2( 194.797, -352.943 )
 
-[node name="brick2" parent="bricks" index="2" instance=ExtResource( 6 )]
+[node name="brick2" parent="bricks" index="2" instance=ExtResource( 11 )]
 
 position = Vector2( 193.12, -49.743 )
 
-[node name="brick7" parent="bricks" index="3" instance=ExtResource( 6 )]
+[node name="brick7" parent="bricks" index="3" instance=ExtResource( 11 )]
 
 position = Vector2( 194.12, -302.743 )
 
-[node name="brick3" parent="bricks" index="4" instance=ExtResource( 6 )]
+[node name="brick3" parent="bricks" index="4" instance=ExtResource( 11 )]
 
 position = Vector2( 193.064, 1.23724 )
 
-[node name="brick8" parent="bricks" index="5" instance=ExtResource( 6 )]
+[node name="brick8" parent="bricks" index="5" instance=ExtResource( 11 )]
 
 position = Vector2( 194.064, -251.763 )
 
-[node name="brick4" parent="bricks" index="6" instance=ExtResource( 6 )]
+[node name="brick4" parent="bricks" index="6" instance=ExtResource( 11 )]
 
 position = Vector2( 192.827, 51.4421 )
 
-[node name="brick9" parent="bricks" index="7" instance=ExtResource( 6 )]
+[node name="brick9" parent="bricks" index="7" instance=ExtResource( 11 )]
 
 position = Vector2( 193.827, -201.558 )
 
-[node name="brick5" parent="bricks" index="8" instance=ExtResource( 6 )]
+[node name="brick5" parent="bricks" index="8" instance=ExtResource( 11 )]
 
 position = Vector2( 192.595, 102.178 )
 
-[node name="brick10" parent="bricks" index="9" instance=ExtResource( 6 )]
+[node name="brick10" parent="bricks" index="9" instance=ExtResource( 11 )]
 
 position = Vector2( 193.595, -150.822 )
 
-[node name="cartoffel" type="RigidBody2D" parent="." index="4"]
-
-visible = false
-position = Vector2( 500, 400 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 0.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = 0.5
-angular_velocity = 0.0
-angular_damp = 3.0
-script = ExtResource( 7 )
-_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Pickable", "Transform" ]
-engine_thrust = 500
-spin_thrust = 2500
-
-[node name="sprite" type="Sprite" parent="cartoffel" index="0"]
-
-texture = ExtResource( 8 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="shape" type="CollisionShape2D" parent="cartoffel" index="1"]
-
-position = Vector2( 58.3964, 0.915009 )
-scale = Vector2( 6.19523, 1 )
-shape = SubResource( 2 )
-
-[node name="camera" type="Camera2D" parent="cartoffel" index="2"]
-
-anchor_mode = 1
-rotating = false
-current = false
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-
-[node name="cartoffel_new" parent="." index="5" instance=ExtResource( 9 )]
+[node name="cartoffel_new" parent="." index="4" instance=ExtResource( 12 )]
 
 position = Vector2( 340.812, 347.629 )
+bullet = ExtResource( 13 )
+shield = ExtResource( 14 )
+drop = ExtResource( 15 )
 
 [node name="camera" type="Camera2D" parent="cartoffel_new" index="6"]
 
-position = Vector2( -340.812, -347.629 )
+position = Vector2( 100, 100 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -422,13 +417,14 @@ smoothing_enabled = false
 smoothing_speed = 5.0
 offset_v = 0.0
 offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
+drag_margin_left = 0.5
+drag_margin_top = 0.5
+drag_margin_right = 0.5
+drag_margin_bottom = 0.5
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin", "Limit", "Transform" ]
 
 [connection signal="pressed" from="hud/exit" to="." method="_on_exit_pressed"]
 
