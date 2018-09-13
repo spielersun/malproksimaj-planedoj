@@ -24,9 +24,12 @@ window/size/width=1600
 window/size/height=900
 window/size/test_width=1600
 window/size/test_height=900
+mouse_cursor/custom_image="res://sprites/cursor.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 window/stretch/shrink="1"
+"mouse_cursor/Custom Image"=true
+mouse_cursor/custom_image.Windows="res://sprites/cursor.png"
 
 [input]
 

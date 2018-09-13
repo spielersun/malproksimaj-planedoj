@@ -18,7 +18,7 @@
 [ext_resource path="res://scenes/fp-obstacle-spawner.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/fp-ruffguy.tscn" type="PackedScene" id=17]
 
-[node name="episode_cartoffel" type="Node2D" index="0"]
+[node name="episode_cartoffel" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material" ]
