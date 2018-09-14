@@ -1,7 +1,7 @@
-extends RigidBody2D
+extends KinematicBody2D
 
 export (float) var rotation_speed = 2
-export var speed = 100
+export var speed = 0
 
 export (int) var engine_thrust
 export (int) var spin_thrust
@@ -34,10 +34,15 @@ var top_bound
 var bottom_bound
 var direction = 1
 var hanging = false
+var ship_height = 0
 
-var thrust = Vector2()
+var bullet_speed = 200
+
+var gear_1 = 1000
+var gear_2 = 1000
 var rotation_dir = 0
 var screensize
+var gear = 0
 
 var dragging
 var drag_start = Vector2()
@@ -51,19 +56,17 @@ func _ready():
 	
 	connect("body_entered", self, "_on_body_entered")
 	
-	top_bound = position.y - 2
-	bottom_bound = position.y + 2
-	
 	direction = 1 if rand_range(0,100) > 50 else -1 
+	ship_height = position.y
 	
 func _process(delta):
 	get_input()
 
 func get_input():
 	if Input.is_action_pressed("fp_forward"):
-		thrust = Vector2(engine_thrust, 0)
-	else:
-		thrust = Vector2()
+		gear = 1
+	elif Input.is_action_just_released("fp_forward"):
+		gear = 0
 	
 #	if Input.is_action_pressed("fp_auxiliary"):
 #		apply_impulse(Vector2(0, 0), Vector2(30, 0))
@@ -74,7 +77,20 @@ func get_input():
 #		rotation_dir -= 1
 
 func _physics_process(delta):
+	print()
 	var deg_angle
+	
+	top_bound = ship_height - 2
+	bottom_bound = ship_height + 2
+	
+	if gear == 1 and speed < gear_1:
+		speed += 10
+	elif gear == 2 and speed < gear_2:
+		speed += 10
+	elif gear == 0 and speed > 0:
+		speed -= 10
+	
+	position.x += speed * delta
 
 	relative_height = get_global_mouse_position().y - position.y
 	relative_width = get_global_mouse_position().x - position.x
@@ -91,7 +107,7 @@ func _physics_process(delta):
 	else:
 		deg_angle = rad2deg(mouse_angle)
 
-	turret.rotation = deg2rad(deg_angle)
+	turret.rotation = rotation + deg2rad(deg_angle)
 
 	# var motion = (get_global_mouse_position().y - position.y) * 10 * delta
 	# translate(Vector2(0, motion))
@@ -105,18 +121,17 @@ func _physics_process(delta):
 	# 	turret.rotation -= rotation_speed * delta
 
 	if descending:
-		gravity_scale = 1
-		#var motion = (800 - position.y) * delta
-		#translate(Vector2(0, motion))
+		var motion = (800 - position.y) * delta
+		translate(Vector2(0, motion))
 
 		# var motion_turret_x = ((turret.position.x + 2) - turret.position.x) * delta
 		# var motion_turret_y = ((turret.position.y + 3) - turret.position.y) * delta
 		# turret.translate(Vector2(motion_turret_x, motion_turret_y))
 
-		# position.y += delta * speed
-		#if position.y >= 790:
-		#	landed = true
-		#	descending = false
+		position.y += delta * speed
+		if position.y >= 790:
+			landed = true
+			descending = false
 	elif ascending:
 		var motion = -(position.y - 150) * delta
 		translate(Vector2(0, motion))
@@ -141,16 +156,24 @@ func _physics_process(delta):
 
 			if Input.is_action_pressed("fp_down"):
 				hanging = false
-				position.y += speed * delta
-			elif Input.is_action_pressed("fp_up"):
+				position.y += speed * delta / 5
+			elif Input.is_action_just_released("fp_down"):
+				hanging = true
+				ship_height = position.y
+					
+			if Input.is_action_pressed("fp_up"):
 				hanging = false
-				position.y -= speed * delta
+				position.y -= speed * delta / 5
+				ship_height = position.y
+			elif Input.is_action_just_released("fp_up"):
+				hanging = true
+				ship_height = position.y
 
 	if Input.is_action_just_pressed("fp_shoot"):
 		if double_shooting:
-			double_shoot()
+			double_shoot(delta)
 		else:
-			shoot()
+			shoot(delta)
 	if !landed:
 		if Input.is_action_just_pressed("fp_drop"):
 			hanging = false
@@ -174,9 +197,9 @@ func _physics_process(delta):
 		elif position.y < top_bound:
 			direction = 1
 	
-func _integrate_forces(state):
-	set_applied_force(thrust.rotated(rotation))
-	set_applied_torque(rotation_dir * spin_thrust * 10)
+# func _integrate_forces(state):
+# 	set_applied_force(thrust.rotated(rotation))
+# 	set_applied_torque(rotation_dir * spin_thrust * 10)
 	
 	# var xform = state.get_transform()
 	# if xform.origin.x > screensize.x:
@@ -195,7 +218,7 @@ func animation_changed():
 	elif ship_anims.animation == "move-right":
 		ship_anims.play("cruise-right")
 
-func shoot():
+func shoot(delta):
 	var new_bullet = bullet.instance()
 	var turret_angle = turret.rotation
 	# print(turret_angle)
@@ -205,17 +228,19 @@ func shoot():
 	
 	beam.play()
 	
-	get_parent().add_child(new_bullet)
+	new_bullet.speed = bullet_speed + speed
 	new_bullet.angle = turret_angle
 	new_bullet.position = Vector2(bullet_x, bullet_y) 
 	new_bullet.start_x = bullet_x
-
+	
+	get_parent().add_child(new_bullet)
+	
 func drop():
 	var new_drop = drop.instance()
 	new_drop.position = Vector2(position.x + 20, position.y + 40) 
 	get_parent().add_child(new_drop)
 	
-func double_shoot():
+func double_shoot(delta):
 	var new_bullet_up = bullet.instance()
 	var turret_angle_up = turret.rotation + 0.1
 	
@@ -234,14 +259,16 @@ func double_shoot():
 	beam.play()
 	beam.play()
 	
-	get_parent().add_child(new_bullet_up)
-	get_parent().add_child(new_bullet_down)
-	
 	new_bullet_up.angle = turret_angle_up
 	new_bullet_up.position = Vector2(bullet_x_up, bullet_y_up) 
+	new_bullet_up.speed = bullet_speed + speed
 	
 	new_bullet_down.angle = turret_angle_down
 	new_bullet_down.position = Vector2(bullet_x_up, bullet_y_down) 
+	new_bullet_down.speed = bullet_speed + speed
+	
+	get_parent().add_child(new_bullet_up)
+	get_parent().add_child(new_bullet_down)
 
 func set_double_shooting(value):
 	if value:

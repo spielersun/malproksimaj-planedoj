@@ -1,6 +1,6 @@
 extends Area2D
 
-export var speed = 200
+export var initial_speed = 200
 export var angle = 0
 export var damage = 5
 
@@ -8,6 +8,7 @@ var corrupt_angle
 var bounced = false
 
 var start_x
+var speed
 
 export(PackedScene) var explosion
 
