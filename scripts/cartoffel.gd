@@ -22,6 +22,8 @@ var accelerated = false
 var descending = false
 var ascending = false
 var landed = false
+var hanging = false
+var shifted_2 = false
 
 var armor = 5 setget took_hit
 var double_shooting = false setget set_double_shooting
@@ -32,14 +34,14 @@ var relative_width
 
 var top_bound
 var bottom_bound
+
 var direction = 1
-var hanging = false
 var ship_height = 0
 
 var bullet_speed = 200
 
-var gear_1 = 1000
-var gear_2 = 1000
+var gear_1 = 100
+var gear_2 = 300
 var rotation_dir = 0
 var screensize
 var gear = 0
@@ -50,12 +52,11 @@ var drag_start = Vector2()
 func _ready():
 	randomize()
 	wait()
+	
 	ship_anims.connect("animation_finished", self, "animation_changed")
-	
-	screensize = get_viewport().get_visible_rect().size
-	
 	connect("body_entered", self, "_on_body_entered")
 	
+	screensize = get_viewport().get_visible_rect().size
 	direction = 1 if rand_range(0,100) > 50 else -1 
 	ship_height = position.y
 	
@@ -64,8 +65,12 @@ func _process(delta):
 
 func get_input():
 	if Input.is_action_pressed("fp_forward"):
-		gear = 1
+		if shifted_2:
+			gear = 2
+		else:
+			gear = 1
 	elif Input.is_action_just_released("fp_forward"):
+		shifted_2 = false
 		gear = 0
 	
 #	if Input.is_action_pressed("fp_auxiliary"):
@@ -77,18 +82,18 @@ func get_input():
 #		rotation_dir -= 1
 
 func _physics_process(delta):
-	print()
+	print(speed)
 	var deg_angle
 	
 	top_bound = ship_height - 2
 	bottom_bound = ship_height + 2
 	
 	if gear == 1 and speed < gear_1:
-		speed += 10
+		speed += 100 * delta
 	elif gear == 2 and speed < gear_2:
-		speed += 10
+		speed += 100 * delta
 	elif gear == 0 and speed > 0:
-		speed -= 10
+		speed -= 100 * delta
 	
 	position.x += speed * delta
 
@@ -112,8 +117,8 @@ func _physics_process(delta):
 	# var motion = (get_global_mouse_position().y - position.y) * 10 * delta
 	# translate(Vector2(0, motion))
 
-	var view_size = get_viewport_rect().size
-	position.y = clamp(position.y, 0 + 100, view_size.y - 100)
+	# var view_size = get_viewport_rect().size
+	#  position.y = clamp(position.y, 0 + 100, view_size.y - 100)
 
 	# if Input.is_action_pressed("turret_down"):
 	# 	turret.rotation += rotation_speed * delta
@@ -130,6 +135,7 @@ func _physics_process(delta):
 
 		position.y += delta * speed
 		if position.y >= 790:
+			ship_height = position.y
 			landed = true
 			descending = false
 	elif ascending:
@@ -137,6 +143,7 @@ func _physics_process(delta):
 		translate(Vector2(0, motion))
 
 		if position.y <= 250:
+			ship_height = position.y
 			landed = false
 			ascending = false
 	else:
@@ -216,6 +223,7 @@ func animation_changed():
 	if ship_anims.animation == "start-right":
 		ship_anims.play("move-right")
 	elif ship_anims.animation == "move-right":
+		shifted_2 = true
 		ship_anims.play("cruise-right")
 
 func shoot(delta):

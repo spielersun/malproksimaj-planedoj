@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/new/bg-0.png" type="Texture" id=1]
+[ext_resource path="res://sprites/new/bg-4.png" type="Texture" id=2]
+[ext_resource path="res://sprites/new/bg-3.png" type="Texture" id=3]
+[ext_resource path="res://sprites/new/bg-2.png" type="Texture" id=4]
+
+[node name="mountains" type="ParallaxBackground"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+
+[node name="layer_1" type="ParallaxLayer" parent="." index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1600, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="sprite" type="Sprite" parent="layer_1" index="0"]
+
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 1600, 900 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="layer_2" type="ParallaxLayer" parent="." index="1"]
+
+motion_scale = Vector2( 0.02, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1600, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="sprite" type="Sprite" parent="layer_2" index="0"]
+
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( -800, 225 )
+region_rect = Rect2( 0, 0, 1600, 225 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="layer_3" type="ParallaxLayer" parent="." index="2"]
+
+motion_scale = Vector2( 0.05, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1600, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="sprite" type="Sprite" parent="layer_3" index="0"]
+
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( -800, 225 )
+region_rect = Rect2( 0, 0, 1600, 225 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="layer_4" type="ParallaxLayer" parent="." index="3"]
+
+motion_scale = Vector2( 0.1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1600, 0 )
+_sections_unfolded = [ "Motion", "Visibility" ]
+
+[node name="sprite" type="Sprite" parent="layer_4" index="0"]
+
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( -800, 225 )
+region_rect = Rect2( 0, 0, 1600, 225 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+
