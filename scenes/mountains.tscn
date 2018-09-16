@@ -34,7 +34,7 @@ _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility
 
 [node name="layer_2" type="ParallaxLayer" parent="." index="1"]
 
-motion_scale = Vector2( 0.02, 1 )
+motion_scale = Vector2( 0.1, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1600, 0 )
 _sections_unfolded = [ "Motion" ]
@@ -49,7 +49,7 @@ _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="layer_3" type="ParallaxLayer" parent="." index="2"]
 
-motion_scale = Vector2( 0.05, 1 )
+motion_scale = Vector2( 0.3, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1600, 0 )
 _sections_unfolded = [ "Motion" ]
@@ -64,7 +64,7 @@ _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="layer_4" type="ParallaxLayer" parent="." index="3"]
 
-motion_scale = Vector2( 0.1, 1 )
+motion_scale = Vector2( 0.7, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 1600, 0 )
 _sections_unfolded = [ "Motion", "Visibility" ]

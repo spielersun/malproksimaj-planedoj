@@ -153,7 +153,7 @@ func shoot():
 	var bullet_y = (position.y + 20) + (40 * sin(turret_angle))
 	
 	beam.play()
-	
+	new_bullet.start_x = position.x
 	get_parent().add_child(new_bullet)
 	new_bullet.angle = turret_angle
 	new_bullet.position = Vector2(bullet_x, bullet_y) 
@@ -181,6 +181,9 @@ func double_shoot():
 	
 	beam.play()
 	beam.play()
+	
+	new_bullet_up.start_x = position.x
+	new_bullet_down.start_x = position.x
 	
 	get_parent().add_child(new_bullet_up)
 	get_parent().add_child(new_bullet_down)

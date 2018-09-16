@@ -17,7 +17,7 @@ func _ready():
 
 func _process(delta):
 	if !shield_down:
-		var cartoffel = get_tree().get_root().find_node("cartoffel_new")
+		var cartoffel = get_tree().get_root().find_node("fp_cartoffel")
 		cartoffel_armor = cartoffel.armor
 		
 		if cartoffel_armor <= 1:

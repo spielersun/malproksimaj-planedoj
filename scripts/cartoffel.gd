@@ -82,7 +82,7 @@ func get_input():
 #		rotation_dir -= 1
 
 func _physics_process(delta):
-	print(speed)
+	#print(speed)
 	var deg_angle
 	
 	top_bound = ship_height - 2
@@ -113,6 +113,8 @@ func _physics_process(delta):
 		deg_angle = rad2deg(mouse_angle)
 
 	turret.rotation = rotation + deg2rad(deg_angle)
+	
+	# turret.rotation = (get_global_mouse_position() - position).angle()
 
 	# var motion = (get_global_mouse_position().y - position.y) * 10 * delta
 	# translate(Vector2(0, motion))
