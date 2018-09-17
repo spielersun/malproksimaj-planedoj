@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scripts/episode_tries.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/score-bg.png" type="Texture" id=2]
@@ -14,12 +14,13 @@
 [ext_resource path="res://scenes/brick.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/cartoffel.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/cartoffel_bullet.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/fp-cartoffel-shield.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/fp-cartoffel-drop.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/cartoffel_shield.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/cartoffel_drop.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/mountains.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/drop_spawner.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/astro_drop.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/astro_drop_prize.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/enemy_marconi.tscn" type="PackedScene" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -33,7 +34,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="hud" type="CanvasLayer" parent="." index="0"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -445,6 +445,14 @@ astro_drop_prize = ExtResource( 20 )
 position = Vector2( 4951.58, -157.635 )
 astro_drop = ExtResource( 19 )
 astro_drop_prize = ExtResource( 20 )
+
+[node name="enemy_marconi" parent="." index="8" instance=ExtResource( 21 )]
+
+position = Vector2( 1089.8, 394.934 )
+
+[node name="enemy_marconi2" parent="." index="9" instance=ExtResource( 21 )]
+
+position = Vector2( 2610.81, 546.448 )
 
 [connection signal="pressed" from="hud/exit" to="." method="_on_exit_pressed"]
 

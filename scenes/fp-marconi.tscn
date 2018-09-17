@@ -1,13 +1,14 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/fp-marconi.gd" type="Script" id=1]
-[ext_resource path="res://scenes/fp-bullet-marconi.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/enemy_marconi_bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/new/marconi-0.png" type="Texture" id=3]
 [ext_resource path="res://sprites/new/marconi-1.png" type="Texture" id=4]
 [ext_resource path="res://sprites/new/marconi-2.png" type="Texture" id=5]
 [ext_resource path="res://sprites/new/marconi-3.png" type="Texture" id=6]
 [ext_resource path="res://sprites/new/marconi-4.png" type="Texture" id=7]
 [ext_resource path="res://sprites/new/marconi-5.png" type="Texture" id=8]
+
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -23,7 +24,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 19.8756, 20.4128 )
 
-[node name="fp-marconi" type="KinematicBody2D" index="0" groups=[
+[node name="fp-marconi" type="KinematicBody2D" groups=[
 "enemy",
 ]]
 

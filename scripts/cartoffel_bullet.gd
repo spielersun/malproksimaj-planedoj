@@ -37,6 +37,7 @@ func _process(delta):
 	
 func _on_body_entered(body):
 	var score_text = get_tree().get_root().get_node("episode_tries").find_node("label")
+	
 	if body.is_in_group("enemy"):
 		body.add_damage(damage)
 		belt.create_explosion(position)

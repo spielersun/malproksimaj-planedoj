@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scripts/fp-bullet-marconi.gd" type="Script" id=1]
+[ext_resource path="res://scripts/enemy_marconi_bullet.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/cartoffel-bullet.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8.98591, 3.13014 )
 
-[node name="fp-bullet-marconi" type="Area2D" groups=[
+[node name="enemy_marconi_bullet" type="Area2D" groups=[
 "projectile",
 ]]
 
@@ -22,7 +22,8 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
-speed = 200
+speed = 100
+angle = 0
 damage = 5
 
 [node name="bullet" type="Sprite" parent="." index="0"]
