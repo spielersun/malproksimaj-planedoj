@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scripts/episode_tries.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/score-bg.png" type="Texture" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://scenes/astro_drop_prize.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/enemy_marconi.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scenes/enemy_giorgio.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/ground_fire.tscn" type="PackedScene" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -459,6 +460,18 @@ position = Vector2( 2610.81, 546.448 )
 [node name="enemy_giorgio" parent="." index="10" instance=ExtResource( 22 )]
 
 position = Vector2( 1011.07, 422.606 )
+
+[node name="ground_fire" parent="." index="11" instance=ExtResource( 23 )]
+
+position = Vector2( 1731.99, 823.729 )
+
+[node name="ground_fire2" parent="." index="12" instance=ExtResource( 23 )]
+
+position = Vector2( 1905, 818.42 )
+
+[node name="ground_fire3" parent="." index="13" instance=ExtResource( 23 )]
+
+position = Vector2( 2130.91, 843.413 )
 
 [connection signal="pressed" from="hud/exit" to="." method="_on_exit_pressed"]
 

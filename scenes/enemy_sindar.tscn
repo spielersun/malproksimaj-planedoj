@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://scripts/fp-sindar.gd" type="Script" id=1]
+[ext_resource path="res://scripts/enemy_sindar.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/sindar/sindar_0.png" type="Texture" id=2]
 [ext_resource path="res://sprites/new/sindar/sindar_1.png" type="Texture" id=3]
 [ext_resource path="res://sprites/new/sindar/sindar_2.png" type="Texture" id=4]
@@ -20,7 +20,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 33.6498, 89.7897 )
 
-[node name="fp-sindar" type="KinematicBody2D" groups=[
+[node name="enemy_sindar" type="KinematicBody2D" index="0" groups=[
 "enemy",
 ]]
 
