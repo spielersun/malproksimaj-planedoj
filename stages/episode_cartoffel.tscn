@@ -13,10 +13,11 @@
 [ext_resource path="res://sprites/icons/icon_unplug_2.png" type="Texture" id=11]
 [ext_resource path="res://sprites/icons/icon_unplug_1.png" type="Texture" id=12]
 [ext_resource path="res://scenes/fp-enemy-spawner.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/fp-lorenna.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/enemy_lorenna.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/fp-mother.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/fp-obstacle-spawner.tscn" type="PackedScene" id=16]
 [ext_resource path="res://scenes/fp-ruffguy.tscn" type="PackedScene" id=17]
+
 
 
 [node name="episode_cartoffel" type="Node2D"]

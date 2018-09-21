@@ -11,16 +11,14 @@ func _ready():
 	connect("body_entered", self, "_on_body_entered")
 	
 func _process(delta):
-	_move(delta)
-	if position.y == 850:
-		belt.create_explosion(position)
-		queue_free()
-
-func _move(delta):
 	rotation += 0.1
 	position.x += -20 * delta
 	position.y += 100 * delta
 	
+	if position.y == 850:
+		belt.create_explosion(position)
+		queue_free()
+
 func _on_body_entered(area):
 	var score_text = get_tree().get_root().get_node("episode_tries").find_node("label")
 	

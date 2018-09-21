@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://scripts/fp-lorenna.gd" type="Script" id=1]
+[ext_resource path="res://scripts/enemy_lorenna.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/lorenna-0.png" type="Texture" id=2]
 [ext_resource path="res://sprites/new/lorenna-1.png" type="Texture" id=3]
 [ext_resource path="res://sprites/new/lorenna-2.png" type="Texture" id=4]
@@ -20,7 +20,7 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[node name="fp-lorenna" type="KinematicBody2D" index="0" groups=[
+[node name="enemy_lorenna" type="KinematicBody2D" groups=[
 "enemy",
 ]]
 
@@ -31,10 +31,13 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
+detect_radius = 250
+fire_rate = 0.2
+bullet = null
 speed = 100
-health = 5
+health = 15
 
-[node name="ship" type="Sprite" parent="." index="0"]
+[node name="sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
 
@@ -47,5 +50,30 @@ shape = SubResource( 1 )
 
 frames = SubResource( 2 )
 animation = "move-left"
+
+[node name="vision" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="shape" type="CollisionShape2D" parent="vision" index="0"]
+
+[node name="timer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="body_entered" from="vision" to="." method="_on_vision_body_entered"]
+
+[connection signal="body_exited" from="vision" to="." method="_on_vision_body_exited"]
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
 
 
