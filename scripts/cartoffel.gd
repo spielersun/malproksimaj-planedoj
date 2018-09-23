@@ -54,7 +54,6 @@ func _ready():
 	wait()
 	
 	ship_anims.connect("animation_finished", self, "animation_changed")
-	connect("body_entered", self, "_on_body_entered")
 	
 	screensize = get_viewport().get_visible_rect().size
 	direction = 1 if rand_range(0,100) > 50 else -1 
@@ -308,7 +307,12 @@ func took_hit(new_value):
 	else:
 		armor = new_value
 		hit_shield()
-	
+
+func heal(amount):
+	health += amount
+	#health = clamp(health, 0, max_health)
+	#emit_signal('health_changed', health * 100/max_health)
+
 func hit_shield():
 	var new_hit = shield.instance()
 	new_hit.position = position
@@ -327,9 +331,6 @@ func to_ship_form():
 	ship_anims.play("retract-tires")
 	roll.disabled = true
 	ascending = true
-
-func _on_body_entered(body):
-	pass
 
 func drag_this(event):
 	if event.is_action_pressed("fp_up") and not dragging:

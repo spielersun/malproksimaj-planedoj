@@ -1,26 +1,21 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/episode_cartoffel.gd" type="Script" id=1]
 [ext_resource path="res://scenes/fp-mountains.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/fp-cartoffel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/cartoffel_drop.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sprites/new/health-bar.png" type="Texture" id=5]
-[ext_resource path="res://scripts/fp-ship-health.gd" type="Script" id=6]
-[ext_resource path="res://sprites/new/score-bg.png" type="Texture" id=7]
-[ext_resource path="res://scripts/fp-ship-score.gd" type="Script" id=8]
-[ext_resource path="res://fonts/orator.tres" type="DynamicFont" id=9]
-[ext_resource path="res://sprites/icons/icon_unplug_0.png" type="Texture" id=10]
-[ext_resource path="res://sprites/icons/icon_unplug_2.png" type="Texture" id=11]
-[ext_resource path="res://sprites/icons/icon_unplug_1.png" type="Texture" id=12]
-[ext_resource path="res://scenes/fp-enemy-spawner.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/enemy_lorenna.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/fp-mother.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/fp-obstacle-spawner.tscn" type="PackedScene" id=16]
-[ext_resource path="res://scenes/fp-ruffguy.tscn" type="PackedScene" id=17]
+[ext_resource path="res://sprites/new/score-bg.png" type="Texture" id=6]
+[ext_resource path="res://fonts/orator.tres" type="DynamicFont" id=7]
+[ext_resource path="res://sprites/icons/icon_unplug_0.png" type="Texture" id=8]
+[ext_resource path="res://sprites/icons/icon_unplug_2.png" type="Texture" id=9]
+[ext_resource path="res://sprites/icons/icon_unplug_1.png" type="Texture" id=10]
+[ext_resource path="res://scenes/fp-enemy-spawner.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/fp-mother.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/fp-obstacle-spawner.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/fp-ruffguy.tscn" type="PackedScene" id=14]
 
-
-
-[node name="episode_cartoffel" type="Node2D"]
+[node name="episode_cartoffel" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material" ]
@@ -48,7 +43,6 @@ texture = ExtResource( 5 )
 offset = Vector2( 70, 50 )
 hframes = 6
 frame = 5
-script = ExtResource( 6 )
 _sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 [node name="fp-ship-score" type="TextureRect" parent="hud" index="1"]
@@ -67,9 +61,8 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 stretch_mode = 0
-script = ExtResource( 8 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="score" type="Label" parent="hud/fp-ship-score" index="0"]
@@ -88,7 +81,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.859375, 0.80889, 0.271912, 1 )
 text = "000"
 align = 1
@@ -119,21 +112,20 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 11 )
-texture_hover = ExtResource( 12 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
 _sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
-[node name="fp-enemy-spawner" parent="." index="3" instance=ExtResource( 13 )]
+[node name="fp-enemy-spawner" parent="." index="3" instance=ExtResource( 11 )]
 
 _sections_unfolded = [ "Z Index" ]
-lorenna = ExtResource( 14 )
 
-[node name="fp-mother" parent="." index="4" instance=ExtResource( 15 )]
+[node name="fp-mother" parent="." index="4" instance=ExtResource( 12 )]
 
-[node name="fp-obstacle-spawner" parent="." index="5" instance=ExtResource( 16 )]
+[node name="fp-obstacle-spawner" parent="." index="5" instance=ExtResource( 13 )]
 
-[node name="fp-ruffguy" parent="." index="6" instance=ExtResource( 17 )]
+[node name="fp-ruffguy" parent="." index="6" instance=ExtResource( 14 )]
 
 position = Vector2( 277.594, -233.179 )
 

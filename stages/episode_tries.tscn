@@ -1,37 +1,36 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scripts/episode_tries.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/score-bg.png" type="Texture" id=2]
-[ext_resource path="res://scripts/fp-ship-score.gd" type="Script" id=3]
-[ext_resource path="res://fonts/orator.tres" type="DynamicFont" id=4]
-[ext_resource path="res://sprites/new/health-bar.png" type="Texture" id=5]
-[ext_resource path="res://scripts/fp-ship-health.gd" type="Script" id=6]
-[ext_resource path="res://sprites/icons/icon_unplug_0.png" type="Texture" id=7]
-[ext_resource path="res://sprites/icons/icon_unplug_2.png" type="Texture" id=8]
-[ext_resource path="res://sprites/icons/icon_unplug_1.png" type="Texture" id=9]
-[ext_resource path="res://scripts/ground.gd" type="Script" id=10]
-[ext_resource path="res://sprites/new/bg-1.png" type="Texture" id=11]
-[ext_resource path="res://scenes/brick.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/cartoffel.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/cartoffel_bullet.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/cartoffel_shield.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/cartoffel_drop.tscn" type="PackedScene" id=16]
-[ext_resource path="res://scenes/mountains.tscn" type="PackedScene" id=17]
-[ext_resource path="res://scenes/drop_spawner.tscn" type="PackedScene" id=18]
-[ext_resource path="res://scenes/astro_drop.tscn" type="PackedScene" id=19]
-[ext_resource path="res://scenes/astro_drop_prize.tscn" type="PackedScene" id=20]
-[ext_resource path="res://scenes/enemy_marconi.tscn" type="PackedScene" id=21]
-[ext_resource path="res://scenes/enemy_giorgio.tscn" type="PackedScene" id=22]
-[ext_resource path="res://scenes/ground_fire.tscn" type="PackedScene" id=23]
-[ext_resource path="res://scenes/enemy_lorenna.tscn" type="PackedScene" id=24]
-[ext_resource path="res://scenes/enemy_lorenna_rocket.tscn" type="PackedScene" id=25]
+[ext_resource path="res://fonts/orator.tres" type="DynamicFont" id=3]
+[ext_resource path="res://sprites/new/health-bar.png" type="Texture" id=4]
+[ext_resource path="res://sprites/icons/icon_unplug_0.png" type="Texture" id=5]
+[ext_resource path="res://sprites/icons/icon_unplug_2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/icons/icon_unplug_1.png" type="Texture" id=7]
+[ext_resource path="res://scripts/ground.gd" type="Script" id=8]
+[ext_resource path="res://sprites/new/bg-1.png" type="Texture" id=9]
+[ext_resource path="res://scenes/brick.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/cartoffel.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/cartoffel_bullet.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/cartoffel_shield.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/cartoffel_drop.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/mountains.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/drop_spawner.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/astro_drop.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/astro_drop_prize.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/enemy_marconi.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/enemy_giorgio.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/ground_fire.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/enemy_lorenna.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/enemy_lorenna_rocket.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scenes/pickup.tscn" type="PackedScene" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 800.022, 58.8754 )
 
-[node name="episode_tries" type="Node2D"]
+[node name="episode_tries" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -64,7 +63,6 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 2 )
 stretch_mode = 0
-script = ExtResource( 3 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="label" type="Label" parent="hud/score" index="0"]
@@ -83,7 +81,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.859375, 0.80889, 0.271912, 1 )
 text = "000"
 align = 1
@@ -94,11 +92,10 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="health" type="Sprite" parent="hud" index="1"]
 
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 offset = Vector2( 70, 50 )
 hframes = 6
 frame = 5
-script = ExtResource( 6 )
 _sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
 [node name="exit" type="TextureButton" parent="hud" index="2"]
@@ -123,9 +120,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 _sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
 [node name="grounds" type="Node2D" parent="." index="1"]
@@ -145,12 +142,12 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-script = ExtResource( 10 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="sprite" type="Sprite" parent="grounds/ground5" index="0"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds/ground5" index="1"]
@@ -172,12 +169,12 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-script = ExtResource( 10 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="sprite" type="Sprite" parent="grounds/ground" index="0"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds/ground" index="1"]
@@ -199,12 +196,12 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-script = ExtResource( 10 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="sprite" type="Sprite" parent="grounds/ground2" index="0"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds/ground2" index="1"]
@@ -226,12 +223,12 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-script = ExtResource( 10 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="sprite" type="Sprite" parent="grounds/ground3" index="0"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds/ground3" index="1"]
@@ -253,12 +250,12 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-script = ExtResource( 10 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="sprite" type="Sprite" parent="grounds/ground4" index="0"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds/ground4" index="1"]
@@ -284,12 +281,12 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-script = ExtResource( 10 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="sprite" type="Sprite" parent="grounds2/ground" index="0"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds2/ground" index="1"]
@@ -311,12 +308,12 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-script = ExtResource( 10 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="sprite" type="Sprite" parent="grounds2/ground2" index="0"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds2/ground2" index="1"]
@@ -338,12 +335,12 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-script = ExtResource( 10 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="sprite" type="Sprite" parent="grounds2/ground3" index="0"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds2/ground3" index="1"]
@@ -365,12 +362,12 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-script = ExtResource( 10 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index" ]
 
 [node name="sprite" type="Sprite" parent="grounds2/ground4" index="0"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shape" type="CollisionShape2D" parent="grounds2/ground4" index="1"]
@@ -384,102 +381,108 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 position = Vector2( 3185.95, 653.342 )
 
-[node name="brick" parent="bricks" index="0" instance=ExtResource( 12 )]
+[node name="brick" parent="bricks" index="0" instance=ExtResource( 10 )]
 
 position = Vector2( 193.797, -99.9429 )
 
-[node name="brick6" parent="bricks" index="1" instance=ExtResource( 12 )]
+[node name="brick6" parent="bricks" index="1" instance=ExtResource( 10 )]
 
 position = Vector2( 194.797, -352.943 )
 
-[node name="brick2" parent="bricks" index="2" instance=ExtResource( 12 )]
+[node name="brick2" parent="bricks" index="2" instance=ExtResource( 10 )]
 
 position = Vector2( 193.12, -49.743 )
 
-[node name="brick7" parent="bricks" index="3" instance=ExtResource( 12 )]
+[node name="brick7" parent="bricks" index="3" instance=ExtResource( 10 )]
 
 position = Vector2( 194.12, -302.743 )
 
-[node name="brick3" parent="bricks" index="4" instance=ExtResource( 12 )]
+[node name="brick3" parent="bricks" index="4" instance=ExtResource( 10 )]
 
 position = Vector2( 193.064, 1.23724 )
 
-[node name="brick8" parent="bricks" index="5" instance=ExtResource( 12 )]
+[node name="brick8" parent="bricks" index="5" instance=ExtResource( 10 )]
 
 position = Vector2( 194.064, -251.763 )
 
-[node name="brick4" parent="bricks" index="6" instance=ExtResource( 12 )]
+[node name="brick4" parent="bricks" index="6" instance=ExtResource( 10 )]
 
 position = Vector2( 192.827, 51.4421 )
 
-[node name="brick9" parent="bricks" index="7" instance=ExtResource( 12 )]
+[node name="brick9" parent="bricks" index="7" instance=ExtResource( 10 )]
 
 position = Vector2( 193.827, -201.558 )
 
-[node name="brick5" parent="bricks" index="8" instance=ExtResource( 12 )]
+[node name="brick5" parent="bricks" index="8" instance=ExtResource( 10 )]
 
 position = Vector2( 192.595, 102.178 )
 
-[node name="brick10" parent="bricks" index="9" instance=ExtResource( 12 )]
+[node name="brick10" parent="bricks" index="9" instance=ExtResource( 10 )]
 
 position = Vector2( 193.595, -150.822 )
 
-[node name="cartoffel" parent="." index="4" instance=ExtResource( 13 )]
+[node name="cartoffel" parent="." index="4" instance=ExtResource( 11 )]
 
 position = Vector2( 350, 450 )
 _sections_unfolded = [ "Transform" ]
-bullet = ExtResource( 14 )
-shield = ExtResource( 15 )
-drop = ExtResource( 16 )
+bullet = ExtResource( 12 )
+shield = ExtResource( 13 )
+drop = ExtResource( 14 )
 
-[node name="mountains" parent="." index="5" instance=ExtResource( 17 )]
+[node name="mountains" parent="." index="5" instance=ExtResource( 15 )]
 
 offset = Vector2( 400, 450 )
 transform = Transform2D( 1, 0, 0, 1, 400, 450 )
 _sections_unfolded = [ "Scroll" ]
 
-[node name="drop_spawner" parent="." index="6" instance=ExtResource( 18 )]
+[node name="drop_spawner" parent="." index="6" instance=ExtResource( 16 )]
 
 position = Vector2( 1841.92, -238.34 )
 _sections_unfolded = [ "Transform" ]
-astro_drop = ExtResource( 19 )
-astro_drop_prize = ExtResource( 20 )
+astro_drop = ExtResource( 17 )
+astro_drop_prize = ExtResource( 18 )
 
-[node name="drop_spawner2" parent="." index="7" instance=ExtResource( 18 )]
+[node name="drop_spawner2" parent="." index="7" instance=ExtResource( 16 )]
 
 position = Vector2( 4951.58, -157.635 )
-astro_drop = ExtResource( 19 )
-astro_drop_prize = ExtResource( 20 )
+astro_drop = ExtResource( 17 )
+astro_drop_prize = ExtResource( 18 )
 
-[node name="enemy_marconi" parent="." index="8" instance=ExtResource( 21 )]
+[node name="enemy_marconi" parent="." index="8" instance=ExtResource( 19 )]
 
 position = Vector2( 4057.84, 406.092 )
 
-[node name="enemy_marconi2" parent="." index="9" instance=ExtResource( 21 )]
+[node name="enemy_marconi2" parent="." index="9" instance=ExtResource( 19 )]
 
 position = Vector2( 2610.81, 546.448 )
 
-[node name="enemy_giorgio" parent="." index="10" instance=ExtResource( 22 )]
+[node name="enemy_giorgio" parent="." index="10" instance=ExtResource( 20 )]
 
 position = Vector2( 1011.07, 422.606 )
 
-[node name="ground_fire" parent="." index="11" instance=ExtResource( 23 )]
+[node name="ground_fire" parent="." index="11" instance=ExtResource( 21 )]
 
 position = Vector2( 1731.99, 823.729 )
 
-[node name="ground_fire2" parent="." index="12" instance=ExtResource( 23 )]
+[node name="ground_fire2" parent="." index="12" instance=ExtResource( 21 )]
 
 position = Vector2( 1905, 818.42 )
 
-[node name="ground_fire3" parent="." index="13" instance=ExtResource( 23 )]
+[node name="ground_fire3" parent="." index="13" instance=ExtResource( 21 )]
 
 position = Vector2( 2130.91, 843.413 )
 
-[node name="enemy_lorenna" parent="." index="14" instance=ExtResource( 24 )]
+[node name="enemy_lorenna" parent="." index="14" instance=ExtResource( 22 )]
 
 position = Vector2( 1265.19, 668.479 )
 fire_rate = 0.5
-bullet = ExtResource( 25 )
+bullet = ExtResource( 23 )
+
+[node name="pickups" type="Node2D" parent="." index="15"]
+
+[node name="pickup" parent="pickups" index="0" instance=ExtResource( 24 )]
+
+position = Vector2( 741.406, 470.69 )
 
 [connection signal="pressed" from="hud/exit" to="." method="_on_exit_pressed"]
 

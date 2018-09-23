@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/pickup.gd" type="Script" id=1]
+[ext_resource path="res://sprites/environmental/shadow_circle.png" type="Texture" id=2]
+[ext_resource path="res://sprites/environmental/rate.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 15.1475, 8.52644 )
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "bounce"
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( -1.92559, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.4 ), Vector2( 0.25, 0.35 ) ]
+}
+
+[node name="pickup" type="Area2D" index="0"]
+
+z_index = 50
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Audio Bus", "Collision", "Z Index" ]
+type = null
+amount = Vector2( 10, 25 )
+
+[node name="shadow" type="Sprite" parent="." index="0"]
+
+position = Vector2( 0, 10 )
+scale = Vector2( 0.3, 0.4 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="sprite" type="Sprite" parent="." index="1"]
+
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="." index="2"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="animation" type="AnimationPlayer" parent="." index="3"]
+
+root_node = NodePath("..")
+autoplay = "bounce"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/bounce = SubResource( 2 )
+blend_times = [  ]
+
+[connection signal="body_entered" from="." to="." method="_on_pickup_body_entered"]
+
+

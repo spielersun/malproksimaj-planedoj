@@ -27,7 +27,6 @@ signal took_damage
 func _ready():
 	north_x = position.x
 	north_y = position.y
-	print(north_x)
 	for drop in drop_count:
 		if drop != (drop_count-1):
 			astro_drop()
@@ -58,7 +57,8 @@ func astro_drop():
 		new_astro.position = Vector2(spawn_x, south_y)
 	
 	new_astro.connect("astro_crashed", self, "_on_astro_crashed")
-	get_parent().add_child(new_astro)
+	get_parent().call_deferred("add_child", new_astro)
+	#get_parent().add_child(new_astro)
 
 
 func astro_drop_prize():

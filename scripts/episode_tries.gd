@@ -5,7 +5,8 @@ onready var lorenna = $enemy_lorenna
 var cursor = load("res://sprites/cursor.png")
 
 func _ready():
-	lorenna.connect("homing_bullet", self, "_on_enemy_lorenna_homing_bullet")
+	pass
+	#lorenna.connect("homing_bullet", self, "_on_enemy_lorenna_homing_bullet")
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
