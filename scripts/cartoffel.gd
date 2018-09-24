@@ -309,9 +309,9 @@ func took_hit(new_value):
 		hit_shield()
 
 func heal(amount):
-	health += amount
-	#health = clamp(health, 0, max_health)
-	#emit_signal('health_changed', health * 100/max_health)
+	armor += amount
+	#armor = clamp(armor, 0, max_armor)
+	#emit_signal('armor_changed', armor * 100/max_armor)
 
 func hit_shield():
 	var new_hit = shield.instance()

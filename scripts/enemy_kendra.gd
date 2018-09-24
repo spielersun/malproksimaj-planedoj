@@ -61,6 +61,5 @@ func add_damage(damage):
 	health -= damage
 	if health <= 0:
 		dead = true
-		collision.queue_free()
-		hide()
+		queue_free()
 		emit_signal("kendra_defeated")

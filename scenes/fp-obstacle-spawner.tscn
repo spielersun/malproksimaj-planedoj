@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/fp-obstacle-spawner.gd" type="Script" id=1]
-[ext_resource path="res://scenes/fp-floatiing-rock.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/fp-floating-turret.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/obstacle_rock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/obstacle_turret.tscn" type="PackedScene" id=3]
+
+
 
 [node name="fp-obstacle-spawner" type="Node2D"]
 

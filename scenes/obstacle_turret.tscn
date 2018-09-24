@@ -1,7 +1,7 @@
 [gd_scene load_steps=34 format=2]
 
-[ext_resource path="res://scripts/fp-floating-turret.gd" type="Script" id=1]
-[ext_resource path="res://scenes/fp-floating-rock-ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/obstacle_turret.gd" type="Script" id=1]
+[ext_resource path="res://scenes/obstacle_turret_ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/new/floating-turret/floating_turret_0.png" type="Texture" id=3]
 [ext_resource path="res://sprites/new/floating-turret/floating_turret_1.png" type="Texture" id=4]
 [ext_resource path="res://sprites/new/floating-turret/floating_turret_2.png" type="Texture" id=5]
@@ -44,22 +44,22 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 33.4335
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 39.915
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 72.2413, 28.3762 )
 
-[node name="fp-floating-turret" type="Area2D" groups=[
+[node name="obstacle_turret" type="Area2D" groups=[
 "obstacle",
 ]]
 
@@ -85,17 +85,26 @@ _sections_unfolded = [ "Transform" ]
 [node name="turret" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( 9.72256, 483.061 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="engine" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( 6.72256, 548.282 )
 scale = Vector2( 1, 0.366875 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="shape" type="CollisionShape2D" parent="." index="3"]
 
 position = Vector2( 8.72256, 524.061 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
+
+[node name="timer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
 
 

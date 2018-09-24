@@ -22,9 +22,9 @@ func _ready():
 	
 	direction = 1 if rand_range(0,100) > 50 else -1 
 	
-	while !dead:
-		spawn_balls()
-		yield(belt.create_timer(rand_range(1.50, 3.00)), "timeout")
+	$timer.wait_time = rand_range(1.50,3.00)
+	
+	# yield(belt.create_timer(rand_range(1.50, 3.00)), "timeout")
 		
 func _process(delta):
 	position.x -= delta * speed
@@ -38,7 +38,7 @@ func _process(delta):
 func spawn_balls():
 	var new_ball = ball.instance()
 	new_ball.position = Vector2(position.x + 10, position.y + 480) 
-	get_parent().add_child(new_ball)
+	get_parent().call_deferred("add_child",new_ball)
 	
 func bullet_hit(damage):
 	health -= damage
@@ -48,3 +48,7 @@ func bullet_hit(damage):
 func animation_changed():
 	if object.animation == "fall":
 		queue_free()
+
+func _on_timer_timeout():
+	while !dead:
+		spawn_balls()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://scripts/fp-floating-rock.gd" type="Script" id=1]
+[ext_resource path="res://scripts/obstacle_rock.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/floating-rock/floating_rock_0.png" type="Texture" id=2]
 [ext_resource path="res://sprites/new/floating-rock/floating_rock_1.png" type="Texture" id=3]
 [ext_resource path="res://sprites/new/floating-rock/floating_rock_2.png" type="Texture" id=4]
@@ -49,7 +49,7 @@ height = 96.0137
 custom_solver_bias = 0.0
 extents = Vector2( 31.0785, 154.288 )
 
-[node name="fp-floating-rock" type="Area2D" groups=[
+[node name="obstacle_rock" type="Area2D" index="0" groups=[
 "rock",
 ]]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scripts/episode_tries.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/score-bg.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://scenes/enemy_lorenna.tscn" type="PackedScene" id=22]
 [ext_resource path="res://scenes/enemy_lorenna_rocket.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/pickup.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scenes/obstacle_turret.tscn" type="PackedScene" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -458,7 +459,7 @@ position = Vector2( 2610.81, 546.448 )
 
 [node name="enemy_giorgio" parent="." index="10" instance=ExtResource( 20 )]
 
-position = Vector2( 1011.07, 422.606 )
+position = Vector2( 3712.58, 368.076 )
 
 [node name="ground_fire" parent="." index="11" instance=ExtResource( 21 )]
 
@@ -474,7 +475,7 @@ position = Vector2( 2130.91, 843.413 )
 
 [node name="enemy_lorenna" parent="." index="14" instance=ExtResource( 22 )]
 
-position = Vector2( 1265.19, 668.479 )
+position = Vector2( 4475.64, 613.949 )
 fire_rate = 0.5
 bullet = ExtResource( 23 )
 
@@ -482,7 +483,13 @@ bullet = ExtResource( 23 )
 
 [node name="pickup" parent="pickups" index="0" instance=ExtResource( 24 )]
 
-position = Vector2( 741.406, 470.69 )
+position = Vector2( 5480.97, 457.058 )
+
+[node name="obstacles" type="Node2D" parent="." index="16"]
+
+[node name="obstacle_turret" parent="obstacles" index="0" instance=ExtResource( 25 )]
+
+position = Vector2( 1206.48, 45.4418 )
 
 [connection signal="pressed" from="hud/exit" to="." method="_on_exit_pressed"]
 

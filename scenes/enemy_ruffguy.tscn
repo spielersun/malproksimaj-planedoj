@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://scripts/fp-ruffguy.gd" type="Script" id=1]
+[ext_resource path="res://scripts/enemy_ruffguy.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/ruffguy/ruffguy_0.png" type="Texture" id=2]
 [ext_resource path="res://sprites/new/ruffguy/ruffguy_1.png" type="Texture" id=3]
 [ext_resource path="res://sprites/new/ruffguy/ruffguy_2.png" type="Texture" id=4]
@@ -43,7 +43,7 @@ extents = Vector2( 163.024, 21.1005 )
 custom_solver_bias = 0.0
 extents = Vector2( 106.863, 53.7994 )
 
-[node name="fp-ruffguy" type="KinematicBody2D" index="0" groups=[
+[node name="enemy_ruffguy" type="KinematicBody2D" index="0" groups=[
 "company",
 ]]
 
