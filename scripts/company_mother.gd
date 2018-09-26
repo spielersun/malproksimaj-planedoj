@@ -19,8 +19,8 @@ var motion_x
 var motion_y
 
 const supports = [
-	preload("res://scenes/fp-support-battery.tscn"),
-	preload("res://scenes/fp-support-double.tscn")
+	preload("res://scenes/company_supplies_battery.tscn"),
+	preload("res://scenes/company_supplies_double.tscn")
 ]
 
 func _ready():

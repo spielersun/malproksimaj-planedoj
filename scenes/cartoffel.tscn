@@ -82,20 +82,15 @@ animations = [ {
 "name": "ride",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
-"loop": false,
-"name": "retract-tires",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
 "loop": false,
 "name": "move-right",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 43 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 43 ) ],
-"loop": true,
-"name": "cruise-right",
-"speed": 10.0
+"frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "retract-tires",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ) ],
 "loop": false,
@@ -105,6 +100,11 @@ animations = [ {
 "frames": [ ExtResource( 49 ), ExtResource( 50 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 37 ) ],
 "loop": false,
 "name": "start-right",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 43 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 43 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "cruise-right",
 "speed": 10.0
 } ]
 
@@ -124,7 +124,7 @@ radius = 3.31684
 custom_solver_bias = 0.0
 extents = Vector2( 5.61569, 0.336707 )
 
-[node name="cartoffel" type="KinematicBody2D" index="0" groups=[
+[node name="cartoffel" type="KinematicBody2D" groups=[
 "player",
 ]]
 
@@ -206,7 +206,7 @@ _sections_unfolded = [ "Pause" ]
 
 [node name="camera" type="Camera2D" parent="." index="8"]
 
-offset = Vector2( 200, -100 )
+offset = Vector2( 200, 0 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -214,7 +214,7 @@ zoom = Vector2( 1, 1 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
-limit_bottom = 10000000
+limit_bottom = 900
 limit_smoothed = false
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
@@ -229,6 +229,6 @@ drag_margin_bottom = 0.0
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Drag Margin", "Smoothing" ]
+_sections_unfolded = [ "Drag Margin", "Limit", "Smoothing" ]
 
 

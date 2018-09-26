@@ -11,9 +11,11 @@
 [ext_resource path="res://sprites/icons/icon_unplug_2.png" type="Texture" id=9]
 [ext_resource path="res://sprites/icons/icon_unplug_1.png" type="Texture" id=10]
 [ext_resource path="res://scenes/fp-enemy-spawner.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/fp-mother.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/company_mother.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/fp-obstacle-spawner.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/enemy_ruffguy.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/company_ruffguy.tscn" type="PackedScene" id=14]
+
+
 
 
 [node name="episode_cartoffel" type="Node2D" index="0"]

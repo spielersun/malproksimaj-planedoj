@@ -20,7 +20,7 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[node name="enemy_lorenna" type="KinematicBody2D" groups=[
+[node name="enemy_lorenna" type="KinematicBody2D" index="0" groups=[
 "enemy",
 ]]
 

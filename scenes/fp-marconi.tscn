@@ -9,7 +9,6 @@
 [ext_resource path="res://sprites/new/marconi-4.png" type="Texture" id=7]
 [ext_resource path="res://sprites/new/marconi-5.png" type="Texture" id=8]
 
-
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {

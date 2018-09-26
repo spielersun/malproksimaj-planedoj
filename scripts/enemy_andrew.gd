@@ -12,10 +12,14 @@ var right_bound
 
 var direction = 1
 var dead = false
+var start_x
 
 var cannon_active = false
 
+signal enemy_dead
+
 func _ready():
+	start_x = position.x
 	object.connect("animation_finished", self, "animation_changed")
 	
 	object.play("passive")
@@ -36,13 +40,14 @@ func _process(delta):
 	elif position.y < left_bound:
 		direction = 1
 	
-	if position.x < -100:
+	if position.x < start_x - 3000:
 		queue_free()
 
 func add_damage(damage):
 	health -= damage
 	if health <= 0:
 		dead = true
+		emit_signal("enemy_dead", "andrew")
 		queue_free()
 		
 func animation_changed():

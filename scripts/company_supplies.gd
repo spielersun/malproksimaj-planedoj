@@ -13,5 +13,6 @@ func _process(delta):
 	translate(velocity * delta)
 	rotation += delta
 	
-	if position.x <= 0:
+	if position.y >= 750:
+		belt.create_explosion(position)
 		queue_free()

@@ -40,7 +40,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -0.291962, -121.01, 0, -132.479, 0, 132.919, 119.863, -0.414902, 0, 0, -134.679, 5.28154, -0.732086, 120.18, 0, 0, -1.32038, -137.32, -120.887, -1.29515, 0, 0, 0, 0, -0.732086, -121.01 )
 }
 
-[node name="enemy_kendra" type="KinematicBody2D" groups=[
+[node name="enemy_kendra" type="KinematicBody2D" index="0" groups=[
 "enemy",
 ]]
 
@@ -59,7 +59,7 @@ speed = 100
 health = 15
 ball = ExtResource( 2 )
 
-[node name="ship" type="AnimatedSprite" parent="." index="0"]
+[node name="sprites" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
 animation = "move"

@@ -16,7 +16,7 @@ var can_shoot = true
 var max_health = 50
 
 signal health_changed
-signal giorgio_defeated
+signal enemy_dead
 
 func _ready():
 	ship_anims.play("move-left")
@@ -42,7 +42,5 @@ func add_damage(damage):
 	emit_signal('health_changed', health * 100/max_health)
 	if health <= 0:
 		dead = true
+		emit_signal("enemy_dead", "giorgio")
 		queue_free()
-#		collision.queue_free()
-#		hide()
-		emit_signal("giorgio_defeated")

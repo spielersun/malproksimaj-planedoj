@@ -11,10 +11,9 @@ export var health = 1000
 onready var sprite = $vehicle
 onready var collision = $shape
 
-var start_x
-
 var target
 var can_shoot = true
+var start_x
 
 var target_pos
 var left_bound
@@ -27,6 +26,7 @@ var vis_color = Color(.867, .91, .247, .1)
 var laser_color = Color(1.0, .329, .298)
 
 signal homing_bullet
+signal enemy_dead
 
 func _ready():
 	start_x = position.x
@@ -44,7 +44,7 @@ func _physics_process(delta):
 	if target:
 		aim()
 		
-	if position.x < start_x - 2000:
+	if position.x < start_x - 3000:
 		queue_free()
 		
 func aim():
@@ -71,6 +71,7 @@ func add_damage(damage):
 	health -= damage
 	if health <= 0:
 		dead = true
+		emit_signal("enemy_dead", "kendra")
 		queue_free()
 
 func shoot(pos):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scripts/fp-mother.gd" type="Script" id=1]
-[ext_resource path="res://scenes/fp-mother-shield.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/company_mother.gd" type="Script" id=1]
+[ext_resource path="res://scenes/company_mother_shield.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/new/mother.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 366.425, 190.41 )
 
-[node name="fp-mother" type="KinematicBody2D" groups=[
+[node name="company_mother" type="KinematicBody2D" groups=[
 "company",
 ]]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scripts/fp-support-battery.gd" type="Script" id=1]
+[ext_resource path="res://scripts/company_supplies_battery.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/support-battery.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 25.0843, 25.0411 )
 
-[node name="fp-support-battery" type="Area2D"]
+[node name="company_supplies_battery" type="Area2D" index="0"]
 
 z_index = 65
 input_pickable = true

@@ -19,7 +19,6 @@
 [ext_resource path="res://sprites/new/andrew/andrew_6.png" type="Texture" id=17]
 [ext_resource path="res://sprites/new/andrew/andrew_7.png" type="Texture" id=18]
 
-
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {

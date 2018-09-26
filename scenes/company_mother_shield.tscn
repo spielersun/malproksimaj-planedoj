@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://sprites/new/mother-shield.png" type="Texture" id=1]
-[ext_resource path="res://scripts/fp-mother-shield.gd" type="Script" id=2]
+[ext_resource path="res://scripts/company_mother_shield.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
 
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="fp-mother-shield" type="Sprite"]
+[node name="company_mother_shield" type="Sprite" index="0"]
 
 z_index = 60
 texture = ExtResource( 1 )
