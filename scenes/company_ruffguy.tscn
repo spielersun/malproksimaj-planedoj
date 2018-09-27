@@ -9,7 +9,6 @@
 [ext_resource path="res://sprites/new/ruffguy/ruffguy_5.png" type="Texture" id=7]
 [ext_resource path="res://sprites/new/ruffguy/ruffguy_6.png" type="Texture" id=8]
 
-
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
@@ -37,14 +36,14 @@ extents = Vector2( 51.7757, 54.8034 )
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 163.024, 21.1005 )
+extents = Vector2( 163.024, 9.5367 )
 
 [sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 106.863, 53.7994 )
 
-[node name="enemy_ruffguy" type="KinematicBody2D" index="0" groups=[
+[node name="company_ruffguy" type="RigidBody2D" groups=[
 "company",
 ]]
 
@@ -52,7 +51,21 @@ z_index = 60
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-collision/safe_margin = 0.08
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
 
@@ -73,11 +86,12 @@ shape = SubResource( 3 )
 
 [node name="bottom" type="CollisionShape2D" parent="." index="3"]
 
-position = Vector2( 25.9872, 180.657 )
+position = Vector2( 27.6049, 193.275 )
 shape = SubResource( 4 )
 
 [node name="inside" type="CollisionShape2D" parent="." index="4"]
 
+visible = false
 position = Vector2( -26.8478, 103.43 )
 shape = SubResource( 5 )
 

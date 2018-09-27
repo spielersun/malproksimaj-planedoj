@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 onready var ship_anims = $object
 
@@ -24,6 +24,7 @@ func _ready():
 	direction = 1 if rand_range(0,100) > 50 else -1 
 	
 	connect("body_entered", self, "_on_body_entered")
+	connect("body_shape_entered", self, "_on_body_shape_entered")
 
 func _physics_process(delta):
 	
@@ -55,5 +56,9 @@ func _on_body_entered(body):
 func hit_shield():
 	pass
 
+func _on_body_shape_entered(body_id, body, body_shape, local_shape):
+	print(body)
+	print(local_shape)
+	print(body_shape)
 
 

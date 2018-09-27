@@ -23,7 +23,6 @@
 [ext_resource path="res://sprites/new/floating-rock/floating_rock_19.png" type="Texture" id=21]
 [ext_resource path="res://sprites/new/floating-rock/floating_rock_20.png" type="Texture" id=22]
 
-
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
@@ -49,7 +48,7 @@ height = 96.0137
 custom_solver_bias = 0.0
 extents = Vector2( 31.0785, 154.288 )
 
-[node name="obstacle_rock" type="Area2D" index="0" groups=[
+[node name="obstacle_rock" type="Area2D" groups=[
 "rock",
 ]]
 

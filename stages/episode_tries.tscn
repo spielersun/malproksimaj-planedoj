@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/episode_tries.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/score-bg.png" type="Texture" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://scenes/enemy_lorenna_rocket.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/pickup.tscn" type="PackedScene" id=24]
 [ext_resource path="res://scenes/obstacle_turret.tscn" type="PackedScene" id=25]
+[ext_resource path="res://scenes/company_ruffguy.tscn" type="PackedScene" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -128,6 +129,7 @@ _sections_unfolded = [ "Margin", "Rect", "Textures" ]
 
 [node name="grounds" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="ground5" type="StaticBody2D" parent="grounds" index="0" groups=[
@@ -598,8 +600,6 @@ bullet = ExtResource( 23 )
 
 [node name="pickups" type="Node2D" parent="." index="14"]
 
-editor/display_folded = true
-
 [node name="pickup" parent="pickups" index="0" instance=ExtResource( 24 )]
 
 position = Vector2( 5480.97, 457.058 )
@@ -611,6 +611,10 @@ editor/display_folded = true
 [node name="obstacle_turret" parent="obstacles" index="0" instance=ExtResource( 25 )]
 
 position = Vector2( 1206.48, 45.4418 )
+
+[node name="company_ruffguy" parent="." index="16" instance=ExtResource( 26 )]
+
+position = Vector2( 5100.35, 630.712 )
 
 [connection signal="pressed" from="hud/exit" to="." method="_on_exit_pressed"]
 
