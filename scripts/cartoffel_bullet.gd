@@ -36,13 +36,13 @@ func _process(delta):
 		queue_free()
 	
 func _on_body_entered(body):
-	var score_text = get_tree().get_root().get_node("episode_tries").find_node("label")
+	# var score_text = get_tree().get_root().get_node("episode_tries").find_node("label")
 	
 	if body.is_in_group("enemy"):
 		body.add_damage(damage)
 		belt.create_explosion(position)
-		var total_score = int(score_text.text) + 5
-		score_text.text = str(total_score)
+		# var total_score = int(score_text.text) + 5
+		# score_text.text = str(total_score)
 		# emit_signal("add_score", [5])
 		queue_free()
 	elif body.is_in_group("company"):
@@ -61,3 +61,12 @@ func _on_area_shape_entered(area_id, area, area_shape, self_shape):
 		area.bullet_hit(damage)
 		belt.create_explosion(position)
 		queue_free()
+	elif area.is_in_group("astro_drop"):
+		belt.create_explosion(position)
+		queue_free()
+		area.queue_free()
+	
+
+
+
+

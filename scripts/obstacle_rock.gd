@@ -1,9 +1,12 @@
 extends Area2D
 
 onready var object = $object
+export var value = 15
 
 var speed = 100
 var health = 10
+
+signal obstacle_destroyed
 
 func _ready():
 	object.play("idle")
@@ -19,4 +22,5 @@ func bullet_hit(damage):
 
 func animation_changed():
 	if object.animation == "fall":
+		emit_signal("obstacle_destroyed", value)
 		queue_free()

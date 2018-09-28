@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var speed = 150
 export var health = 15
+export var value = 10
 
 onready var sprite = $sprite
 onready var collision = $shape
@@ -28,6 +29,6 @@ func _process(delta):
 func add_damage(damage):
 	health -= damage
 	if health <= 0:
+		emit_signal("enemy_dead", value)
 		dead = true
-		emit_signal("enemy_dead", "sindar")
 		queue_free()

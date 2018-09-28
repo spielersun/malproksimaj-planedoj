@@ -12,5 +12,5 @@ func _ready():
 
 func _process(delta):
 	if !shield_down:
-		var mother = get_tree().get_root().get_node("episode_cartoffel").find_node("fp-mother")
+		var mother = get_tree().get_root().get_node("episode_cartoffel").find_node("mother")
 		position = mother.position

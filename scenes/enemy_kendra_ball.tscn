@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 15.5203
 
-[node name="enemy_kendra_ball" type="KinematicBody2D" groups=[
+[node name="enemy_kendra_ball" type="KinematicBody2D" index="0" groups=[
 "enemy",
 ]]
 
@@ -18,6 +18,7 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 health = 10
+value = 2
 
 [node name="ship" type="Sprite" parent="." index="0"]
 

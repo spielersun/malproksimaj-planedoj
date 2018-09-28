@@ -7,6 +7,7 @@ export(PackedScene) var bullet
 
 export var speed = 100
 export var health = 1000
+export var value = 10
 
 onready var sprite = $vehicle
 onready var collision = $shape
@@ -37,7 +38,7 @@ func _ready():
 	$timer.wait_time = fire_rate
 
 func _physics_process(delta):
-	position.x -= speed * delta
+	# position.x -= speed * delta
 	sprite.play("move-left")
 	update()
 	
@@ -70,8 +71,8 @@ func aim():
 func add_damage(damage):
 	health -= damage
 	if health <= 0:
+		emit_signal("enemy_dead", value)
 		dead = true
-		emit_signal("enemy_dead", "kendra")
 		queue_free()
 
 func shoot(pos):

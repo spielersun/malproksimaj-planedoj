@@ -3,6 +3,7 @@ extends Area2D
 onready var object = $object
 
 export(PackedScene) var ball
+export var value = 15
 
 var speed = 100
 var health = 10
@@ -11,6 +12,8 @@ var dead = false
 var top_bound
 var bottom_bound
 var direction = 1
+
+signal obstacle_destroyed
 
 func _ready():
 	randomize()
@@ -27,7 +30,7 @@ func _ready():
 	# yield(belt.create_timer(rand_range(1.50, 3.00)), "timeout")
 		
 func _process(delta):
-	position.x -= delta * speed
+	#position.x -= delta * speed
 	position.y += 10 * direction * delta
 	
 	if position.y > bottom_bound:
@@ -38,7 +41,7 @@ func _process(delta):
 func spawn_balls():
 	var new_ball = ball.instance()
 	new_ball.position = Vector2(position.x + 10, position.y + 480) 
-	get_parent().call_deferred("add_child",new_ball)
+	get_parent().call_deferred("add_child", new_ball)
 	
 func bullet_hit(damage):
 	health -= damage
@@ -47,6 +50,7 @@ func bullet_hit(damage):
 
 func animation_changed():
 	if object.animation == "fall":
+		emit_signal("obstacle_destroyed", value)
 		queue_free()
 
 func _on_timer_timeout():

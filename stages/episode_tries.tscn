@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scripts/episode_tries.gd" type="Script" id=1]
 [ext_resource path="res://sprites/new/score-bg.png" type="Texture" id=2]
@@ -25,7 +25,8 @@
 [ext_resource path="res://scenes/enemy_lorenna_rocket.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/pickup.tscn" type="PackedScene" id=24]
 [ext_resource path="res://scenes/obstacle_turret.tscn" type="PackedScene" id=25]
-[ext_resource path="res://scenes/company_ruffguy.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/obstacle_rock.tscn" type="PackedScene" id=26]
+[ext_resource path="res://scenes/company_ruffguy.tscn" type="PackedScene" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -39,7 +40,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="hud" type="CanvasLayer" parent="." index="0"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -48,7 +48,6 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="score" type="TextureRect" parent="hud" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -554,14 +553,14 @@ _sections_unfolded = [ "Scroll" ]
 
 [node name="drop_spawner" parent="." index="7" instance=ExtResource( 16 )]
 
-position = Vector2( 1841.92, -238.34 )
+position = Vector2( 1883.02, -214.366 )
 _sections_unfolded = [ "Transform" ]
 astro_drop = ExtResource( 17 )
 astro_drop_prize = ExtResource( 18 )
 
 [node name="drop_spawner2" parent="." index="8" instance=ExtResource( 16 )]
 
-position = Vector2( 4951.58, -157.635 )
+position = Vector2( 5040.62, -137.086 )
 astro_drop = ExtResource( 17 )
 astro_drop_prize = ExtResource( 18 )
 
@@ -576,6 +575,7 @@ position = Vector2( 2610.81, 546.448 )
 [node name="enemy_giorgio" parent="." index="11" instance=ExtResource( 20 )]
 
 position = Vector2( 3712.58, 368.076 )
+value = 10
 
 [node name="fires" type="Node2D" parent="." index="12"]
 
@@ -584,13 +584,25 @@ position = Vector2( 1731.99, 823.729 )
 
 [node name="ground_fire" parent="fires" index="0" instance=ExtResource( 21 )]
 
-[node name="ground_fire2" parent="fires" index="1" instance=ExtResource( 21 )]
+[node name="ground_fire4" parent="fires" index="1" instance=ExtResource( 21 )]
+
+position = Vector2( 3318.62, 30.823 )
+
+[node name="ground_fire2" parent="fires" index="2" instance=ExtResource( 21 )]
 
 position = Vector2( 173.01, -5.30902 )
 
-[node name="ground_fire3" parent="fires" index="2" instance=ExtResource( 21 )]
+[node name="ground_fire5" parent="fires" index="3" instance=ExtResource( 21 )]
+
+position = Vector2( 3084.08, -1.88434 )
+
+[node name="ground_fire3" parent="fires" index="4" instance=ExtResource( 21 )]
 
 position = Vector2( 398.92, 19.684 )
+
+[node name="ground_fire6" parent="fires" index="5" instance=ExtResource( 21 )]
+
+position = Vector2( 3501.78, 40.2327 )
 
 [node name="enemy_lorenna" parent="." index="13" instance=ExtResource( 22 )]
 
@@ -600,24 +612,41 @@ bullet = ExtResource( 23 )
 
 [node name="pickups" type="Node2D" parent="." index="14"]
 
+editor/display_folded = true
+
 [node name="pickup" parent="pickups" index="0" instance=ExtResource( 24 )]
 
-position = Vector2( 5480.97, 457.058 )
+position = Vector2( 3772, 737.891 )
 
 [node name="obstacles" type="Node2D" parent="." index="15"]
 
-editor/display_folded = true
-
 [node name="obstacle_turret" parent="obstacles" index="0" instance=ExtResource( 25 )]
 
-position = Vector2( 1206.48, 45.4418 )
+position = Vector2( 1206.48, 0 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="company_ruffguy" parent="." index="16" instance=ExtResource( 26 )]
+[node name="obstacle_rock" parent="obstacles" index="1" instance=ExtResource( 26 )]
 
-position = Vector2( 5100.35, 630.712 )
+position = Vector2( 6110, 0 )
+
+[node name="company_ruffguy" parent="." index="16" instance=ExtResource( 27 )]
+
+position = Vector2( 7210.02, 640.986 )
 
 [connection signal="pressed" from="hud/exit" to="." method="_on_exit_pressed"]
 
+[connection signal="enemy_dead" from="enemy_marconi" to="." method="_on_enemy_dead"]
+
+[connection signal="enemy_dead" from="enemy_marconi2" to="." method="_on_enemy_dead"]
+
+[connection signal="enemy_dead" from="enemy_giorgio" to="." method="_on_enemy_dead"]
+
+[connection signal="enemy_dead" from="enemy_lorenna" to="." method="_on_enemy_dead"]
+
 [connection signal="homing_bullet" from="enemy_lorenna" to="." method="_on_enemy_lorenna_homing_bullet"]
+
+[connection signal="obstacle_destroyed" from="obstacles/obstacle_turret" to="." method="_on_obstacle_destroyed"]
+
+[connection signal="obstacle_destroyed" from="obstacles/obstacle_rock" to="." method="_on_obstacle_destroyed"]
 
 

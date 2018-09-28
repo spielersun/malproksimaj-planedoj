@@ -74,6 +74,7 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
 ball = ExtResource( 2 )
+value = 15
 
 [node name="object" type="AnimatedSprite" parent="." index="0"]
 

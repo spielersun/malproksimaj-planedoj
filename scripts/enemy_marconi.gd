@@ -5,6 +5,7 @@ export (float) var fire_rate
 
 export var speed = 100
 export var health = 15
+export var value = 10
 
 export(PackedScene) var bullet
 
@@ -24,7 +25,7 @@ var hit_pos
 var vis_color = Color(.867, .91, .247, .1)
 var laser_color = Color(1.0, .329, .298)
 
-signal marconi_defeated
+signal enemy_dead
 
 func _ready():
 	randomize()
@@ -87,10 +88,9 @@ func aim():
 func add_damage(damage):
 	health -= damage
 	if health <= 0:
+		emit_signal("enemy_dead", value)
 		dead = true
 		queue_free()
-		hide()
-		emit_signal("marconi_defeated")
 
 func shoot(pos):
 	randomize()

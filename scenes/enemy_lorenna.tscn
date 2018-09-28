@@ -20,7 +20,7 @@ animations = [ {
 "speed": 15.0
 } ]
 
-[node name="enemy_lorenna" type="KinematicBody2D" index="0" groups=[
+[node name="enemy_lorenna" type="KinematicBody2D" groups=[
 "enemy",
 ]]
 
@@ -36,6 +36,7 @@ fire_rate = 0.2
 bullet = null
 speed = 100
 health = 15
+value = 10
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 

@@ -33,6 +33,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
 speed = 150
 health = 15
+value = 10
 ball = null
 
 [node name="sprite" type="AnimatedSprite" parent="." index="0"]

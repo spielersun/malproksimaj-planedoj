@@ -57,6 +57,7 @@ __meta__ = {
 }
 speed = 100
 health = 15
+value = 10
 ball = ExtResource( 2 )
 
 [node name="sprites" type="AnimatedSprite" parent="." index="0"]
