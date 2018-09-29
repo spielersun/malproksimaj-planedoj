@@ -40,6 +40,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="hud" type="CanvasLayer" parent="." index="0"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -48,6 +49,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="score" type="TextureRect" parent="hud" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -620,20 +622,24 @@ position = Vector2( 3772, 737.891 )
 
 [node name="obstacles" type="Node2D" parent="." index="15"]
 
+editor/display_folded = true
+
 [node name="obstacle_turret" parent="obstacles" index="0" instance=ExtResource( 25 )]
 
-position = Vector2( 1206.48, 0 )
+position = Vector2( 3039.4, 7.02258 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="obstacle_rock" parent="obstacles" index="1" instance=ExtResource( 26 )]
 
-position = Vector2( 6110, 0 )
+position = Vector2( 1067.72, 7.02271 )
 
 [node name="company_ruffguy" parent="." index="16" instance=ExtResource( 27 )]
 
 position = Vector2( 7210.02, 640.986 )
 
 [connection signal="pressed" from="hud/exit" to="." method="_on_exit_pressed"]
+
+[connection signal="armor_changed" from="cartoffel" to="." method="_on_cartoffel_armor_changed"]
 
 [connection signal="enemy_dead" from="enemy_marconi" to="." method="_on_enemy_dead"]
 

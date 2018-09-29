@@ -33,13 +33,14 @@ func _process(delta):
 		queue_free()
 	
 func _on_body_entered(body):
-	var health_bar = get_tree().get_root().get_node("episode_tries").find_node("health")
+	pass
+	# var health_bar = get_tree().get_root().get_node("episode_tries").find_node("health")
 	
-#	if body.is_in_group("player"):
+	if body.is_in_group("player"):
 #		# emit_signal("armor_changed", [1])
 #		health_bar.frame = body.armor - 1
-#		body.armor -= 1
-#		queue_free()
-#	elif body.is_in_group("company"):
-#		belt.create_explosion(position)
-#		queue_free()
+		body.change_armor(-1)
+		queue_free()
+	elif body.is_in_group("company"):
+		belt.create_explosion(position)
+		queue_free()

@@ -20,6 +20,8 @@ func _ready():
 	object.play("float")
 	object.connect("animation_finished", self, "animation_changed")
 	
+	connect("body_entered", self, "_on_body_entered")
+	
 	top_bound = position.y - 10
 	bottom_bound = position.y + 10
 	
@@ -56,3 +58,15 @@ func animation_changed():
 func _on_timer_timeout():
 	while !dead:
 		spawn_balls()
+
+func _on_body_entered(body):
+	var explode_position = Vector2(position.x, position.y+525) 
+	
+	if body.is_in_group("player"):
+		belt.create_explosion(explode_position)
+		body.change_armor(-1)
+		queue_free()
+	elif body.is_in_group("company"):
+		body.hit_shield()
+		queue_free()
+		

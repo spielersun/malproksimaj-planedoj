@@ -25,7 +25,7 @@ var landed = false
 var hanging = false
 var shifted_2 = false
 
-var armor = 5 setget took_hit
+var armor = 5
 var double_shooting = false setget set_double_shooting
 
 var mouse_angle
@@ -39,6 +39,7 @@ var direction = 1
 var ship_height = 0
 
 var bullet_speed = 200
+var hull_damage = 40
 
 var gear_1 = 100
 var gear_2 = 300
@@ -49,10 +50,12 @@ var gear = 0
 var dragging
 var drag_start = Vector2()
 
+signal armor_changed
+
 func _ready():
 	randomize()
 	wait()
-	
+
 	ship_anims.connect("animation_finished", self, "animation_changed")
 	
 	screensize = get_viewport().get_visible_rect().size
@@ -298,15 +301,22 @@ func ride_stop():
 	accelerated = false
 	ship_anims.play("stop")
 
-func took_hit(new_value):
-	if new_value > 4:
-		hit_shield()
-		return
-	elif new_value <= 0:
-		queue_free()
+func change_armor(value):
+	if value > 0:
+		if armor >= 5:
+			return
+		else:
+			armor += value
+			emit_signal("armor_changed", value)
 	else:
-		armor = new_value
-		hit_shield()
+		if armor <= 5 and armor > 1:
+			hit_shield()
+			armor -= 1
+			emit_signal("armor_changed", value)
+		else:
+			armor -= 1
+			emit_signal("armor_changed", value)
+			queue_free()
 
 func heal(amount):
 	armor += amount
@@ -314,9 +324,9 @@ func heal(amount):
 	#emit_signal('armor_changed', armor * 100/max_armor)
 
 func hit_shield():
-	var new_hit = shield.instance()
-	new_hit.position = position
-	get_parent().add_child(new_hit)
+	var new_shield = shield.instance()
+	new_shield.position = position
+	get_parent().add_child(new_shield)
 
 func wait():
 	hanging = true
@@ -342,3 +352,25 @@ func drag_this(event):
 		var drag_end = get_global_mouse_position()
 		var dir = drag_start - drag_end
 		apply_impulse(Vector2(40, 0), dir * 5)
+		
+#func _on_body_entered(body):
+#	if body.is_in_group("enemy"):
+#		body.add_damage(hull_damage)
+#		belt.create_explosion(position)
+#	elif body.is_in_group("company"):
+#		body.hit_shield()
+#
+#func _on_area_shape_entered(area_id, area, area_shape, self_shape):
+#	if area.is_in_group("rock"):
+#		if area_shape == 0:
+#			belt.create_explosion(position)
+#			queue_free()
+#		elif area_shape == 1:
+#			area.bullet_hit(hull_damage)
+#			belt.create_explosion(position)
+#	elif area.is_in_group("obstacle"):
+#		area.bullet_hit(hull_damage)
+#		belt.create_explosion(position)
+#	elif area.is_in_group("astro_drop"):
+#		belt.create_explosion(position)
+#		area.queue_free()
