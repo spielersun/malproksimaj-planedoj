@@ -608,7 +608,8 @@ position = Vector2( 3501.78, 40.2327 )
 
 [node name="enemy_lorenna" parent="." index="13" instance=ExtResource( 22 )]
 
-position = Vector2( 4475.64, 613.949 )
+position = Vector2( 1200, 613.949 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 fire_rate = 0.5
 bullet = ExtResource( 23 )
 
@@ -631,7 +632,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="obstacle_rock" parent="obstacles" index="1" instance=ExtResource( 26 )]
 
-position = Vector2( 1067.72, 7.02271 )
+position = Vector2( 6000, 0 )
 
 [node name="company_ruffguy" parent="." index="16" instance=ExtResource( 27 )]
 

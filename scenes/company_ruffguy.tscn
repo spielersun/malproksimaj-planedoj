@@ -26,7 +26,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 152.171, 61.4185 )
+extents = Vector2( 168.962, 61.4185 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -43,7 +43,7 @@ extents = Vector2( 163.024, 9.5367 )
 custom_solver_bias = 0.0
 extents = Vector2( 106.863, 53.7994 )
 
-[node name="company_ruffguy" type="RigidBody2D" groups=[
+[node name="company_ruffguy" type="RigidBody2D" index="0" groups=[
 "company",
 ]]
 
@@ -76,7 +76,8 @@ animation = "active"
 
 [node name="top" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 16.9845, -14.0777 )
+position = Vector2( 29.853, -21.05 )
+scale = Vector2( 0.939872, 0.937411 )
 shape = SubResource( 2 )
 
 [node name="front" type="CollisionShape2D" parent="." index="2"]
