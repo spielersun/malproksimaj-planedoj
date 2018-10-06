@@ -1,15 +1,14 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+onready var _character = $char
+onready var _label = $hud/label
+onready var _bar = $hud/bar
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	_label.update_text(_character.level, _character.experience, _character.experience_required)
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _input(event):
+	if not event.is_action_pressed("ui_accept"):
+		return
+	_character.gain_experience(50)
+	_label.update_text(_character.level, _character.experience, _character.experience_required)
