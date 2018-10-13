@@ -1,15 +1,8 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	for window in get_children():
+		window.connect('move_to_top', self, 'move_window_to_top')
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func move_window_to_top(node):
+	move_child(node, get_child_count() - 1)
