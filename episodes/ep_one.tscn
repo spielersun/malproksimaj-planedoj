@@ -14,7 +14,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="ep_one" type="Node2D" index="0"]
+[node name="ep_one" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -28,6 +28,7 @@ level = 1
 
 [node name="hud" type="Control" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
