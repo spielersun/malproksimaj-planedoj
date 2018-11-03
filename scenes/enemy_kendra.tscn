@@ -40,7 +40,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -0.291962, -121.01, 0, -132.479, 0, 132.919, 119.863, -0.414902, 0, 0, -134.679, 5.28154, -0.732086, 120.18, 0, 0, -1.32038, -137.32, -120.887, -1.29515, 0, 0, 0, 0, -0.732086, -121.01 )
 }
 
-[node name="enemy_kendra" type="KinematicBody2D" index="0" groups=[
+[node name="enemy_kendra" type="KinematicBody2D" groups=[
 "enemy",
 ]]
 
@@ -77,7 +77,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="follow" type="PathFollow2D" parent="path" index="0"]
 
-editor/display_folded = true
 position = Vector2( -3.16994, 120.228 )
 rotation = -0.053751
 offset = 392.398
@@ -92,7 +91,6 @@ lookahead = 4.0
 
 [node name="follow2" type="PathFollow2D" parent="path" index="1"]
 
-editor/display_folded = true
 position = Vector2( -3.16994, 120.228 )
 rotation = -0.053751
 offset = 392.398
