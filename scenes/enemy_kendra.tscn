@@ -71,7 +71,6 @@ shape = SubResource( 2 )
 
 [node name="path" type="Path2D" parent="." index="2"]
 
-editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 3 )
 _sections_unfolded = [ "Transform", "Z Index" ]
