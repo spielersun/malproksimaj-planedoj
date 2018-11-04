@@ -54,7 +54,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 9.13599, 118.768, 100.759, 0.0786133, 0, 0, -109.504, 10.0377, -0.530396, 100.298, 0, 0, 0, 0, -101.32, -0.491699, -106.723, -8.33262, 118.873, -12.0724, 0.131897, -101.219, 0, 0, 0, 0, 100.733, 0.0961151 )
 }
 
-[node name="kendra" type="KinematicBody2D" index="0"]
+[node name="kendra" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1

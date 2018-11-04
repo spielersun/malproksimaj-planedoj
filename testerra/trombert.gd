@@ -9,34 +9,10 @@ const SPEED = 100
 
 var motion = Vector2()
 
-onready var sprites = $sprites
-
-onready var path = $path
-
-onready var follow1 = $path/follow1
-onready var follow2 = $path/follow2
-onready var follow3 = $path/follow3
-onready var follow4 = $path/follow4
-onready var follow5 = $path/follow5
-
-var direction = 1
-
-export(PackedScene) var ball
-
 func _ready():
-	follow1.unit_offset = 0.1
-	follow2.unit_offset = 0.2
-	follow3.unit_offset = 0.3
-	follow4.unit_offset = 0.4
-	follow5.unit_offset = 0.5
+	pass
 
 func _physics_process(delta):
-	follow1.offset += SPEED * 10 * delta
-	follow2.offset += SPEED * 10 * delta
-	follow3.offset += SPEED * 10 * delta
-	follow4.offset += SPEED * 10 * delta
-	follow5.offset += SPEED * 10 * delta
-	
 	#motion.y += GRAVITY
 	var friction = false
 	
@@ -44,14 +20,14 @@ func _physics_process(delta):
 		#motion.x += ACCELERATION
 		motion.x = min(motion.x+ACCELERATION, MAX_SPEED)
 		$sprites.flip_h = false
-		$sprites.play("active")
+		$sprites.play('move')
 	elif Input.is_action_pressed("ui_left"):
 		#motion.x -= ACCELERATION
 		motion.x = max(motion.x-ACCELERATION, -MAX_SPEED)
 		$sprites.flip_h = true
-		$sprites.play("active")
+		$sprites.play('move')
 	else: 
-		$sprites.play("passive")
+		$sprites.play('idle')
 		friction = true
 	
 	if is_on_floor():
@@ -62,9 +38,9 @@ func _physics_process(delta):
 			motion.x = lerp(motion.x, 0, 0.2)
 	else:
 		if motion.y < 0:
-			$sprites.play("active")
+			$sprites.play("jump")
 		else:
-			$sprites.play("active")
+			$sprites.play("fall")
 			
 		if friction:
 			motion.x = lerp(motion.x, 0, 0.05)
