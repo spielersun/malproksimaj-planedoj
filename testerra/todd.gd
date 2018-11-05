@@ -25,12 +25,12 @@ func _physics_process(delta):
 		#motion.x += ACCELERATION
 		motion.x = min(motion.x+ACCELERATION, MAX_SPEED)
 		$sprites.flip_h = false
-		$sprites.play("move")
+		$sprites.play("run")
 	elif Input.is_action_pressed("ui_left"):
 		#motion.x -= ACCELERATION
 		motion.x = max(motion.x-ACCELERATION, -MAX_SPEED)
 		$sprites.flip_h = true
-		$sprites.play("move")
+		$sprites.play("run")
 	else: 
 		$sprites.play("idle")
 		friction = true

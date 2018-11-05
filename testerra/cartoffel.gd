@@ -25,14 +25,14 @@ func _physics_process(delta):
 		#motion.x += ACCELERATION
 		motion.x = min(motion.x+ACCELERATION, MAX_SPEED)
 		$sprites.flip_h = false
-		$sprites.play("move")
+		$sprites.play("active")
 	elif Input.is_action_pressed("ui_left"):
 		#motion.x -= ACCELERATION
 		motion.x = max(motion.x-ACCELERATION, -MAX_SPEED)
 		$sprites.flip_h = true
-		$sprites.play("move")
+		$sprites.play("active")
 	else: 
-		$sprites.play("idle")
+		$sprites.play("passive")
 		friction = true
 	
 	if is_on_floor():
@@ -43,9 +43,9 @@ func _physics_process(delta):
 			motion.x = lerp(motion.x, 0, 0.2)
 	else:
 		if motion.y < 0:
-			$sprites.play("jump")
+			$sprites.play("active")
 		else:
-			$sprites.play("fall")
+			$sprites.play("active")
 			
 		if friction:
 			motion.x = lerp(motion.x, 0, 0.05)

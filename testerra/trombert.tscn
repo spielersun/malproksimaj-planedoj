@@ -4,9 +4,9 @@
 [ext_resource path="res://assets/images/trombert/idle_0.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/trombert/jump_1.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/trombert/jump_2.png" type="Texture" id=4]
-[ext_resource path="res://assets/images/trombert/move_2.png" type="Texture" id=5]
-[ext_resource path="res://assets/images/trombert/move_1.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/trombert/move_0.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/trombert/move_0.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/trombert/move_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/trombert/move_1.png" type="Texture" id=7]
 [ext_resource path="res://assets/images/trombert/fall_1.png" type="Texture" id=8]
 [ext_resource path="res://assets/images/trombert/fall_2.png" type="Texture" id=9]
 
@@ -40,7 +40,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 45.247, 25.8324 )
 
-[node name="trombert" type="KinematicBody2D" index="0"]
+[node name="trombert" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
