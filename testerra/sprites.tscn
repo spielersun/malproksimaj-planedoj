@@ -1,0 +1,187 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/images/map-tiles.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 25, 25 )
+
+[node name="sprites" type="Node"]
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="sprite2" type="Sprite" parent="." index="1"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 350, 0, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="sprite2" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="sprite2/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 0, 50, 50, 0, 50 )
+
+[node name="sprite3" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 100, 50, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="sprite3" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="sprite3/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 50, 0, 0, 50, 50, 50 )
+
+[node name="sprite4" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 100, 0, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="sprite4" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="sprite4/static" index="0"]
+
+position = Vector2( 25, 25 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="sprite5" type="Sprite" parent="." index="4"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 150, 100, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="sprite5" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="sprite5/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 0, 50, 50, 50, 0 )
+
+[node name="sprite6" type="Sprite" parent="." index="5"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 450, 50, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="sprite6" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="sprite6/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 0, 0, 50, 50, 0 )
+
+[node name="sprite7" type="Sprite" parent="." index="6"]
+
+editor/display_folded = true
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 250, 0, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="sprite7" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="sprite7/static" index="0"]
+
+position = Vector2( 25, 25 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="sprite8" type="Sprite" parent="." index="7"]
+
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 150, 0, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+

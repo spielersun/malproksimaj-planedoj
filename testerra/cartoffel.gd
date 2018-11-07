@@ -18,16 +18,16 @@ func _ready():
 
 func _physics_process(delta):
 	
-	#motion.y += GRAVITY
+	motion.y += GRAVITY
 	var friction = false
 	
 	if Input.is_action_pressed("ui_right"):
-		#motion.x += ACCELERATION
+		motion.x += ACCELERATION
 		motion.x = min(motion.x+ACCELERATION, MAX_SPEED)
 		$sprites.flip_h = false
 		$sprites.play("active")
 	elif Input.is_action_pressed("ui_left"):
-		#motion.x -= ACCELERATION
+		motion.x -= ACCELERATION
 		motion.x = max(motion.x-ACCELERATION, -MAX_SPEED)
 		$sprites.flip_h = true
 		$sprites.play("active")
