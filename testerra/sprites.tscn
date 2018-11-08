@@ -7,9 +7,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 25, 25 )
 
-[node name="sprites" type="Node"]
+[node name="sprites" type="Node" index="0"]
 
-[node name="sprite" type="Sprite" parent="." index="0"]
+[node name="blue" type="Sprite" parent="." index="0"]
 
 visible = false
 texture = ExtResource( 1 )
@@ -18,59 +18,16 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 50, 50 )
 _sections_unfolded = [ "Region" ]
 
-[node name="sprite2" type="Sprite" parent="." index="1"]
+[node name="yellow" type="Sprite" parent="." index="1"]
 
-editor/display_folded = true
 visible = false
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 350, 0, 50, 50 )
+region_rect = Rect2( 50, 0, 50, 50 )
 _sections_unfolded = [ "Region" ]
 
-[node name="static" type="StaticBody2D" parent="sprite2" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="polygon" type="CollisionPolygon2D" parent="sprite2/static" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( 0, 0, 50, 50, 0, 50 )
-
-[node name="sprite3" type="Sprite" parent="." index="2"]
-
-editor/display_folded = true
-visible = false
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 100, 50, 50, 50 )
-_sections_unfolded = [ "Region" ]
-
-[node name="static" type="StaticBody2D" parent="sprite3" index="0"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Transform" ]
-
-[node name="polygon" type="CollisionPolygon2D" parent="sprite3/static" index="0"]
-
-build_mode = 0
-polygon = PoolVector2Array( 50, 0, 0, 50, 50, 50 )
-
-[node name="sprite4" type="Sprite" parent="." index="3"]
+[node name="red" type="Sprite" parent="." index="2"]
 
 editor/display_folded = true
 visible = false
@@ -80,7 +37,7 @@ region_enabled = true
 region_rect = Rect2( 100, 0, 50, 50 )
 _sections_unfolded = [ "Region" ]
 
-[node name="static" type="StaticBody2D" parent="sprite4" index="0"]
+[node name="static" type="StaticBody2D" parent="red" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -91,23 +48,32 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="shape" type="CollisionShape2D" parent="sprite4/static" index="0"]
+[node name="shape" type="CollisionShape2D" parent="red/static" index="0"]
 
 position = Vector2( 25, 25 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="sprite5" type="Sprite" parent="." index="4"]
+[node name="white" type="Sprite" parent="." index="3"]
+
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 150, 0, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="darkyellow" type="Sprite" parent="." index="4"]
 
 editor/display_folded = true
 visible = false
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 150, 100, 50, 50 )
+region_rect = Rect2( 200, 0, 50, 50 )
 _sections_unfolded = [ "Region" ]
 
-[node name="static" type="StaticBody2D" parent="sprite5" index="0"]
+[node name="static" type="StaticBody2D" parent="darkyellow" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -118,12 +84,383 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="polygon" type="CollisionPolygon2D" parent="sprite5/static" index="0"]
+[node name="shape" type="CollisionShape2D" parent="darkyellow/static" index="0"]
+
+position = Vector2( 25, 25 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="darkred" type="Sprite" parent="." index="5"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 250, 0, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="darkred" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="darkred/static" index="0"]
+
+position = Vector2( 25, 25 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="yellow-red" type="Sprite" parent="." index="6"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 300, 0, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="yellow-red" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="yellow-red/static" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 0, 0, 50, 50, 50, 0 )
+polygon = PoolVector2Array( 50, 0, 50, 50, 0, 0 )
 
-[node name="sprite6" type="Sprite" parent="." index="5"]
+[node name="red-blue" type="Sprite" parent="." index="7"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 350, 0, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="red-blue" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="red-blue/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 0, 50, 50, 0, 50 )
+
+[node name="white-red" type="Sprite" parent="." index="8"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 400, 0, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="white-red" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="white-red/static" index="0"]
+
+position = Vector2( 25, 25 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="darkyellow-yellow" type="Sprite" parent="." index="9"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 450, 0, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="darkyellow-yellow" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="darkyellow-yellow/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 0, 50, 50, 0, 50 )
+
+[node name="darkred-red" type="Sprite" parent="." index="10"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 50, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="darkred-red" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="darkred-red/static" index="0"]
+
+position = Vector2( 25, 25 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="red-yellow" type="Sprite" parent="." index="11"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 50, 50, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="red-yellow" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="red-yellow/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 0, 50, 0, 0, 50 )
+
+[node name="blue-red" type="Sprite" parent="." index="12"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 100, 50, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="blue-red" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="blue-red/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 50, 0, 0, 50, 50, 50 )
+
+[node name="red-white" type="Sprite" parent="." index="13"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 150, 50, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="red-white" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="red-white/static" index="0"]
+
+position = Vector2( 25, 25 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="yellow-darkyellow" type="Sprite" parent="." index="14"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 200, 50, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="yellow-darkyellow" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="yellow-darkyellow/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 50, 0, 0, 50, 50, 50 )
+
+[node name="red-darkred" type="Sprite" parent="." index="15"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 250, 50, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="red-darkred" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="red-darkred/static" index="0"]
+
+position = Vector2( 25, 25 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="yellow-red-reverse" type="Sprite" parent="." index="16"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 300, 50, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="yellow-red-reverse" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="yellow-red-reverse/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 50, 0, 0, 50, 50, 50 )
+
+[node name="white-red-reverse" type="Sprite" parent="." index="17"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 350, 50, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="white-red-reverse" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="white-red-reverse/static" index="0"]
+
+position = Vector2( 25, 25 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="darkyellow-yellow-reverse" type="Sprite" parent="." index="18"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 400, 50, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="darkyellow-yellow-reverse" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="darkyellow-yellow-reverse/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 0, 0, 50, 50, 0 )
+
+[node name="darkred-blue" type="Sprite" parent="." index="19"]
 
 editor/display_folded = true
 visible = false
@@ -133,7 +470,7 @@ region_enabled = true
 region_rect = Rect2( 450, 50, 50, 50 )
 _sections_unfolded = [ "Region" ]
 
-[node name="static" type="StaticBody2D" parent="sprite6" index="0"]
+[node name="static" type="StaticBody2D" parent="darkred-blue" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -144,21 +481,22 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="polygon" type="CollisionPolygon2D" parent="sprite6/static" index="0"]
+[node name="polygon" type="CollisionPolygon2D" parent="darkred-blue/static" index="0"]
 
 build_mode = 0
 polygon = PoolVector2Array( 0, 0, 0, 50, 50, 0 )
 
-[node name="sprite7" type="Sprite" parent="." index="6"]
+[node name="red-yellow-reverse" type="Sprite" parent="." index="20"]
 
 editor/display_folded = true
+visible = false
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 250, 0, 50, 50 )
+region_rect = Rect2( 0, 100, 50, 50 )
 _sections_unfolded = [ "Region" ]
 
-[node name="static" type="StaticBody2D" parent="sprite7" index="0"]
+[node name="static" type="StaticBody2D" parent="red-yellow-reverse" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -169,19 +507,87 @@ friction = 1.0
 bounce = 0.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="shape" type="CollisionShape2D" parent="sprite7/static" index="0"]
+[node name="polygon" type="CollisionPolygon2D" parent="red-yellow-reverse/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 0, 0, 50, 50, 50 )
+
+[node name="red-white-reverse" type="Sprite" parent="." index="21"]
+
+editor/display_folded = true
+visible = false
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 50, 100, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="red-white-reverse" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="red-white-reverse/static" index="0"]
 
 position = Vector2( 25, 25 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="sprite8" type="Sprite" parent="." index="7"]
+[node name="yellow-darkyellow-reverse" type="Sprite" parent="." index="22"]
 
+editor/display_folded = true
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 100, 100, 50, 50 )
+_sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="yellow-darkyellow-reverse" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="yellow-darkyellow-reverse/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 0, 50, 0, 50, 50 )
+
+[node name="blue-darkred" type="Sprite" parent="." index="23"]
+
+editor/display_folded = true
 visible = false
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 150, 0, 50, 50 )
+region_rect = Rect2( 150, 100, 50, 50 )
 _sections_unfolded = [ "Region" ]
+
+[node name="static" type="StaticBody2D" parent="blue-darkred" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="polygon" type="CollisionPolygon2D" parent="blue-darkred/static" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 0, 50, 50, 50, 0 )
 
 
