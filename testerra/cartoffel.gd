@@ -9,7 +9,12 @@ const SPEED = 100
 
 var motion = Vector2()
 
+var mouse_angle
+var relative_height
+var relative_width
+
 onready var sprites = $sprites
+onready var turret = $turret
 
 var direction = 1
 
@@ -17,6 +22,26 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	
+	var deg_angle
+	
+	relative_height = get_global_mouse_position().y - position.y
+	relative_width = get_global_mouse_position().x - position.x
+	
+	if relative_width == 0:
+		mouse_angle = atan(relative_height)
+	elif relative_height == 0:
+		mouse_angle = atan(relative_width)
+	else:
+		mouse_angle = atan(relative_height/relative_width)
+
+	if relative_width <= 0:
+		deg_angle = rad2deg(mouse_angle) + 180
+	else:
+		deg_angle = rad2deg(mouse_angle)
+
+	turret.rotation = rotation + deg2rad(deg_angle)
+	
 	
 	motion.y += GRAVITY
 	var friction = false
