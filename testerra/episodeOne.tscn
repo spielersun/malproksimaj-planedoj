@@ -34,6 +34,6 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="cartoffel" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 304.624, 385.186 )
+position = Vector2( 303.366, 461.171 )
 
 

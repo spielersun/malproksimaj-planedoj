@@ -1,31 +1,33 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://testerra/cartoffel.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/cartoffel/glide_1.png" type="Texture" id=2]
-[ext_resource path="res://assets/images/cartoffel/glide_2.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/cartoffel/glide_3.png" type="Texture" id=4]
-[ext_resource path="res://assets/images/cartoffel/glide_4.png" type="Texture" id=5]
-[ext_resource path="res://assets/images/cartoffel/idle_0.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/cartoffel/turret.png" type="Texture" id=7]
+[ext_resource path="res://scenes/cartoffel_bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/images/cartoffel/glide_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/cartoffel/glide_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/cartoffel/glide_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/cartoffel/glide_4.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/cartoffel/idle_0.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/cartoffel/turret.png" type="Texture" id=8]
+[ext_resource path="res://audio/laser_3.wav" type="AudioStream" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "active",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "passive",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 64.6526, 38.1167 )
+radius = 30.715
 
 [node name="cartoffel" type="KinematicBody2D"]
 
@@ -34,25 +36,21 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+bullet = ExtResource( 2 )
 
 [node name="sprites" type="AnimatedSprite" parent="." index="0"]
 
 frames = SubResource( 1 )
 animation = "passive"
 
-[node name="shape" type="CollisionShape2D" parent="." index="1"]
-
-position = Vector2( 33, 0 )
-shape = SubResource( 2 )
-
-[node name="turret" type="Sprite" parent="." index="2"]
+[node name="turret" type="Sprite" parent="." index="1"]
 
 position = Vector2( 5.58298, 13.1865 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 7.5, 0 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="camera" type="Camera2D" parent="." index="3"]
+[node name="camera" type="Camera2D" parent="." index="2"]
 
 anchor_mode = 1
 rotating = false
@@ -76,5 +74,27 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="beam" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "beam"
+area_mask = 1
+_sections_unfolded = [ "Pause" ]
+
+[node name="shape" type="CollisionShape2D" parent="." index="4"]
+
+position = Vector2( 67.0652, 7.68509 )
+shape = SubResource( 2 )
+
+[node name="body" type="CollisionPolygon2D" parent="." index="5"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0.521835, 21.9265, 24.8717, 22.9232, 31.8491, 24.632, 39.8233, 26.9104, 51.6423, 34.1726, 89.3774, -10.2552, 80.5488, -19.0838, 67.0211, -26.9156, 47.94, -34.0354, 28.7164, -36.741, 22.7357, -38.0226, 5.36332, -38.165, -3.32288, -35.1746, -13.2906, -31.7571, -19.5561, -28.7668, -30.0935, -17.375, -31.8022, -13.1031, -31.8022, -1.99618, -28.5271, 2.27572, -21.5497, 10.1075, -14.5722, 15.9458, -6.02841, 19.7905 )
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://testerra/todd.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/todd/idle_0.png" type="Texture" id=2]
@@ -35,7 +35,17 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 26.8243, 23.1461 )
+extents = Vector2( 27.5072, 18.0536 )
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 10.1284
+
+[sub_resource type="CircleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 10.2253
 
 [node name="todd" type="KinematicBody2D"]
 
@@ -50,9 +60,44 @@ script = ExtResource( 1 )
 frames = SubResource( 1 )
 animation = "idle"
 
-[node name="shape" type="CollisionShape2D" parent="." index="1"]
+[node name="body" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.475655, 9.03749 )
+position = Vector2( 0.570126, 4.03064 )
 shape = SubResource( 2 )
+
+[node name="tireBack" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -13.9814, 22.1057 )
+shape = SubResource( 3 )
+
+[node name="tireFront" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 13.3201, 21.9168 )
+shape = SubResource( 4 )
+
+[node name="camera" type="Camera2D" parent="." index="4"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
 
 
