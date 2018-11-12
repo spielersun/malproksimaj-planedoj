@@ -2,9 +2,9 @@
 
 [ext_resource path="res://testerra/menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/frame.png" type="Texture" id=2]
-[ext_resource path="res://assets/images/bg_0.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/header.png" type="Texture" id=4]
-[ext_resource path="res://testerra/test_theme.tres" type="Theme" id=5]
+[ext_resource path="res://assets/images/header.png" type="Texture" id=3]
+[ext_resource path="res://testerra/test_theme.tres" type="Theme" id=4]
+[ext_resource path="res://testerra/ignamons_meselvign.tscn" type="PackedScene" id=5]
 
 [node name="menu" type="Node" index="0"]
 
@@ -23,21 +23,17 @@ transform = Transform2D( 1, 0, 0, 1, 800, 450 )
 
 texture = ExtResource( 2 )
 
-[node name="bg" type="CanvasLayer" parent="." index="1"]
+[node name="menu" type="CanvasLayer" parent="." index="1"]
 
-editor/display_folded = true
-layer = -1
-offset = Vector2( 800, 450 )
+layer = 1
+offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 800, 450 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="bg" type="Sprite" parent="bg" index="0"]
+[node name="menuItems" type="Control" parent="menu" index="0"]
 
-texture = ExtResource( 3 )
-
-[node name="menuItems" type="Control" parent="." index="2"]
-
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -54,13 +50,13 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
 
-[node name="header" type="Sprite" parent="menuItems" index="0"]
+[node name="header" type="Sprite" parent="menu/menuItems" index="0"]
 
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 centered = false
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
-[node name="start" type="Button" parent="menuItems" index="1"]
+[node name="start" type="Button" parent="menu/menuItems" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -76,7 +72,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 5 )
+theme = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -86,7 +82,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin", "Rect", "Theme", "Visibility", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="options" type="Button" parent="menuItems" index="2"]
+[node name="options" type="Button" parent="menu/menuItems" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -102,7 +98,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 5 )
+theme = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -112,7 +108,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin", "Rect", "Theme", "Visibility", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[node name="exit" type="Button" parent="menuItems" index="3"]
+[node name="exit" type="Button" parent="menu/menuItems" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -128,7 +124,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 5 )
+theme = ExtResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -138,10 +134,37 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin", "Rect", "Theme", "Visibility", "custom_constants", "custom_fonts", "custom_styles" ]
 
-[connection signal="pressed" from="menuItems/start" to="." method="_on_start_pressed"]
+[node name="ignamons_meselvign" parent="." index="2" instance=ExtResource( 5 )]
 
-[connection signal="pressed" from="menuItems/options" to="." method="_on_options_pressed"]
+[node name="camera" type="Camera2D" parent="." index="3"]
 
-[connection signal="pressed" from="menuItems/exit" to="." method="_on_exit_pressed"]
+anchor_mode = 0
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+[connection signal="pressed" from="menu/menuItems/start" to="." method="_on_start_pressed"]
+
+[connection signal="pressed" from="menu/menuItems/options" to="." method="_on_options_pressed"]
+
+[connection signal="pressed" from="menu/menuItems/exit" to="." method="_on_exit_pressed"]
 
 
