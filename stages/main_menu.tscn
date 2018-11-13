@@ -57,6 +57,7 @@ position = Vector2( 0.734985, -0.735107 )
 
 [node name="items" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 617.553, 369.549 )
 z_index = 50
 _sections_unfolded = [ "Z Index" ]
@@ -361,6 +362,7 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="pressed" from="items/cartoffel" to="." method="_on_cartoffel_pressed"]
 

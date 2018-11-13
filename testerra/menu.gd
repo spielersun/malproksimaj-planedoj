@@ -1,11 +1,10 @@
 extends Node
 
 onready var camera = $camera
+onready var music = $music
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	helper.roll_music()
 
 func _physics_process(delta):
 	camera.position.x += delta * 100

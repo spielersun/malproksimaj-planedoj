@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://testerra/menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/frame.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/header.png" type="Texture" id=3]
 [ext_resource path="res://testerra/test_theme.tres" type="Theme" id=4]
 [ext_resource path="res://testerra/ignamons_meselvign.tscn" type="PackedScene" id=5]
+[ext_resource path="res://testerra/awesomeness.tres" type="AudioStream" id=6]
 
 [node name="menu" type="Node" index="0"]
 
@@ -160,6 +161,19 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="music" type="AudioStreamPlayer2D" parent="." index="4"]
+
+position = Vector2( 808.606, 460.908 )
+stream = ExtResource( 6 )
+volume_db = 0.19
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+_sections_unfolded = [ "Z Index" ]
 
 [connection signal="pressed" from="menu/menuItems/start" to="." method="_on_start_pressed"]
 
